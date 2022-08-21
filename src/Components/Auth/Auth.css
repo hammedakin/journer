@@ -1,0 +1,65 @@
+.auth {
+    margin: 5rem 0 !important;
+}
+
+/* Login */
+ #togglePassword,
+ #togglePassword2 {
+  font-size: 22px;
+}
+.auth .toggle-eye {
+  right: 5%;
+  top: 25%;
+  position: absolute;
+  cursor: pointer;
+  font-weight: bolder;
+  display: block;
+}
+/* Login */
+
+
+/* Form Style */
+* {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.auth .input-style {
+  width: 100%;
+  padding: 12px 0px;
+  margin: 8px 0;
+  display: inline-block;
+  /* border: 1px solid #828282; */
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 24px;
+  color: var(--dark-color);
+  box-shadow: none;
+  /* background: transparent !important; */
+  margin-bottom: 1.5rem !important;
+}
+.auth .input-style.pword-input {
+  padding-right: 4.1rem !important;
+}
+
+
+.auth .input-style.input-line {
+  border: 0px solid #8e8e8e ;
+  border-bottom: 2px solid #d0d0d0;
+  border-radius: 1px !important;
+  color: var(--dark-color);
+  background-color: var(--light-color) !important;
+  word-break: break-all !important;
+  transition: all 0.5s !important;
+}
+
+.auth .input-style.input-line:hover,
+.auth .input-style.input-line:active,
+.auth .input-style.input-line:focus {
+   border: 0px solid var(--pry-color);
+  border-bottom: 2px solid var(--pry-color);
+}
+
+/* Form Style */
+

@@ -1,0 +1,33 @@
+
+/* CSS Variables */
+:root {
+  --pry-color: #1560bd;
+  --pry-bold-color: #023676;
+  --sec-color: #f1f6fd;
+  --sec-bold-color: #c6dcf8;
+  --dark-color: #000;
+  --dark-hover-color: #1d1d1d;
+  --light-color: #fff;
+  --light-bold-color: #fbfbfe80;
+  --nav-color: #6faaf6;
+}
+/* CSS Variables */
+
+
+
+
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
