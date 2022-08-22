@@ -1,6 +1,9 @@
 /* The Top Nav */
 /* The Top Nav */
-
+.top-nav {
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.7);
+}
 
 /* The Top Nav */
 /* The Top Nav */
@@ -17,7 +20,7 @@
   overflow-x: hidden;
   height: 100vh;
   z-index: 1040 !important;
-  border-right: 1px var(--pry-color) solid ;
+  border-right: 1px var(--pry-color) solid;
 }
 
 .main-nav-container .sidebar li.active {
@@ -56,8 +59,6 @@
     min-height: 100vh;
     z-index: 1;
   }
-
-
 
   .main-nav-container #side_nav.active {
     margin-left: 0;
