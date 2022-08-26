@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import DeleteModal from '../Global/DeleteModal';
+import ChangePin from './NoteFooter/ChangePin';
+
+const NoteFooter = (props) => {
+
+    const { toPin } = props
+
+    const { handleChange, timestamp, edited, data, sending, form, submit, noteId } = props.data
+    console.log(props.data);
 
 
-const NoteFooter = ({ timestamp, edited, noteId }) => {
+    // const [pinned, setpinned] = useState(data.pinned);
+    // console.log(pinned);
+
 
     // Get todays Date and Time
     // Get todays Date and Time
@@ -27,11 +37,15 @@ const NoteFooter = ({ timestamp, edited, noteId }) => {
     // Get Current Date and Time
     // Get Current Date and Time
 
-    const [token, settoken] = useState('elemi');
 
+
+
+
+    // Delete FN
     function del(e) {
         alert(e)
     }
+    // Delete FN
 
     return (
         <>
@@ -44,7 +58,7 @@ const NoteFooter = ({ timestamp, edited, noteId }) => {
 
                         <li className="list-unstyled text-center" >
                             <a className=''>
-                                <i className={`bi h4`} />
+                                {/* <i className={`bi h4`} /> */}
                                 <div className="small-text">
                                     <small className="my-2">
                                         {edited ? 'Edited ' : ''}
@@ -54,9 +68,16 @@ const NoteFooter = ({ timestamp, edited, noteId }) => {
                             </a>
                         </li>
                         <li className="list-unstyled text-center" >
-                            <a className=''>
-                                <i className='bi bi-pin h5 sec-bold p-2 br-sm me-2' />
-                            </a>
+
+                            {/* <a className=''
+                                onClick={e => toPin(e)}
+                            >
+                                <i
+                                    className={` ${pinned ? '  bi-pin-fill' : '  bi-pin'}  bi h5 sec-bold p-2 br-sm me-2 `}
+                                />
+                            </a> */}
+                            <ChangePin  noteId={noteId} />
+
                             <a className=''>
                                 <i className='bi bi-share h5 sec-bold p-2 br-sm me-2' />
                             </a>
@@ -70,9 +91,9 @@ const NoteFooter = ({ timestamp, edited, noteId }) => {
                             <a className=''>
                                 <DeleteModal
                                     content={`Are you sure?`}
-                                    Fn={e => del(token)}
+                                    // Fn={e => del(token)}
                                     noteId={noteId}
-                                    >
+                                >
                                     <i className='bi bi-trash3 h5 red-bold-text red-light p-2 br-sm me-2'
                                     />
 

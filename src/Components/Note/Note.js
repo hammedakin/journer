@@ -6,7 +6,7 @@ import NoteFooter from './NoteFooter';
 const Note = (props) => {
 
     const { handleChange, timestamp, edited, data, sending, form, submit, noteId } = props
-
+    // console.log(props);
     const [test, settest] = useState(true);
     let navigate = useNavigate();
 
@@ -15,7 +15,6 @@ const Note = (props) => {
         navigate(-1)
     }
     // Back Button
-
 
     return (
         <>
@@ -76,7 +75,14 @@ const Note = (props) => {
                 </form>
 
 
-                <NoteFooter edited={edited} timestamp={timestamp} noteId={noteId} />
+                <NoteFooter
+                    edited={edited}
+                    timestamp={timestamp}
+                    noteId={noteId}
+                    data={props}
+                    // toPin={toPin}
+
+                />
             </main>
         </>
     );

@@ -35,6 +35,7 @@ const AllNotes = () => {
 
 
     const allnotes = data.note?.map((item) => {
+    // const allnotes = note?.map((item) => {
         const { timestamp, title, content, _id, labels, color } = item
         return (
             <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'}`} key={_id}>
@@ -58,7 +59,7 @@ const AllNotes = () => {
                 </div>
             </div>
         )
-    });
+    }).reverse();
 
     return (
         <>

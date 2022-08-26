@@ -32,7 +32,7 @@ const AddNote = () => {
     // Get Current Date and Time
     // Get Current Date and Time
 
-    // let data = {}
+    let data = {}
 
     // Form Fields
     const [form, setform] = useState({ title: '', content: '' });
@@ -94,10 +94,8 @@ const AddNote = () => {
             <Wrapper>
                 <Note
                     handleChange={handleChange}
-
-
                     timestamp={timestamp}
-                    // data={data}
+                    data={data}
                     form={form}
                     submit={createNote}
                     sending={sending}

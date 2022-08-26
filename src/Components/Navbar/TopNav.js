@@ -14,7 +14,7 @@ const TopNav = () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-md navbar-light fixed-top py-3 shadow-none border-bottom top-nav">
+            <nav className="navbar navbar-expand-md navbar-light fixed-top py-3 shadow-none top-nav">
                 <div className="container-fluid">
                     <div className="d-flex align-items-center">
                         <a className="navbar-brand px-1 py-0 me-2 d-md-none d-block" onClick={openNav} >
