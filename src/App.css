@@ -96,6 +96,9 @@ pre {
 .dark-text {
   color: var(--dark-color) !important;
 }
+.dark-bold-text {
+  color: var(--dark-hover-color) !important;
+}
 .light-bg {
   background-color: var(--light-color) !important;
 }
@@ -155,9 +158,6 @@ pre {
   color: #d73d3d;
 }
 
-.cyan {
-  background-color: #80ff9547;
-}
 /* Specially for Dashboard */
 
 /* Colors */
@@ -182,10 +182,14 @@ pre {
   color: var(--pry-color) !important;
   border: var(--pry-color) 1px solid !important;
 }
+
+/* Border Color */
 .sec-bold-border {
   background-color: transparent !important;
   border: var(--sec-bold-color) 1px solid !important;
 }
+
+/* Border Color */
 
 .w-lg-75 {
   width: 75% !important;

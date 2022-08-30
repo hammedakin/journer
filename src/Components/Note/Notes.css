@@ -1,7 +1,20 @@
 
-.allnotes {
-  /* margin-top: 3rem; */
+/* Special Themes */
+.greenish {
+  background-color: #80ff9547;
 }
+.reddish {
+  background-color: #ff808047;
+}
+.blueish {
+  background-color: #9580ff47;
+}
+.yellowish {
+  background-color: #fffd8047;
+}
+/* Special Themes */
+
+
 /* Each Note */
 .each-note {
   border-left: 2px var(--pry-color) solid;
@@ -9,7 +22,6 @@
   border-top-left-radius: 3px;
 
   height: 100%;
-  /* max-height: 65vh; */
 }
 
 .each-note .date {
@@ -28,7 +40,6 @@
   font-size: 11px;
 
   text-overflow: ellipsis !important;
-  /* white-space: nowrap !important; */
   overflow: hidden !important;
   -webkit-line-clamp: 6 !important;
   display: -webkit-box !important;
@@ -67,7 +78,6 @@
 .note {
     border: 0 !important;
     max-height: 70vh;
-    /* margin-top: 2rem; */
 }
 
 /* Form Style */
@@ -81,45 +91,28 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none !important;
 }
 
-.input-style {
+.note .input-style {
   width: 100%;
   padding: 7px 0px;
-  /* margin: 8px 0; */
   display: inline-block;
   border: 1px solid transparent;
   box-sizing: border-box;
-  /* border-radius: 5px; */
-  font-size: 13px;
-  /* line-height: 24px; */
+  font-size: 15px;
+  /* font-weight: 600; */
   color: var(--dark-color);
   box-shadow: none;
   background: transparent !important;
-  /* margin-bottom: 1.5rem !important; */
-  /* -webkit-appearance: textfield !important; */
 }
 
 .note .textarea-style {
-  height: 60vh;
-  font-size: 17px;
+  /* min-height: 60vh; */
+  height: 63vh;
+  font-size: 15px;
+  font-weight: 500 !important;
     word-wrap: break-word !important;
   white-space: wrap !important;
+  resize: none !important;
 }
-
-
-
-/* select {
-  background: url(../User/img/dropdown.svg) no-repeat right #ddd0 !important;
-  -webkit-appearance: none;
-  background-position-x: 94% !important;
-  background-color: white;
-  background-position-y: 52%;
-  color: #828282 !important;
-} */
-
-/* .input-style:hover,
-.input-style:focus {
-  border: 1px solid var(--pry-color) !important;
-} */
 
 /* Form Style */
 

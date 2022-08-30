@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import DeleteModal from '../Global/DeleteModal';
-import ChangePin from './NoteFooter/ChangePin';
+import ChangePinButton from './NoteFooter/ChangePinButton';
+import LabelButtton from './NoteFooter/LabelButtton';
+import ShareButton from './NoteFooter/ShareBotton';
+import ThemeButton from './NoteFooter/ThemeButton';
 
 const NoteFooter = (props) => {
 
-    const { toPin } = props
-
     const { handleChange, timestamp, edited, data, sending, form, submit, noteId } = props.data
-    console.log(props.data);
-
-
-    // const [pinned, setpinned] = useState(data.pinned);
-    // console.log(pinned);
 
 
     // Get todays Date and Time
@@ -38,15 +34,6 @@ const NoteFooter = (props) => {
     // Get Current Date and Time
 
 
-
-
-
-    // Delete FN
-    function del(e) {
-        alert(e)
-    }
-    // Delete FN
-
     return (
         <>
             <div className=" pb-5">
@@ -56,50 +43,40 @@ const NoteFooter = (props) => {
                     <div className="container justify-content-between" id="logo">
 
 
-                        <li className="list-unstyled text-center" >
-                            <a className=''>
-                                {/* <i className={`bi h4`} /> */}
-                                <div className="small-text">
-                                    <small className="my-2">
-                                        {edited ? 'Edited ' : ''}
-                                        {currentDate === timestamp.date ? timestamp.time : timestamp.date}
-                                    </small>
-                                </div>
-                            </a>
+                        <li className="list-unstyled text-center " >
+                            <div className="small-text pry-bold-text">
+                                <small className="my-2">
+                                    {edited ? 'Edited ' : ''}
+                                    {currentDate === edited.date ? edited.time : edited.date}
+                                </small>
+                            </div>
                         </li>
-                        <li className="list-unstyled text-center" >
+                        <li className="list-unstyled text-center " >
 
-                            {/* <a className=''
-                                onClick={e => toPin(e)}
+
+                            <ChangePinButton
+                                noteId={noteId}
+                                pin={data.pinned} />
+
+                            <ShareButton
+                                form={form}
+                            />
+
+                            <ThemeButton
+                                noteId={noteId}
+                                theme={data.theme}
+                            />
+
+                            <LabelButtton />
+
+                            <DeleteModal
+                                content={`Are you sure?`}
+                                // Fn={e => del(token)}
+                                noteId={noteId}
                             >
-                                <i
-                                    className={` ${pinned ? '  bi-pin-fill' : '  bi-pin'}  bi h5 sec-bold p-2 br-sm me-2 `}
+                                <i className='bi bi-trash3 h5 red-bold-text red-light p-2 br-sm me-2 '
                                 />
-                            </a> */}
-                            <ChangePin  noteId={noteId} />
-
-                            <a className=''>
-                                <i className='bi bi-share h5 sec-bold p-2 br-sm me-2' />
-                            </a>
-                            <a className=''>
-                                <i className='bi bi-palette h5 sec-bold p-2 br-sm me-2' />
-                            </a>
-                            <a className=''>
-                                <i className='bi bi-tag h5 sec-bold p-2 br-sm me-2' />
-
-                            </a>
-                            <a className=''>
-                                <DeleteModal
-                                    content={`Are you sure?`}
-                                    // Fn={e => del(token)}
-                                    noteId={noteId}
-                                >
-                                    <i className='bi bi-trash3 h5 red-bold-text red-light p-2 br-sm me-2'
-                                    />
-
-                                </DeleteModal>
-
-                            </a>
+                            </DeleteModal>
                         </li>
 
                     </div>

@@ -2,31 +2,13 @@ import React from 'react';
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { removeData } from '../Global/LocalStorage';
 import { toast } from "react-toastify";
+import { labels } from '../Note/data';
+import Label from '../../Pages/Label';
 
 const NavbarLink = () => {
     let navigate = useNavigate()
 
-    const link = [
-        {
-            name: 'Revising'
-        },
-        {
-            name: 'Testing'
-        },
-        {
-            name: 'Revising and Testing'
-        },
-        {
-            name: 'Query'
-        },
-        {
-            name: 'Okay then'
-        },
-        {
-            name: 'RevisWe go againing'
-        },
-    ]
-
+ 
 
     function logout() {
         removeData('name')
@@ -61,7 +43,7 @@ const NavbarLink = () => {
                         </span>
                     </NavLink>
                 </li>
-                {link.map(({ name }, i) => {
+                {/* {labels.map(({ name }, i) => {
                     return (
                         <li className="mb-2 " key={i}>
                             <a
@@ -75,16 +57,24 @@ const NavbarLink = () => {
                             </a>
                         </li>
                     )
-                })}
+                })} */}
+                <li className="mb-2">
+                    <Label>
+                    <a
+                        href="#!"
+                        className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between"
+                    >
+                        <span className="text-truncate"> <i className="bi bi-tag"></i> Create Label </span>
+                    </a>
+                    </Label>
+                </li>
+
 
                 <li className="mb-2 ">
                     <NavLink tag={Link}
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/settings`}>
 
                         <span className=""> <i className="bi bi-book"></i> Settings </span>
-                        <span className="pry-bold br-sm text-white py-0 px-2">
-                            02
-                        </span>
                     </NavLink>
                 </li>
                 <li className="mb-2 ">

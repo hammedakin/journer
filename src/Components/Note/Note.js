@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Loading } from '../Global/Loader';
 import { useNavigate } from "react-router-dom";
 import NoteFooter from './NoteFooter';
+import { ClipLoader } from 'react-spinners';
 
 const Note = (props) => {
 
     const { handleChange, timestamp, edited, data, sending, form, submit, noteId } = props
-    // console.log(props);
-    const [test, settest] = useState(true);
+
     let navigate = useNavigate();
 
     // Back Button
@@ -30,12 +30,12 @@ const Note = (props) => {
                     </div>
                     <div className="">
                         {sending ?
-                            <span className="h5 sec-bold p-2 br-sm me-3 p-0">
-                                <i className={`bi bx bi-arrow-repeat bx-spin transparent`} ></i>
+                            <span className="h5 sec-bold p-2 br-sm me-0 p-0">
+                                <ClipLoader color={"#023676"} loading={sending} speedMultiplier="1.2" size="19" />
                             </span>
                             :
                             <i
-                                className='bi bi-check2 h5 sec-bold p-2 br-sm me-2'
+                                className='bi bi-check2 h5 sec-bold p-2 br-sm me-0'
                                 onClick={e => submit(e)}
                             />
                         }
@@ -44,14 +44,12 @@ const Note = (props) => {
 
 
 
-
-
                 <form>
                     <div className="row justify-content-center text-left">
                         <div className="col-md-12 ">
                             <input
                                 type="text"
-                                className="input-style h5 fw-bold"
+                                className="input-style fw-bolder"
                                 name="title"
                                 placeholder="Title..."
                                 onChange={handleChange}
@@ -81,6 +79,7 @@ const Note = (props) => {
                     noteId={noteId}
                     data={props}
                     // toPin={toPin}
+                    form={form}
 
                 />
             </main>

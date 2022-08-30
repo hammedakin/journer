@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const DeleteModal = ({ children, name, content, Fn, noteId }) => {
+const DeleteModal = ({ children, content, Fn, noteId }) => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
     const [token] = useState(localStorage.getItem('token'));
     const [sending, setsending] = useState(false);

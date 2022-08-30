@@ -4,14 +4,13 @@ import AddNoteDiv from "./AddNoteDiv";
 import { note } from "./data";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../Global/useFetch";
+import { useDate } from "../Global/useDate";
 const AllNotes = () => {
     let navigate = useNavigate()
     // Get All Note
     const { loading, data, fetchData } = useFetch('note')
 
     const [column, setcolumn] = useState(true);
-
-
 
     // change column
     function columnChange() {
@@ -28,22 +27,21 @@ const AllNotes = () => {
         navigate(
             '/edit',
             { state: data }
-
         )
     }
     // Route to Edit
 
 
-    const allnotes = data.note?.map((item) => {
-    // const allnotes = note?.map((item) => {
-        const { timestamp, title, content, _id, labels, color } = item
+    // const allnotes = data.note?.map((item) => {
+        const allnotes = note?.map((item) => {
+        const { timestamp, edited, title, content, _id, labels, theme } = item
         return (
             <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'}`} key={_id}>
-                <div className={`each-note  hover-shadow br-sm p-3 ${color ? color : 'light-bg '}`}
+                <div className={`each-note  hover-shadow br-sm p-3 ${theme.color ? theme.color : 'light-bg '}`}
                     onClick={e => toEdit(item)}
                 >
                     <small className="date grey-text">
-                        {timestamp.date}
+                        {edited.date}
                     </small>
                     <h6 className="title fw-bolder text-wrap">
                         {title}

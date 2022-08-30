@@ -18,7 +18,6 @@ const EditNote = () => {
     // Form Fields
     const [form, setform] = useState({ title: data.title, content: data.content });
     function handleChange(e) {
-        // console.log('here');
         setform((inputs) => ({
             ...inputs,
             [e.target.name]: e.target.value,
@@ -26,6 +25,31 @@ const EditNote = () => {
         editNote(e);
     }
     // Form Fields
+
+
+    // Get todays Date and Time
+    // Get todays Date and Time
+
+    function padTo2Digits(num) {
+        return num.toString().padStart(2, '0');
+    }
+
+    let d = new Date()
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    let date = d.getDate();
+    let month = months[d.getMonth()]
+    let year = d.getFullYear();
+    let min = d.getMinutes();
+    let hour = d.getHours();
+    let currentTime = `${padTo2Digits(hour)}:${padTo2Digits(min)}`
+    let currentDate = `${date} ${month} ${year}`
+    let timestamp = { date: currentDate, time: currentTime }
+
+    // Get Current Date and Time
+    // Get Current Date and Time
+
+
+
 
     //   Edit Note Function
     //   Edit Note Function
@@ -36,8 +60,9 @@ const EditNote = () => {
             const data = {
                 title: form.title,
                 content: form.content,
-                pinned: pinned
-                // color:color,
+                pinned: pinned,
+                edited: timestamp
+                // theme:theme,
                 // label: form.label,
             }
             const headers = {
@@ -71,26 +96,18 @@ const EditNote = () => {
     //   Edit Note Function
     //   Edit Note Function
 
-
-    // function toPin(e) {
-    //     e.preventDefault();
-    //     setpinned(!pinned)
-    //     editNote(e)
-    // }
-
     return (
         <>
             <Wrapper>
                 <Note
                     handleChange={handleChange}
+                    data={data}
+                    form={form}
                     timestamp={data.timestamp}
                     edited={data.edited}
-                    form={form}
                     noteId={data?._id}
-                    data={data}
                     submit={editNote}
                     sending={sending}
-                    // toPin={toPin}
                 />
 
 

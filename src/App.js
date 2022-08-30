@@ -3,11 +3,13 @@ import { Route, Routes } from "react-router-dom"
 
 import './App.css';
 import './Components/Note/Notes.css'
+import './Components/Label/Label.css'
 import './Components/Dashboard/Dashboard.css'
+import './Components/Auth/Auth.css'
+
 
 
 import Test from "./Components/Global/Test";
-import Auth from "./Pages/Auth";
 import Dashboard from "./Pages/Dashboard";
 
 import Home from "./Pages/Home"

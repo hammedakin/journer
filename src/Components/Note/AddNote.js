@@ -32,7 +32,8 @@ const AddNote = () => {
     // Get Current Date and Time
     // Get Current Date and Time
 
-    let data = {}
+    const [data, setdata] = useState({});
+    const [noteId, setnoteId] = useState('');
 
     // Form Fields
     const [form, setform] = useState({ title: '', content: '' });
@@ -54,7 +55,7 @@ const AddNote = () => {
             const data = {
                 title: form.title,
                 content: form.content,
-                // color:color,
+                // theme:theme,
                 // label: form.label,
                 // pinned:pinned 
             }
@@ -70,6 +71,7 @@ const AddNote = () => {
                     } else {
                         setsending(false);
                         toast.success(res.data.msg);
+                        setnoteId(res.data.note._id)
                     }
                 })
                 .catch((error) => {
@@ -94,11 +96,13 @@ const AddNote = () => {
             <Wrapper>
                 <Note
                     handleChange={handleChange}
-                    timestamp={timestamp}
                     data={data}
                     form={form}
+                    timestamp={timestamp}
+                    edited={timestamp}
                     submit={createNote}
                     sending={sending}
+                    noteId={noteId}
                 />
             </Wrapper>
 

@@ -1,0 +1,43 @@
+/* Loader Border Color */
+.dark-bold-border {
+  border-width: 1.5px;
+  border-color: var(--dark-hover-color) var(--dark-hover-color) transparent !important;
+}
+/* Loader Border Color */
+
+/* Form Style */
+* {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.label .input-style {
+  width: 100%;
+  padding: 7px 0px;
+  display: inline-block;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: var(--dark-color);
+  box-shadow: none;
+  background: transparent !important;
+}
+
+.label .label-add-form {
+    border-bottom: 1px transparent solid;
+}
+
+.label .label-form {
+    border-bottom: 1px transparent solid;
+    border-top: 1px transparent solid;
+}
+.label .label-add-form:hover {
+    border-bottom: 1px #e3e2e2 solid;
+}
+
+.label .label-form:hover {
+    border-bottom: 1px #e3e2e2 solid;
+    border-top: 1px #e3e2e2 solid;
+}
+
+/* Form Style */

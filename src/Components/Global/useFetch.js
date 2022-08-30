@@ -33,7 +33,8 @@ export const useFetch = (url) => {
                     toast.error(error.response.data.msg);
                 } else {
                     setloading(false);
-                    toast.error('network error ❌');
+                    // toast.error('network error ❌');
+                    console.log('network error ❌');
                 }
             });
     }

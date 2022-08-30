@@ -5,7 +5,7 @@ import add from '../assets/add.png'
 const AddNoteDiv = ({ column }) => {
     return (
         <>
-            <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'}`}>
+            <div className={`mb-4 ${column ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'}`}>
                 <Link to="/new">
                     <div className="each-note shadow light-bg p-3 text-center">
                         <h4 className="sec-bold-text mt-3">
