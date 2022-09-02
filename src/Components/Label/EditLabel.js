@@ -8,9 +8,6 @@ import TheEditLabelForm from './TheEditLabelForm';
 
 const EditLabel = ({ loading, data, fetchData }) => {
 
-
-
-
     
     return (
         <>

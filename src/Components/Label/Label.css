@@ -6,10 +6,6 @@
 /* Loader Border Color */
 
 /* Form Style */
-* {
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-}
 
 .label .input-style {
   width: 100%;

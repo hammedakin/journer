@@ -237,6 +237,10 @@ pre {
   min-height: 70vh !important;
 }
 
+* {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
 
 /* Global */
 /* Global */

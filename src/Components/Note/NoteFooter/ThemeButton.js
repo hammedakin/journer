@@ -53,6 +53,7 @@ const ThemeButton = ({ noteId, theme }) => {
                 } else {
                     setsending(false);
                     setistheme(res.data.note.theme)
+                    console.log(res.data.note);
                 }
             })
             .catch((error) => {

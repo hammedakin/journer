@@ -50,7 +50,6 @@ const Register = () => {
                         setsending(false);
                         toast.error('network error ❌');
                     }
-
                 });
         } else {
             setsending(false);
@@ -59,7 +58,6 @@ const Register = () => {
     }
     //   Regsiter Function
     //   Regsiter Function
-
 
 
     // Password Show Function 

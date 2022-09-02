@@ -19,10 +19,6 @@
 
 
 /* Form Style */
-* {
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-}
 
 .auth .input-style {
   width: 100%;

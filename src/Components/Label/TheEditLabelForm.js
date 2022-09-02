@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify'
 import { ClipLoader } from 'react-spinners';
 import { axios } from "axios";
-import DeleteModal from '../Global/DeleteModal';
 
 const TheEditLabelForm = ({ label, id, fetchData }) => {
 
@@ -18,7 +17,7 @@ const TheEditLabelForm = ({ label, id, fetchData }) => {
     function labelEdit(e) {
         e.preventDefault();
         if (thelabel) {
-            // setsending(true);
+            setsending(true);
             const data = {
                 label: thelabel
             }
@@ -26,7 +25,7 @@ const TheEditLabelForm = ({ label, id, fetchData }) => {
                 'Authorization': `Bearer ${token}`
             }
             axios
-                .patch(`${endpoint}/label/${id}`, data, { headers })
+                .post(`${endpoint}/label/${id}`, data, { headers })
                 .then((res) => {
                     if (res.data.success === false) {
                         toast.warn(res.data.msg);
@@ -99,10 +98,10 @@ const TheEditLabelForm = ({ label, id, fetchData }) => {
             >
                 {checkEdit ?
                     <>
-                        {sending ?
+                        {deleting ?
                             <ClipLoader
                                 className='dark-bold-border'
-                                loading={sending}
+                                loading={deleting}
                                 speedMultiplier="1.5"
                                 size="18"
                             />

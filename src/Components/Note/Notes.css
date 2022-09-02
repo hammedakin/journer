@@ -1,18 +1,19 @@
 
 /* Special Themes */
 .greenish {
-  background-color: #80ff9547;
+  background-color: #80ff9547 !important;
 }
 .reddish {
-  background-color: #ff808047;
+  background-color: #ff808047 !important;
 }
 .blueish {
-  background-color: #9580ff47;
+  background-color: #9580ff47 !important;
 }
 .yellowish {
-  background-color: #fffd8047;
+  background-color: #fffd8047 !important;
 }
 /* Special Themes */
+
 
 
 /* Each Note */
@@ -77,14 +78,10 @@
 
 .note {
     border: 0 !important;
-    max-height: 70vh;
+    max-height: 75vh;
 }
 
 /* Form Style */
-* {
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -98,7 +95,7 @@ input::-webkit-inner-spin-button {
   border: 1px solid transparent;
   box-sizing: border-box;
   font-size: 15px;
-  /* font-weight: 600; */
+  /* font-weight: 400; */
   color: var(--dark-color);
   box-shadow: none;
   background: transparent !important;
@@ -106,9 +103,9 @@ input::-webkit-inner-spin-button {
 
 .note .textarea-style {
   /* min-height: 60vh; */
-  height: 63vh;
+  height: 75vh;
   font-size: 15px;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
     word-wrap: break-word !important;
   white-space: wrap !important;
   resize: none !important;

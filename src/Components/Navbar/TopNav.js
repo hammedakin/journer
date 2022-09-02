@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const TopNav = () => {
+const TopNav = ({theme}) => {
 
     function openNav() {
         var sidebar = document.getElementById('side_nav');
@@ -14,7 +14,7 @@ const TopNav = () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-md navbar-light fixed-top py-3 shadow-none top-nav">
+            <nav className={`navbar navbar-expand-md fixed-top py-3 shadow-none ${theme ? `d-none` : "navbar-light top-nav"} `}>
                 <div className="container-fluid">
                     <div className="d-flex align-items-center">
                         <a className="navbar-brand px-1 py-0 me-2 d-md-none d-block" onClick={openNav} >

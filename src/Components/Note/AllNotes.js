@@ -4,7 +4,6 @@ import AddNoteDiv from "./AddNoteDiv";
 import { note } from "./data";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../Global/useFetch";
-import { useDate } from "../Global/useDate";
 const AllNotes = () => {
     let navigate = useNavigate()
     // Get All Note
@@ -31,10 +30,9 @@ const AllNotes = () => {
     }
     // Route to Edit
 
-
-    // const allnotes = data.note?.map((item) => {
-        const allnotes = note?.map((item) => {
-        const { timestamp, edited, title, content, _id, labels, theme } = item
+    const allnotes = data.note?.map((item) => {
+        // const allnotes = note?.map((item) => {
+        const { timestamp, edited, title, content, _id, labels, theme, updatedAt } = item
         return (
             <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'}`} key={_id}>
                 <div className={`each-note  hover-shadow br-sm p-3 ${theme.color ? theme.color : 'light-bg '}`}

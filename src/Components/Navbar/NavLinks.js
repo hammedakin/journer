@@ -74,7 +74,7 @@ const NavbarLink = () => {
                     <NavLink tag={Link}
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/settings`}>
 
-                        <span className=""> <i className="bi bi-book"></i> Settings </span>
+                        <span className=""> <i className="bi bi-gear"></i> Settings </span>
                     </NavLink>
                 </li>
                 <li className="mb-2 ">

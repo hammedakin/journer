@@ -1,19 +1,18 @@
 import { ToastContainer } from 'react-toastify';
 import Nav from './Components/Navbar/Nav';
 
+const Wrapper = ({ children, display, theme }) => {
 
-
-const Wrapper = ({ children, display }) => {
     return (
         <>
 
             <div className=" d-flex">
 
-                <Nav />
-                <div className="project-content">
+                <Nav theme={theme} />
+                <div className={`project-content  ${theme } `}>
                     <div className="container-fluid">
                         {children}
-                </div>
+                    </div>
                 </div>
             </div>
 

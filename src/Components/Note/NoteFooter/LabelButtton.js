@@ -3,10 +3,13 @@ import { Modal } from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { labels } from "../data";
+import { useFetch } from "../../Global/useFetch";
 
 
 
 const LabelButtton = ({ children }) => {
+    const { loading, data, fetchData } = useFetch(`label`)
+
     const [sending, setsending] = useState();
 
 
@@ -34,7 +37,7 @@ const LabelButtton = ({ children }) => {
                 <Modal.Body style={{ backgroundColor: "transparent!important" }}>
                     <div className="">
 
-                        {labels.map(({ name, _id }, i) => {
+                        {data.label?.map(({ label, _id }, i) => {
                             return (
                                 <div className="col-md-12 pry-bold-text font-weight-bold p-1 " key={_id}>
                                     <div className="mb-2 row justify-content-between">
@@ -42,10 +45,10 @@ const LabelButtton = ({ children }) => {
 
                                             <label
                                                 className=""
-                                                for={name}
+                                                for={label}
                                             >
                                                 <span className="">
-                                                    {name}
+                                                    {label}
                                                 </span>
                                             </label>
                                         </div>
@@ -54,9 +57,9 @@ const LabelButtton = ({ children }) => {
                                             <input
                                                 type="checkbox"
                                                 className=""
-                                                name={name}
-                                                id={name}
-                                                value={name}
+                                                name={label}
+                                                id={label}
+                                                value={label}
                                             // onChange={e => handleChange(e)}
                                             // checked={feature ? true : false}
 
