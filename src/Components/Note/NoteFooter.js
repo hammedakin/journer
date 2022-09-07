@@ -9,7 +9,6 @@ import ThemeButton from './NoteFooter/ThemeButton';
 const NoteFooter = (props) => {
 
     const { handleChange, timestamp, edited, data, sending, form, submit, noteId } = props.data
-
     return (
         <>
             <div className=" pb-5">
@@ -27,30 +26,34 @@ const NoteFooter = (props) => {
                         </li>
                         <li className="list-unstyled text-center " >
 
+                            {noteId &&
+                                <>
+                                    <ChangePinButton
+                                        noteId={noteId}
+                                        pin={data.pinned} />
 
-                            <ChangePinButton
-                                noteId={noteId}
-                                pin={data.pinned} />
+                                    <ShareButton
+                                        form={form}
+                                    />
 
-                            <ShareButton
-                                form={form}
-                            />
+                                    <ThemeButton
+                                        noteId={noteId}
+                                        theme={data.theme}
+                                    />
 
-                            <ThemeButton
-                                noteId={noteId}
-                                theme={data.theme}
-                            />
+                                    <LabelButtton />
 
-                            <LabelButtton />
+                                    <DeleteModal
+                                        content={`Are you sure?`}
+                                        // Fn={e => del(token)}
+                                        noteId={noteId}
+                                    >
+                                        <i className='bi bi-trash3 h5 red-bold-text red-light p-2 br-sm me-2 '
+                                        />
+                                    </DeleteModal>
+                                </>
 
-                            <DeleteModal
-                                content={`Are you sure?`}
-                                // Fn={e => del(token)}
-                                noteId={noteId}
-                            >
-                                <i className='bi bi-trash3 h5 red-bold-text red-light p-2 br-sm me-2 '
-                                />
-                            </DeleteModal>
+                            }
                         </li>
 
                     </div>

@@ -4,13 +4,16 @@ import SideNav from './SideNav';
 import TopNav from './TopNav';
 
 
-const Nav = ({theme}) => {
+const Nav = ({theme, darktheme, switchTheme}) => {
 
     return (
         <>
             <div className="main-nav-container">
                 <TopNav theme={theme} />
-                <SideNav />
+                <SideNav
+                    darktheme={darktheme}
+                    switchTheme={switchTheme}
+                />
             </div>
         </>
     );

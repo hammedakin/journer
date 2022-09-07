@@ -7,7 +7,7 @@ const Note = (props) => {
 
     const { handleChange, timestamp, edited, data, sending, form, submit, noteId } = props
 
-   
+
 
     return (
         <>

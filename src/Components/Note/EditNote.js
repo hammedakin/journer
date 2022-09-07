@@ -26,7 +26,6 @@ const EditNote = () => {
         editNote(e);
     }
     // Form Fields
-
     const [timestamp] = useState(GetDateTime(new Date()));
 
     //   Edit Note Function

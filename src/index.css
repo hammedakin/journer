@@ -10,12 +10,26 @@
   --light-color: #fff;
   --light-bold-color: #fbfbfe80;
   --nav-color: #6faaf6;
+  --top-nav-bg: #ffffffb3;
 }
 /* CSS Variables */
 
 
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --sec-color: #0a132a;
+  --sec-bold-color: #1f3b81;
+  --pry-color: #f1f6fd;
+  --pry-bold-color: #c6dcf8;
+  --dark-color: #f0f0f0;
+  --dark-hover-color: #5a5a5a;
+  --light-color: #0a132a;
+  --light-bold-color: #fbfbfe80;
+  --nav-color: #6faaf6;
+  --top-nav-bg: #0a132a86;
 
-
+}
+/* Dark Mode Variables */
 
 
 body {

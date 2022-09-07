@@ -4,8 +4,9 @@ import { removeData } from '../Global/LocalStorage';
 import { toast } from "react-toastify";
 import { labels } from '../Note/data';
 import Label from '../../Pages/Label';
+import DarkModeToggle from './DarkModeToggle';
 
-const NavbarLink = () => {
+const NavbarLink = ({darktheme, switchTheme }) => {
     let navigate = useNavigate()
 
  
@@ -28,7 +29,7 @@ const NavbarLink = () => {
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/`}>
 
                         <span className=""> <i className="bi bi-book"></i> Note </span>
-                        <span className="pry-bold br-sm text-white py-0 px-2">
+                        <span className="pry-bold br-sm light-text py-0 px-2">
                             02
                         </span>
                     </NavLink>
@@ -38,7 +39,7 @@ const NavbarLink = () => {
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/`}>
 
                         <span className=""> <i className="bi bi-book"></i> Tasks </span>
-                        <span className="pry-bold br-sm text-white py-0 px-2">
+                        <span className="pry-bold br-sm light-text py-0 px-2">
                             02
                         </span>
                     </NavLink>
@@ -51,7 +52,7 @@ const NavbarLink = () => {
                                 className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between "
                             >
                                 <span className="text-truncate"> <i className="bi bi-tag"></i> {name} </span>
-                                <span className="pry-bold br-sm text-white py-0 px-2">
+                                <span className="pry-bold br-sm light-text py-0 px-2">
                                     01
                                 </span>
                             </a>
@@ -77,14 +78,12 @@ const NavbarLink = () => {
                         <span className=""> <i className="bi bi-gear"></i> Settings </span>
                     </NavLink>
                 </li>
-                <li className="mb-2 ">
-                    <a
-                        className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between">
 
-                        <span className=""> <i className="bi bi-moon-fill"></i> Dark Mode </span>
-                  
-                    </a>
-                </li>
+                <DarkModeToggle
+                    darktheme={darktheme}
+                    switchTheme={switchTheme}
+                />
+              
                 <li className="mb-2 ">
                     <div
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between"

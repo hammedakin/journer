@@ -7,7 +7,7 @@
 body {
   background-color: var(--light-color) !important;
   margin: 0 auto;
-  color: var(--dark-color) !important;
+  color: var(--dark-color) !important ;
   line-height: 1.6;
   font-family: "Inter", sans-serif !important;
   overflow-x: hidden !important;
@@ -55,6 +55,12 @@ pre {
   z-index: 1003 !important;
 }
 /* Loader */
+
+/* Modal */
+.modal-content {
+background-color: var(--light-color) !important;
+}
+/* Modal */
 
 /* Colors */
 .transparent {

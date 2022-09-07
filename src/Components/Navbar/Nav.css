@@ -2,7 +2,7 @@
 /* The Top Nav */
 .top-nav {
   backdrop-filter: blur(4px);
-  background-color: #ffffffb3;
+  background-color: var(--top-nav-bg);
 }
 
 /* The Top Nav */
@@ -23,7 +23,7 @@
   border-right: 1px var(--pry-color) solid;
 }
 
-.main-nav-container .sidebar li.active {
+/* .main-nav-container .sidebar li.active {
   background-color: #eee;
   border-radius: 8px;
   color: #000 !important;
@@ -31,7 +31,7 @@
 .main-nav-container .sidebar li.active a:hover,
 .main-nav-container .sidebar li.active a {
   color: #000;
-}
+} */
 /* .main-nav-container .sidebar li a {
   color: #fff;
 } */

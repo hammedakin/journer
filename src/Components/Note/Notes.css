@@ -1,4 +1,3 @@
-
 /* Special Themes */
 .greenish {
   background-color: #80ff9547 !important;
@@ -14,8 +13,6 @@
 }
 /* Special Themes */
 
-
-
 /* Each Note */
 .each-note {
   border-left: 2px var(--pry-color) solid;
@@ -27,7 +24,6 @@
 
 .each-note .date {
   font-size: 11px;
-
   color: var(--pry-color);
 }
 .each-note .title {
@@ -77,8 +73,8 @@
 /* Note Page */
 
 .note {
-    border: 0 !important;
-    max-height: 75vh;
+  border: 0 !important;
+  max-height: 75vh;
 }
 
 /* Form Style */
@@ -106,7 +102,7 @@ input::-webkit-inner-spin-button {
   height: 75vh;
   font-size: 15px;
   font-weight: 400 !important;
-    word-wrap: break-word !important;
+  word-wrap: break-word !important;
   white-space: wrap !important;
   resize: none !important;
 }
@@ -130,7 +126,22 @@ input::-webkit-inner-spin-button {
 
 /* Note Page */
 
+/* Note Footer */
+.custom-radio input.theme-radio {
+  display: none;
+}
+
+.custom-radio input + .theme-icon {
+  border: 1px solid transparent;
+
+}
+
+.custom-radio input:checked + .theme-icon {
+  border: 1px solid var(--pry-bold-color);
+
+}
+
+/* Note Footer */
+
 @media (max-width: 767px) {
-
-
 }

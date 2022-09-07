@@ -1,7 +1,7 @@
 import React from 'react';
 import NavLink from './NavLinks';
 
-const SideNav = () => {
+const SideNav = ({darktheme, switchTheme }) => {
     function closeNav() {
         var sidebar = document.getElementById('side_nav');
         sidebar.className = "sidebar";
@@ -21,7 +21,10 @@ const SideNav = () => {
                         <i className="bi bi-x pry-text h1 sec-bold br-sm"></i>
                     </span>
                 </div>
-               <NavLink />
+               <NavLink
+                    darktheme={darktheme}
+                    switchTheme={switchTheme}
+               />
             </div>
         </>
      );

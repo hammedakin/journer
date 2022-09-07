@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useNavigate } from "react-router-dom"
 
 
 import './App.css';
@@ -19,6 +19,8 @@ import Register from "./Components/Auth/Register";
 import Login from "./Components/Auth/Login";
 
 function App() {
+
+
   return (
     <>
       <Routes>

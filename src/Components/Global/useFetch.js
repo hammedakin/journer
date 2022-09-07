@@ -34,7 +34,6 @@ export const useFetch = (url) => {
                 } else {
                     setloading(false);
                     // toast.error('network error ❌');
-                    console.log('network error ❌');
                 }
             });
     }
