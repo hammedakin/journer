@@ -39,9 +39,12 @@ const NavbarLink = ({darktheme, switchTheme }) => {
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/`}>
 
                         <span className=""> <i className="bi bi-book"></i> Tasks </span>
-                        <span className="pry-bold br-sm light-text py-0 px-2">
-                            02
+                        <span className="pry-bold br-sm light-text m-0 px-1 small">
+                            soon
                         </span>
+                        {/* <span className="pry-bold br-sm light-text py-0 px-2">
+                            02
+                        </span> */}
                     </NavLink>
                 </li>
                 {/* {labels.map(({ name }, i) => {
@@ -61,23 +64,23 @@ const NavbarLink = ({darktheme, switchTheme }) => {
                 })} */}
                 <li className="mb-2">
                     <Label>
-                    <a
-                        href="#!"
-                        className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between"
+                    <span
+                        // href=""
+                        className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between pointer"
                     >
                         <span className="text-truncate"> <i className="bi bi-tag"></i> Create Label </span>
-                    </a>
+                    </span>
                     </Label>
                 </li>
 
 
-                <li className="mb-2 ">
+                {/* <li className="mb-2 ">
                     <NavLink tag={Link}
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/settings`}>
 
                         <span className=""> <i className="bi bi-gear"></i> Settings </span>
                     </NavLink>
-                </li>
+                </li> */}
 
                 <DarkModeToggle
                     darktheme={darktheme}

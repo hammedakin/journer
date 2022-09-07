@@ -1,15 +1,30 @@
 /* Special Themes */
 .greenish {
-  background-color: #80ff9547 !important;
+  background-color: var(--greenish-bg) !important;
 }
 .reddish {
-  background-color: #ff808047 !important;
+  background-color: var(--reddish-bg) !important;
 }
 .blueish {
-  background-color: #9580ff47 !important;
+  background-color: var(--blueish-bg) !important;
 }
 .yellowish {
-  background-color: #fffd8047 !important;
+  background-color: var(--yellowish-bg) !important;
+}
+.orangeish {
+  background-color: var(--orangeish-bg) !important;
+}
+.tealish {
+  background-color: var(--tealish-bg) !important;
+}
+.purpleish {
+  background-color: var(--purpleish-bg) !important;
+}
+.brownish {
+  background-color: var(--brownish-bg) !important;
+}
+.greyish {
+  background-color: var(--greyish-bg) !important;
 }
 /* Special Themes */
 

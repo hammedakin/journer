@@ -170,4 +170,24 @@ export const allThemes = [
         name: "yellow",
         color: "yellowish",
     },
+    {
+        name: "teal",
+        color: "tealish",
+    },
+    {
+        name: "orange",
+        color: "orangeish",
+    },
+    {
+        name: "brown",
+        color: "brownish",
+    },
+    {
+        name: "purple",
+        color: "purpleish",
+    },
+    {
+        name: "grey",
+        color: "greyish",
+    },
 ]

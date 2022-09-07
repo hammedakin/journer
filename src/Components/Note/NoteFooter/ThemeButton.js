@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { allThemes, labels } from "../data";
-import { useFetch } from "../../Global/useFetch";
+import { allThemes } from "../data";
 import { ClipLoader } from "react-spinners";
-import { Loading } from "../../Global/Loader";
 
 
 
 const ThemeButton = ({ noteId, theme }) => {
-    const { loading, data, fetchData } = useFetch(`note/${noteId}`)
-
 
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
     const [token] = useState(localStorage.getItem('token'));

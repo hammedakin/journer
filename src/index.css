@@ -11,6 +11,17 @@
   --light-bold-color: #fbfbfe80;
   --nav-color: #6faaf6;
   --top-nav-bg: #ffffffb3;
+  /* theme */
+  --reddish-bg:#f28b82;
+  --orangeish-bg:#fbbc04;
+  --yellowish-bg:#fff475;
+  --greenish-bg:#ccff90;
+  --tealish-bg:#a7ffeb;
+  --blueish-bg:#cbf0f8;
+  --darkblueish-bg:#aecbfa;
+  --purpleish-bg:#d7aefb;
+  --brownish-bg:#e6c9a8;
+  --greyish-bg:#e8eaed;
 }
 /* CSS Variables */
 
@@ -27,7 +38,17 @@
   --light-bold-color: #fbfbfe80;
   --nav-color: #6faaf6;
   --top-nav-bg: #0a132a86;
-
+  /* theme */
+  --reddish-bg:#5c2b29;
+  --orangeish-bg:#614a19;
+  --yellowish-bg:#635d19;
+  --greenish-bg:#345920;
+  --tealish-bg:#16504b;
+  --blueish-bg:#2d555e;
+  --darkblueish-bg:#1e3a5f;
+  --purpleish-bg:#42275e;
+  --brownish-bg:#442f19;
+  --greyish-bg:#3c3f43;
 }
 /* Dark Mode Variables */
 

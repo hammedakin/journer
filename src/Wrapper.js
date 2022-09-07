@@ -14,7 +14,7 @@ const Wrapper = ({ children, display, theme }) => {
             <div className=" d-flex dark-text" data-theme={darktheme}>
                 <Nav 
                 theme={theme} 
-                darktheme={darktheme}
+                // darktheme={darktheme}
                 switchTheme={switchTheme}
                 />
                 <div className={`project-content  ${theme } `}>
