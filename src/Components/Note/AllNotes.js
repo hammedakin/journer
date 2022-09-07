@@ -30,8 +30,8 @@ const AllNotes = () => {
     }
     // Route to Edit
 
-    // const allnotes = data.note?.map((item) => {
-        const allnotes = note?.map((item) => {
+    const allnotes = data.note?.map((item) => {
+        // const allnotes = note?.map((item) => {
         const { timestamp, edited, title, content, _id, labels, theme, updatedAt } = item
         return (
             <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'}`} key={_id}>
