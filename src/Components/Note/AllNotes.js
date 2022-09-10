@@ -35,10 +35,10 @@ const AllNotes = () => {
         const { timestamp, edited, title, content, _id, labels, theme, updatedAt } = item
         return (
             <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'}`} key={_id}>
-                <div className={`each-note  hover-shadow br-sm p-3 ${theme.color ? theme.color : 'light-bg '}`}
+                <div className={`each-note  hover-shadow br-sm p-3 ${theme.color ? theme.color : 'light-bg note-border'}`}
                     onClick={e => toEdit(item)}
                 >
-                    <small className="date grey-text">
+                    <small className="date ">
                         {edited.date}
                     </small>
                     <h6 className="title fw-bolder text-wrap">

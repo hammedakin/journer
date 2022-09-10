@@ -39,9 +39,11 @@ const NavbarLink = ({darktheme, switchTheme }) => {
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/`}>
 
                         <span className=""> <i className="bi bi-book"></i> Tasks </span>
-                        <span className="pry-bold br-sm light-text m-0 px-1 small">
+                        <p className="pry-bold br-sm light-text m-0 p-0 px-1"
+                        style={{fontSize:'10px'}}
+                        >
                             soon
-                        </span>
+                        </p>
                         {/* <span className="pry-bold br-sm light-text py-0 px-2">
                             02
                         </span> */}

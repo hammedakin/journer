@@ -39,7 +39,6 @@ const EditNote = () => {
                 content: form.content,
                 pinned: pinned,
                 edited: timestamp
-                // label: form.label,
             }
             const headers = {
                 'Authorization': `Bearer ${token}`

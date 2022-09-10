@@ -94,7 +94,8 @@ const ThemeButton = ({ noteId, theme }) => {
                                         <div className="col-2">
                                             {
                                                 sending ?
-                                                    <ClipLoader color={"#023676"} loading={sending} speedMultiplier="1.2" size="20" />
+                                                    <ClipLoader                                 className='pry-bold-border'
+ loading={sending} speedMultiplier="1.2" size="20" />
                                                     :
                                                     <input
                                                         type="radio"
@@ -130,7 +131,8 @@ const ThemeButton = ({ noteId, theme }) => {
                                             {
                                                 sending ?
 
-                                                    <ClipLoader color={"#023676"} loading={sending} speedMultiplier="1.2" size="20" />
+                                                    <ClipLoader className='pry-bold-border'
+                                                        loading={sending} speedMultiplier="1.2" size="20" />
                                                     :
                                                     <div className={`${color} br-xlg theme-icon fit-content`}>
                                                         <i

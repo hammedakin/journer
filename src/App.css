@@ -54,6 +54,12 @@ pre {
   left: 0;
   z-index: 1003 !important;
 }
+
+/* Loader Border Color */
+.pry-bold-border {
+  border-color: var(--pry-bold-color) var(--pry-bold-color) transparent !important;
+}
+/* Loader Border Color */
 /* Loader */
 
 /* Modal */

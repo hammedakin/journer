@@ -10,10 +10,6 @@ import { useFetch } from "../../Global/useFetch";
 const LabelButtton = ({ children }) => {
     const { loading, data, fetchData } = useFetch(`label`)
 
-    const [sending, setsending] = useState();
-
-
-
     const [showremove, setShowremove] = useState(false);
     const handleCloseremove = () => setShowremove(false);
     const handleShowremove = () => setShowremove(true);
@@ -30,6 +26,7 @@ const LabelButtton = ({ children }) => {
                 show={showremove}
                 onHide={handleCloseremove}
                 size="sm"
+                onEnter={fetchData}
             >
                 <Modal.Header closeButton>
                     <h6 className="font-weight-light ml-auto m-0">Labels</h6>

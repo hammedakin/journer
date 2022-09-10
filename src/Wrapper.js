@@ -9,12 +9,13 @@ const Wrapper = ({ children, display, theme }) => {
         const newTheme = darktheme === 'light' ? 'dark' : 'light';
         setdarktheme(newTheme)
     }
+
     return (
         <>
             <div className=" d-flex dark-text" data-theme={darktheme}>
                 <Nav 
                 theme={theme} 
-                // darktheme={darktheme}
+                darktheme={darktheme}
                 switchTheme={switchTheme}
                 />
                 <div className={`project-content  ${theme } `}>

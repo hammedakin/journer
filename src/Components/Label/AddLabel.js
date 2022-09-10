@@ -91,7 +91,7 @@ const AddLabel = ({ fetchData }) => {
                                 />
                                 :
                                 <i className=' bi bi-check2 h5 dark-bold-text m-0'
-                                    onClick={e => labelCreate(e)}
+                                    onClick={(e) => labelCreate(e)}
                                 />
                             }
                         </>

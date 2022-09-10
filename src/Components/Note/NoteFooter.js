@@ -9,11 +9,13 @@ import ThemeButton from './NoteFooter/ThemeButton';
 const NoteFooter = (props) => {
 
     const { handleChange, timestamp, edited, data, sending, form, submit, noteId } = props.data
+    const { theme } = data
+
     return (
         <>
             <div className=" pb-5">
                 <nav
-                    className="navbar light-bg navbar-expand-sm navbar-light fixed-bottom py-1 border-top shadow-none py-3 bottom-nav"
+                    className={`navbar navbar-expand-sm navbar-light fixed-bottom py-1 border-top shadow-none py-3 bottom-nav ${theme ? theme?.color : "light-bg"} `}
                     id="navbar main ">
                     <div className="container justify-content-between" id="logo">
                         <li className="list-unstyled text-center " >

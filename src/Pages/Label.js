@@ -25,6 +25,7 @@ const Label = ({ children }) => {
                 onHide={handleCloseremove}
                 size="sm"
                 backdrop="static"
+                onExited={fetchData}
 
             >
                 <Modal.Header closeButton>
