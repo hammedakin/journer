@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export const useFetch = (url) => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
-    const [token] = useState(localStorage.getItem('token'));
+    const [token] = useState(localStorage.getItem('usertoken'));
     const [loading, setloading] = useState(false);
     const [data, setdata] = useState([]);
 

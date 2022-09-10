@@ -9,10 +9,11 @@ import { GetDate, GetDateTime } from '../Global/GetDate';
 
 const AddNote = () => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
-    const [token] = useState(localStorage.getItem('token'));
+    const [token] = useState(localStorage.getItem('usertoken'));
     const [sending, setsending] = useState(false);
+    const [noteTheme, setnoteTheme] = useState('');
 
- 
+
     const [data, setdata] = useState({});
     const [noteId, setnoteId] = useState('');
 
@@ -76,7 +77,7 @@ const AddNote = () => {
 
     return (
         <>
-            <Wrapper>
+            <Wrapper theme={noteTheme}>
                 <Note
                     handleChange={handleChange}
                     data={data}
@@ -86,6 +87,9 @@ const AddNote = () => {
                     submit={createNote}
                     sending={sending}
                     noteId={noteId}
+                    setnoteTheme={setnoteTheme}
+                    noteTheme={noteTheme}
+
                 />
             </Wrapper>
 

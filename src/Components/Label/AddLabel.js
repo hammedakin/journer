@@ -5,7 +5,7 @@ import { ClipLoader } from 'react-spinners';
 
 const AddLabel = ({ fetchData }) => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
-    const [token] = useState(localStorage.getItem('token'));
+    const [token] = useState(localStorage.getItem('usertoken'));
     const [sending, setsending] = useState(false);
     const [label, setlabel] = useState('');
 
@@ -58,7 +58,7 @@ const AddLabel = ({ fetchData }) => {
 
             <form>
                 {max.length === 30 ?
-                    <p className="m-0 text-danger small text-center ps-4">Enter a shorter label.</p>
+                    <p className="m-0 text-danger small text-center">Enter a shorter label.</p>
                     : <></>}
                 <div className="d-flex align-items-center label-add-form py-2 px-2">
                     {label ?

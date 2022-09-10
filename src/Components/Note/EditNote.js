@@ -9,12 +9,12 @@ import { GetDateTime } from '../Global/GetDate';
 
 const EditNote = () => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
-    const [token] = useState(localStorage.getItem('token'));
+    const [token] = useState(localStorage.getItem('usertoken'));
     const [sending, setsending] = useState(false);
     let location = useLocation()
     const [data] = useState(location.state);
     const [noteId, setnoteId] = useState(data._id);
-    const [pinned, setpinned] = useState(data.pinned);
+    const [noteTheme, setnoteTheme] = useState(data.theme.color);
 
     // Form Fields
     const [form, setform] = useState({ title: data.title, content: data.content });
@@ -37,7 +37,6 @@ const EditNote = () => {
             const data = {
                 title: form.title,
                 content: form.content,
-                pinned: pinned,
                 edited: timestamp
             }
             const headers = {
@@ -73,7 +72,7 @@ const EditNote = () => {
 
     return (
         <>
-            <Wrapper theme={data.theme.color}>
+            <Wrapper theme={noteTheme}>
                 <Note
                     handleChange={handleChange}
                     data={data}
@@ -81,8 +80,10 @@ const EditNote = () => {
                     timestamp={data.timestamp}
                     edited={data.edited}
                     noteId={data?._id}
-                    submit={(e)=>editNote(e)}
+                    submit={(e) => editNote(e)}
                     sending={sending}
+                    setnoteTheme={setnoteTheme}
+                    noteTheme={noteTheme}
                 />
 
 

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const DeleteModal = ({ children, content, Fn, noteId }) => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
-    const [token] = useState(localStorage.getItem('token'));
+    const [token] = useState(localStorage.getItem('usertoken'));
     const [sending, setsending] = useState(false);
 
     let navigate = useNavigate()

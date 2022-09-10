@@ -13,7 +13,7 @@ const NavbarLink = ({darktheme, switchTheme }) => {
 
     function logout() {
         removeData('name')
-        removeData('token')
+        removeData('usertoken')
         toast.success('logout successful, redirecting...')
         setTimeout(() => {
             navigate('/login')

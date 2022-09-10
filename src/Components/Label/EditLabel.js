@@ -8,11 +8,10 @@ import TheEditLabelForm from './TheEditLabelForm';
 const EditLabel = ({ loading, data, fetchData }) => {
 
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
-    const [token] = useState(localStorage.getItem('token'));
+    const [token] = useState(localStorage.getItem('usertoken'));
     const [deleting, setdeleting] = useState(false);
 
     const [sending, setsending] = useState(false);
-
 
     //  Edit Label Function
     //  Edit Label Function
@@ -113,7 +112,7 @@ const EditLabel = ({ loading, data, fetchData }) => {
                                     fetchData={fetchData}
                                     DeleteLabel={DeleteLabel}
                                     deleting={deleting}
-                                    
+
                                     sending={sending}
                                     labelEdit={labelEdit}
                                 />

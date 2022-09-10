@@ -141,7 +141,6 @@ const Register = () => {
                                                 id="togglePassword"
                                                 onClick={myInput}
                                             >
-                                                k
                                             </a>
                                         </div>
                                     </div>

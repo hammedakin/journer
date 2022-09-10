@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify'
 import { ClipLoader } from 'react-spinners';
-import { axios } from "axios";
 
 const TheEditLabelForm = ({ label, id, deleting, DeleteLabel, labelEdit, sending }) => {
 
-    const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
-    const [token] = useState(localStorage.getItem('token'));
+
     const [newLabel, setnewLabel] = useState(label);
     const [checkEdit, setcheckEdit] = useState(false);
+    const [msg, setmsg] = useState();
 
-
+    const changeLabel = (e) => {
+        setnewLabel(e.target.value)
+        if ([...e.target.value].length >= 29) {
+            setmsg(
+                <p className="m-0 text-danger small text-center ps-4">Enter a shorter label.</p>
+            )
+        } else {
+            setmsg('')
+        }
+    }
 
     return (
         <>
+            {msg}
             <div className="d-flex align-items-center label-form py-2 px-2"
                 onMouseEnter={e => setcheckEdit(true)}
                 onMouseLeave={e => setcheckEdit(false)}
@@ -44,7 +52,7 @@ const TheEditLabelForm = ({ label, id, deleting, DeleteLabel, labelEdit, sending
                     className="input-style h6 fw-light m-0 px-1"
                     name="label"
                     placeholder="Edit label"
-                    onChange={(e) => setnewLabel(e.target.value)}
+                    onChange={(e) => changeLabel(e)}
                     required
                     maxLength="30"
                     value={newLabel}

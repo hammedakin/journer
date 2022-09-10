@@ -38,7 +38,7 @@ const Login = () => {
                         setsending(false);
                     } else {
                         setsending(false);
-                        setData('token', res.data.token)
+                        setData('usertoken', res.data.token)
                         setData('name', res.data.name)
                         navigate("/")
                         setTimeout(() => {
@@ -132,7 +132,6 @@ const Login = () => {
                                                 id="togglePassword"
                                                 onClick={myInput}
                                             >
-                                                k
                                             </a>
                                         </div>
                                     </div>

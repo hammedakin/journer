@@ -26,7 +26,41 @@ console.log(item);
                 )}
             </OrderList> */}
 
-
+            {/* {allThemes.map(({ name, color }, i) => {
+                            return (
+                                <div className="col-md-12 pry-bold-text font-weight-bold p-1 " key={color}>
+                                    <div className="mb-2 row justify-content-between">
+                                        <div className="col">
+                                            <label
+                                                className=""
+                                                for={name}
+                                            >
+                                                <span className="">
+                                                    {name}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div className="col-2">
+                                            {
+                                                sending ?
+                                                    <ClipLoader                                 className='pry-bold-border'
+ loading={sending} speedMultiplier="1.2" size="20" />
+                                                    :
+                                                    <input
+                                                        type="radio"
+                                                        className="custom-control-input"
+                                                        name="groupOfDefaultRadios"
+                                                        id={name}
+                                                        value={color}
+                                                        onChange={e => editTheme(e.target.value)}
+                                                        checked={name == istheme?.name ? true : false}
+                                                    />
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })} */}
         </>
     );
 }

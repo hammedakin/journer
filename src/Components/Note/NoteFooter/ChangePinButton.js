@@ -9,7 +9,7 @@ const ChangePinButton = ({ noteId, pin }) => {
     const { fetchData } = useFetch(`note/${noteId}`)
 
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
-    const [token] = useState(localStorage.getItem('token'));
+    const [token] = useState(localStorage.getItem('usertoken'));
     const [sending, setsending] = useState(false);
     const [pinned, setpinned] = useState(pin);
 
@@ -55,7 +55,7 @@ const ChangePinButton = ({ noteId, pin }) => {
             {
                 sending ?
                     <i
-                        className={`  bi h5 sec-bold p-2 br-sm me-2 pry-bold-text`}
+                        className='bi h5 sec-bold p-2 br-sm me-2 pry-bold-text'
                     >
                         <ClipLoader className='pry-bold-border'
                             loading={sending} speedMultiplier="1.2" size="20" />

@@ -7,10 +7,10 @@ import { ClipLoader } from "react-spinners";
 
 
 
-const ThemeButton = ({ noteId, theme }) => {
+const ThemeButton = ({ noteId, theme, setnoteTheme }) => {
 
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
-    const [token] = useState(localStorage.getItem('token'));
+    const [token] = useState(localStorage.getItem('usertoken'));
 
     const [sending, setsending] = useState();
 
@@ -44,6 +44,8 @@ const ThemeButton = ({ noteId, theme }) => {
                 } else {
                     setsending(false);
                     setistheme(res.data.note.theme)
+                    setnoteTheme(res.data.note.theme.color)
+                    console.log(res.data.note.theme.color);
                 }
             })
             .catch((error) => {
@@ -77,87 +79,69 @@ const ThemeButton = ({ noteId, theme }) => {
                 </Modal.Header>
                 <Modal.Body style={{ backgroundColor: "transparent!important" }}>
                     <div className="">
-                        {/* {allThemes.map(({ name, color }, i) => {
-                            return (
-                                <div className="col-md-12 pry-bold-text font-weight-bold p-1 " key={color}>
-                                    <div className="mb-2 row justify-content-between">
-                                        <div className="col">
-                                            <label
-                                                className=""
-                                                for={name}
-                                            >
-                                                <span className="">
-                                                    {name}
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div className="col-2">
-                                            {
-                                                sending ?
-                                                    <ClipLoader                                 className='pry-bold-border'
- loading={sending} speedMultiplier="1.2" size="20" />
-                                                    :
+
+                        <div className="row text-center">
+
+                            {sending ?
+                                <div className="text-center py-5">
+
+                                    <ClipLoader className='pry-bold-border'
+                                        loading={sending} speedMultiplier="1.2" size="50" />
+                                </div>
+                                :
+                                <>
+                                    {allThemes.map(({ name, color }, i) => {
+                                        return (
+                                            <div className="col-md-4 col-6 mb-4" key={name}>
+                                                <label class="custom-radio">
                                                     <input
                                                         type="radio"
-                                                        className="custom-control-input"
+                                                        className="theme-radio"
                                                         name="groupOfDefaultRadios"
                                                         id={name}
                                                         value={color}
                                                         onChange={e => editTheme(e.target.value)}
                                                         checked={name == istheme?.name ? true : false}
                                                     />
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        })} */}
-                        <div className="row text-center">
 
-
-                            {allThemes.map(({ name, color }, i) => {
-                                return (
-                                    <div className="col-md-4 col-6 mb-4">
-                                        <label class="custom-radio">
-                                            <input
-                                                type="radio"
-                                                className="theme-radio"
-                                                name="groupOfDefaultRadios"
-                                                id={name}
-                                                value={color}
-                                                onChange={e => editTheme(e.target.value)}
-                                                checked={name == istheme?.name ? true : false}
-                                            />
-                                            {
-                                                sending ?
-
-                                                    <ClipLoader className='pry-bold-border'
-                                                        loading={sending} speedMultiplier="1.2" size="20" />
-                                                    :
                                                     <div className={`${color} br-xlg theme-icon fit-content`}>
-                                                        <i
+                                                        {name == istheme?.name ?
+                                                            <i
+                                                                className="bi bx m-0 bx-sm p-2 bi-check2"
+                                                            />
+                                                            :
+                                                            <>
+                                                                {name == 'None' ?
+                                                                    <i
+                                                                        className="bi bx m-0 bx-sm p-2 bi-dash-lg border br-xlg"
+                                                                    />
+                                                                    :
+
+                                                                    <i
+                                                                        className="bi bx m-0 bx-sm p-2 bi-palette"
+                                                                    />
+                                                                }
+                                                            </>
+                                                        }
+
+
+
+                                                        {/* <i
                                                             className={`${name == istheme?.name ? 'bi-check2' : 'bi-palette'}
                                                              bi bx m-0 bx-sm p-2`}
-                                                        />
+                                                        /> */}
                                                     </div>
-                                            }
-                                        </label>
-                                    </div>
+                                                </label>
+                                            </div>
+                                        )
+                                    })
+                                    }
+                                </>
+                            }
 
-                                )
-                            })}
                         </div>
 
-                        {/* <i
-                            className={`${color == '' ? 'bi-slash-circle'
-                                :
-                                <>
-                                    {
-                                        name == istheme?.name ? 'bi-check2' : "bi-palette"
-                                    }
-                                </>}
-                               bi bx m-0 bx-sm p-2`}
-                        /> */}
+
                     </div>
                 </Modal.Body>
 

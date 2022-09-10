@@ -5,7 +5,7 @@ import NoteTop from './NoteTop/NoteTop';
 
 const Note = (props) => {
 
-    const { handleChange, timestamp, edited, data, sending, form, submit, noteId } = props
+    const { handleChange, timestamp, edited, data, sending, form, submit, noteId, setnoteTheme, noteTheme } = props
 
 
 
@@ -17,9 +17,8 @@ const Note = (props) => {
                 <NoteTop
                 sending={sending}
                 submit={submit}
-                theme={data?.theme?.color}
+                theme={noteTheme}
                 />
-
 
                 <form>
                     <div className="row justify-content-center text-left">
@@ -32,6 +31,8 @@ const Note = (props) => {
                                 onChange={handleChange}
                                 required
                                 value={form.title}
+                                maxLength="200"
+
                             />
                         </div>
                         <div className="col-md-12">
@@ -57,7 +58,8 @@ const Note = (props) => {
                     data={props}
                     // toPin={toPin}
                     form={form}
-
+                    setnoteTheme={setnoteTheme}
+                    noteTheme={noteTheme}
                 />
             </main>
         </>

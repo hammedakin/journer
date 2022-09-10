@@ -8,7 +8,7 @@ import Wrapper from '../Wrapper'
 const Dashboard = () => {
     let navigate = useNavigate()
 
-    if (!localStorage.getItem('token')) {
+    if (!localStorage.getItem('usertoken')) {
         setTimeout(() => {
             toast('Login/Register')
             navigate('/home')

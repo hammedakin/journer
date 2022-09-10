@@ -8,14 +8,13 @@ import ThemeButton from './NoteFooter/ThemeButton';
 
 const NoteFooter = (props) => {
 
-    const { handleChange, timestamp, edited, data, sending, form, submit, noteId } = props.data
-    const { theme } = data
+    const { handleChange, timestamp, edited, data, sending, form, submit, noteId, noteTheme, setnoteTheme } = props.data
 
     return (
         <>
             <div className=" pb-5">
                 <nav
-                    className={`navbar navbar-expand-sm navbar-light fixed-bottom py-1 border-top shadow-none py-3 bottom-nav ${theme ? theme?.color : "light-bg"} `}
+                    className={`navbar navbar-expand-sm navbar-light fixed-bottom py-1 border-top shadow-none py-3 bottom-nav ${noteTheme ? noteTheme : "light-bg"} `}
                     id="navbar main ">
                     <div className="container justify-content-between" id="logo">
                         <li className="list-unstyled text-center " >
@@ -41,13 +40,13 @@ const NoteFooter = (props) => {
                                     <ThemeButton
                                         noteId={noteId}
                                         theme={data.theme}
+                                        setnoteTheme={setnoteTheme}
                                     />
 
                                     <LabelButtton />
 
                                     <DeleteModal
                                         content={`Are you sure?`}
-                                        // Fn={e => del(token)}
                                         noteId={noteId}
                                     >
                                         <i className='bi bi-trash3 h5 red-bold-text red-light p-2 br-sm me-2 '

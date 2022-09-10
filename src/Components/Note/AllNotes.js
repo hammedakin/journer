@@ -30,7 +30,7 @@ const AllNotes = () => {
     }
     // Route to Edit
 
-    const allnotes = data.note?.map((item) => {
+    const allnotes = data.note?.filter((x) => x.pinned === false).map((item) => {
         // const allnotes = note?.map((item) => {
         const { timestamp, edited, title, content, _id, labels, theme, updatedAt } = item
         return (
@@ -41,6 +41,37 @@ const AllNotes = () => {
                     <small className="date ">
                         {edited.date}
                     </small>
+                    <h6 className="title fw-bolder text-wrap">
+                        {title}
+                    </h6>
+                    <p className="text-wrap content">
+                        {content}
+                    </p>
+                    <div className="note-label d-flex align-self-end">
+                        {labels?.map((item, i) => {
+                            return <p className="m-0 me-2 br-sm pry-bold sec-text px-2" key={i}>{item}</p>
+                        })}
+                    </div>
+                </div>
+            </div>
+        )
+    }).reverse();
+    const allpinned = data.note?.filter((x) => x.pinned === true).map((item) => {
+        // const allnotes = note?.map((item) => {
+        const { timestamp, edited, title, content, _id, labels, theme, updatedAt } = item
+        return (
+            <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'}`} key={_id}>
+                <div className={`each-note  hover-shadow br-sm p-3 ${theme.color ? theme.color : 'light-bg note-border'}`}
+                    onClick={e => toEdit(item)}
+                >
+                    <div className="d-flex justify-content-between">
+                    <small className="date ">
+                        {edited.date}
+                    </small>
+                    <i
+                        className='bi bi-pin-fill small'
+                    />
+                    </div>
                     <h6 className="title fw-bolder text-wrap">
                         {title}
                     </h6>
@@ -71,6 +102,7 @@ const AllNotes = () => {
                 </div>
                 <div className="row">
                     <AddNoteDiv column={column} />
+                    {allpinned}
                     {allnotes}
                 </div>
             </section>
