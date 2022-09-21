@@ -45,7 +45,6 @@ const ThemeButton = ({ noteId, theme, setnoteTheme }) => {
                     setsending(false);
                     setistheme(res.data.note.theme)
                     setnoteTheme(res.data.note.theme.color)
-                    console.log(res.data.note.theme.color);
                 }
             })
             .catch((error) => {

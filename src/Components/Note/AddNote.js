@@ -25,8 +25,22 @@ const AddNote = () => {
             [e.target.name]: e.target.value,
         }));
         // createNote(e)
+        changeLabel()
     }
     // Form Fields
+
+    const [msg, setmsg] = useState();
+
+    const changeLabel = (e) => {
+        if ([...form.title].length >= 199) {
+       
+            setmsg(
+                <p className="m-0 text-danger small text-center ps-4">Enter a shorter title.</p>
+                )
+            } else {
+            setmsg('')
+        }
+    }
 
     //   Create Note Function
     //   Create Note Function
@@ -39,9 +53,6 @@ const AddNote = () => {
                 content: form.content,
                 timestamp: GetDateTime(new Date()),
                 edited: GetDateTime(new Date())
-                // theme:theme,
-                // label: form.label,
-                // pinned:pinned 
             }
             const headers = {
                 'Authorization': `Bearer ${token}`
@@ -89,7 +100,7 @@ const AddNote = () => {
                     noteId={noteId}
                     setnoteTheme={setnoteTheme}
                     noteTheme={noteTheme}
-
+msg={msg}
                 />
             </Wrapper>
 

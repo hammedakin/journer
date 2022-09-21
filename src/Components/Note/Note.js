@@ -5,9 +5,9 @@ import NoteTop from './NoteTop/NoteTop';
 
 const Note = (props) => {
 
-    const { handleChange, timestamp, edited, data, sending, form, submit, noteId, setnoteTheme, noteTheme } = props
+    const { handleChange, timestamp, edited, data, sending, form, submit, noteId, setnoteTheme, noteTheme, msg } = props
 
-
+    
 
     return (
         <>
@@ -15,12 +15,12 @@ const Note = (props) => {
                 {<Loading load={sending} />}
 
                 <NoteTop
-                sending={sending}
-                submit={submit}
-                theme={noteTheme}
+                    sending={sending}
+                    submit={submit}
+                    theme={noteTheme}
                 />
-
                 <form>
+                    {msg}
                     <div className="row justify-content-center text-left">
                         <div className="col-md-12 ">
                             <input

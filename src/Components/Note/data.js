@@ -124,27 +124,27 @@ export const note = [
 export const labels = [
     {
         _id:"1",
-        name: 'Revising'
+        label: 'Alpha'
     },
     {
         _id:"2",
-        name: 'Testing'
+        label: 'Omega'
     },
     {
         _id:"3",
-        name: 'Revising and Testing'
+        label: 'Beta'
     },
     {
         _id:"4",
-        name: 'Query'
+        label: 'Theta'
     },
     {
         _id:"5",
-        name: 'Okay then'
+        label: 'Gamma'
     },
     {
         _id:"6",
-        name: 'RevisWe go againing'
+        label: 'Sofri'
     },
 ]
 

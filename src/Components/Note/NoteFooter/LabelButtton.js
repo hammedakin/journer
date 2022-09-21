@@ -14,7 +14,14 @@ const LabelButtton = ({ children }) => {
     const handleCloseremove = () => setShowremove(false);
     const handleShowremove = () => setShowremove(true);
 
+    const [chosenLabel, setchosenLabel] = useState([]);
 
+    const handleChange = (e) => {
+        console.log(chosenLabel)
+        let x = ''
+
+        setchosenLabel([e.target.value, ...chosenLabel])
+    }
     return (
 
         <>
@@ -33,13 +40,12 @@ const LabelButtton = ({ children }) => {
                 </Modal.Header>
                 <Modal.Body style={{ backgroundColor: "transparent!important" }}>
                     <div className="">
-
-                        {data.label?.map(({ label, _id }, i) => {
+                        {chosenLabel}
+                        {labels?.map(({ label, _id }, i) => {
                             return (
                                 <div className="col-md-12 pry-bold-text font-weight-bold p-1 " key={_id}>
                                     <div className="mb-2 row justify-content-between">
                                         <div className="col">
-
                                             <label
                                                 className=""
                                                 for={label}
@@ -52,12 +58,12 @@ const LabelButtton = ({ children }) => {
                                         <div className="col-2">
 
                                             <input
-                                                type="checkbox"
+                                                type="radio"
                                                 className=""
                                                 name={label}
                                                 id={label}
                                                 value={label}
-                                            // onChange={e => handleChange(e)}
+                                            onChange={e => handleChange(e)}
                                             // checked={feature ? true : false}
 
                                             />
@@ -68,30 +74,9 @@ const LabelButtton = ({ children }) => {
                             )
                         })}
 
-
-
-
-
-
                     </div>
                 </Modal.Body>
 
-
-
-                {/* <div className="modal-footer justify-content-center">
-                    {sending ?
-                        <i className="bx bx-loader bx-spin bx-sm text-danger" />
-                        :
-                        <>
-                            <a type="button" className="btn btn-outline-danger waves-effect"
-                                onClick={e => handleCloseremove()}
-                            >No</a>
-                            <a href="" className="btn btn-danger waves-effect "
-                                onClick={e => DeleteNote(e)}
-                            >Yes</a>
-                        </>
-                    }
-                </div> */}
             </Modal>
         </>
     );
