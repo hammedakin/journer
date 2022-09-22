@@ -120,8 +120,8 @@ input::-webkit-inner-spin-button {
 }
 
 .note .textarea-style {
-  /* min-height: 60vh; */
-  height: 75vh;
+  height: calc(100vh - 11.2rem);
+
   font-size: 15px;
   font-weight: 400 !important;
   word-wrap: break-word !important;
@@ -161,6 +161,14 @@ input::-webkit-inner-spin-button {
 .custom-radio input:checked + .theme-icon {
   border: 1px solid var(--pry-bold-color);
 
+}
+
+.red-light {
+  background-color: #ffeede;
+}
+
+.red-bold-text {
+  color: #d73d3d;
 }
 
 /* Note Footer */

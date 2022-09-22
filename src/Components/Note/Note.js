@@ -7,19 +7,19 @@ const Note = (props) => {
 
     const { handleChange, timestamp, edited, data, sending, form, submit, noteId, setnoteTheme, noteTheme, msg } = props
 
-    
+
 
     return (
         <>
             <main className="note p-0">
                 {<Loading load={sending} />}
+                <form onSubmit={(e) => submit(e)}>
 
-                <NoteTop
-                    sending={sending}
-                    submit={submit}
-                    theme={noteTheme}
-                />
-                <form>
+                    <NoteTop
+                        sending={sending}
+                        submit={submit}
+                        theme={noteTheme}
+                    />
                     {msg}
                     <div className="row justify-content-center text-left">
                         <div className="col-md-12 ">
@@ -29,9 +29,9 @@ const Note = (props) => {
                                 name="title"
                                 placeholder="Title..."
                                 onChange={handleChange}
-                                required
+
                                 value={form.title}
-                                maxLength="200"
+                                maxLength="1000"
 
                             />
                         </div>

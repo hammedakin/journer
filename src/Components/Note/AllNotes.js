@@ -47,11 +47,11 @@ const AllNotes = () => {
                     <p className="text-wrap content">
                         {content}
                     </p>
-                    <div className="note-label d-flex align-self-end">
+                    {/* <div className="note-label d-flex align-self-end">
                         {labels?.map((item, i) => {
                             return <p className="m-0 me-2 br-sm pry-bold sec-text px-2" key={i}>{item}</p>
                         })}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )
@@ -78,11 +78,11 @@ const AllNotes = () => {
                     <p className="text-wrap content">
                         {content}
                     </p>
-                    <div className="note-label d-flex align-self-end">
+                    {/* <div className="note-label d-flex align-self-end">
                         {labels?.map((item, i) => {
                             return <p className="m-0 me-2 br-sm pry-bold sec-text px-2" key={i}>{item}</p>
                         })}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )
@@ -94,8 +94,8 @@ const AllNotes = () => {
 
             <section className="allnotes mt-2">
                 <div className="pry-text text-end d-flex justify-content-end my-3">
-                    <span className="h5 sec-bold p-2 br-sm me-3 p-0">
-                        <i className={`bi bx bi-arrow-clockwise ${loading && 'bx bx-spin transparent'}`} onClick={Reload}></i>
+                    <span className="h5 sec-bold p-2 br-sm me-3 p-0" onClick={Reload}>
+                        <i className={`bi bx bi-arrow-clockwise ${loading && 'bx bx-spin transparent'}`} ></i>
                     </span>
 
                     <i className={`bi h5  sec-bold p-2 br-sm ${column === true ? 'bi-view-stacked' : 'bi-columns-ga bi-grid'}`} onClick={columnChange}></i>

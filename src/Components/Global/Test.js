@@ -6,7 +6,7 @@
 // let newL = ['Sofri', 'Gamma']
 
 
-// function App() {
+function App() {
 
 //     // State with list of all checked item
 //     const [checked, setChecked] = useState([]);
@@ -41,5 +41,5 @@
 
 //         </div>
 //     );
-// }
-// export default App
+}
+export default App;

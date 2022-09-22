@@ -31,7 +31,7 @@ const DeleteModal = ({ children, content, Fn, noteId }) => {
                 } else {
                     setsending(false);
                     toast.success(res.data.msg);
-                    navigate('/')
+                    navigate('/app')
                 }
             })
             .catch((error) => {

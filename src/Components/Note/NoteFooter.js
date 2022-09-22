@@ -21,7 +21,7 @@ const NoteFooter = (props) => {
                             <div className="small-text pry-bold-text">
                                 <small className="my-2">
                                     {edited ? 'Edited ' : ''}
-                                    {GetDate(new Date()) === edited.date ? edited.time : edited.date}
+                                    {GetDate(new Date()) === edited?.date ? edited?.time : edited?.date}
                                 </small>
                             </div>
                         </li>
@@ -43,7 +43,10 @@ const NoteFooter = (props) => {
                                         setnoteTheme={setnoteTheme}
                                     />
 
-                                    <LabelButtton />
+                                    <LabelButtton
+                                        noteId={noteId}
+                                        label={data.labels}
+                                    />
 
                                     <DeleteModal
                                         content={`Are you sure?`}

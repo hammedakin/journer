@@ -123,12 +123,6 @@ const ThemeButton = ({ noteId, theme, setnoteTheme }) => {
                                                             </>
                                                         }
 
-
-
-                                                        {/* <i
-                                                            className={`${name == istheme?.name ? 'bi-check2' : 'bi-palette'}
-                                                             bi bx m-0 bx-sm p-2`}
-                                                        /> */}
                                                     </div>
                                                 </label>
                                             </div>

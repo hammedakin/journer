@@ -13,19 +13,37 @@ const EditNote = () => {
     const [sending, setsending] = useState(false);
     let location = useLocation()
     const [data] = useState(location.state);
-    const [noteId, setnoteId] = useState(data._id);
-    const [noteTheme, setnoteTheme] = useState(data.theme.color);
+    const [noteId, setnoteId] = useState(data?._id);
+    const [noteTheme, setnoteTheme] = useState(data?.theme.color);
 
     // Form Fields
-    const [form, setform] = useState({ title: data.title, content: data.content });
+    const [form, setform] = useState({ title: data?.title, content: data?.content });
     function handleChange(e) {
         setform((inputs) => ({
             ...inputs,
             [e.target.name]: e.target.value,
         }));
         editNote(e);
+        changeLabel()
+
     }
     // Form Fields
+
+    // Get Err for long Title
+    const [msg, setmsg] = useState('');
+    
+    const changeLabel = (e) => {
+        if ([...form.title].length >= 999) {
+            setmsg(
+                <p className="m-0 text-danger small text-center ps-4">Enter a shorter title.</p>
+                )
+            } else {
+                setmsg('')
+            }
+        }
+        // Get Err for long Title
+
+
     const [timestamp] = useState(GetDateTime(new Date()));
 
     //   Edit Note Function
@@ -77,13 +95,14 @@ const EditNote = () => {
                     handleChange={handleChange}
                     data={data}
                     form={form}
-                    timestamp={data.timestamp}
-                    edited={data.edited}
+                    timestamp={data?.timestamp}
+                    edited={data?.edited}
                     noteId={data?._id}
                     submit={(e) => editNote(e)}
                     sending={sending}
                     setnoteTheme={setnoteTheme}
                     noteTheme={noteTheme}
+                    msg={msg}
                 />
 
 

@@ -3,7 +3,7 @@
 
 .project-content {
   min-height: 100vh;
-  width: 100%;
+  /* width: 100%; */
   margin-left: 250px !important;
   padding: 5rem 1.5rem;
   background-color: var(--light-color) ;

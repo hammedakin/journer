@@ -6,7 +6,6 @@ import App from './App';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import 'jquery'
 import 'boxicons'
-// import 'bootstrap-icons'
 import 'bootstrap/dist/js/bootstrap'
 import "react-toastify/dist/ReactToastify.css";
 import reportWebVitals from './reportWebVitals';
@@ -17,7 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <ScrollToTop />
+    {/* <ScrollToTop /> */}
       <App />
     </BrowserRouter>
 

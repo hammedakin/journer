@@ -2,26 +2,70 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { labels } from "../data";
+// import { labels } from "../data";
 import { useFetch } from "../../Global/useFetch";
+import { ClipLoader } from "react-spinners";
 
 
 
-const LabelButtton = ({ children }) => {
-    const { loading, data, fetchData } = useFetch(`label`)
+const LabelButtton = ({ noteId, label }) => {
+    const { loading, data: allLabels, fetchData } = useFetch(`label`)
+
+    const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
+    const [token] = useState(localStorage.getItem('usertoken'));
 
     const [showremove, setShowremove] = useState(false);
     const handleCloseremove = () => setShowremove(false);
     const handleShowremove = () => setShowremove(true);
 
-    const [chosenLabel, setchosenLabel] = useState([]);
+    const [chosenLabel, setchosenLabel] = useState(label);
+    const [sending, setsending] = useState(false);
 
-    const handleChange = (e) => {
-        console.log(chosenLabel)
-        let x = ''
-
-        setchosenLabel([e.target.value, ...chosenLabel])
+    //   Edit Theme Function
+    //   Edit Theme Function
+    function editLabel(e) {
+        let newLabel = {}
+        if (e === "None") {
+            newLabel = { label: "None", _id: "none" }
+            setchosenLabel(newLabel)
+        } else {
+            let labelIndex = allLabels.label.findIndex(x => x.label === e)
+            newLabel = allLabels.label[labelIndex]
+            setchosenLabel(newLabel)
+        }
+        // console.log(newLabel);
+        setsending(true);
+        const data = {
+            labels: newLabel
+        }
+        const headers = {
+            'Authorization': `Bearer ${token}`
+        }
+        axios
+            .patch(`${endpoint}/note/label/${noteId}`, data, { headers })
+            .then((res) => {
+                if (res.data.success === false) {
+                    toast.warn(res.data.msg);
+                    setsending(false);
+                } else {
+                    setsending(false);
+                    console.log(res.data);
+                    setchosenLabel(res.data.note.labels)
+                }
+            })
+            .catch((error) => {
+                if (error.response.data) {
+                    setsending(false);
+                    toast.error(error.response.data.msg);
+                } else {
+                    setsending(false);
+                    toast.error('network error ❌');
+                }
+            });
     }
+    //   Edit Theme Function
+    //   Edit Theme Function
+
     return (
 
         <>
@@ -40,8 +84,42 @@ const LabelButtton = ({ children }) => {
                 </Modal.Header>
                 <Modal.Body style={{ backgroundColor: "transparent!important" }}>
                     <div className="">
-                        {chosenLabel}
-                        {labels?.map(({ label, _id }, i) => {
+                        {sending ?
+                            <div className="text-center py-5">
+
+                                <ClipLoader className='pry-bold-border'
+                                    loading={sending} speedMultiplier="1.2" size="50" />
+                            </div>
+                            :
+                            <>
+                        <div className="col-md-12 pry-bold-text font-weight-bold p-1 ">
+                            <div className="mb-2 row justify-content-between">
+                                <div className="col">
+                                    <label
+                                        className=""
+                                        for="None"
+                                    >
+                                        <span className="">
+                                            None
+                                        </span>
+                                    </label>
+                                </div>
+                                <div className="col-2">
+
+                                    <input
+                                        type="radio"
+                                        className=""
+                                        name="groupOfDefaultRadios"
+                                        id="None"
+                                        value="None"
+                                        onChange={e => editLabel(e.target.value)}
+                                        checked={"None" == chosenLabel?.label ? true : false}
+
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        {allLabels.label?.map(({ label, _id }, i) => {
                             return (
                                 <div className="col-md-12 pry-bold-text font-weight-bold p-1 " key={_id}>
                                     <div className="mb-2 row justify-content-between">
@@ -60,11 +138,11 @@ const LabelButtton = ({ children }) => {
                                             <input
                                                 type="radio"
                                                 className=""
-                                                name={label}
+                                                name="groupOfDefaultRadios"
                                                 id={label}
                                                 value={label}
-                                            onChange={e => handleChange(e)}
-                                            // checked={feature ? true : false}
+                                                onChange={e => editLabel(e.target.value)}
+                                                checked={label == chosenLabel?.label ? true : false}
 
                                             />
                                         </div>
@@ -73,6 +151,8 @@ const LabelButtton = ({ children }) => {
 
                             )
                         })}
+                            </>
+                        }
 
                     </div>
                 </Modal.Body>

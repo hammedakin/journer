@@ -6,7 +6,7 @@ import { labels } from '../Note/data';
 import Label from '../../Pages/Label';
 import DarkModeToggle from './DarkModeToggle';
 
-const NavbarLink = ({darktheme, switchTheme }) => {
+const NavLinks = ({darktheme, switchTheme }) => {
     let navigate = useNavigate()
 
  
@@ -44,9 +44,7 @@ const NavbarLink = ({darktheme, switchTheme }) => {
                         >
                             soon
                         </p>
-                        {/* <span className="pry-bold br-sm light-text py-0 px-2">
-                            02
-                        </span> */}
+                       
                     </NavLink>
                 </li>
                 {/* {labels.map(({ name }, i) => {
@@ -76,15 +74,7 @@ const NavbarLink = ({darktheme, switchTheme }) => {
                 </li>
 
 
-                {/* <li className="mb-2 ">
-                    <NavLink tag={Link}
-                        className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/settings`}>
-
-                        <span className=""> <i className="bi bi-gear"></i> Settings </span>
-                    </NavLink>
-                </li> */}
-
-                <DarkModeToggle
+                    <DarkModeToggle
                     darktheme={darktheme}
                     switchTheme={switchTheme}
                 />
@@ -103,4 +93,4 @@ const NavbarLink = ({darktheme, switchTheme }) => {
     );
 }
 
-export default NavbarLink;
+export default NavLinks;

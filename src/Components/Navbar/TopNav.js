@@ -18,20 +18,23 @@ const TopNav = ({theme}) => {
                 <div className="container-fluid">
                     <div className="d-flex align-items-center">
                         <a className="navbar-brand px-1 py-0 me-2 d-md-none d-block" onClick={openNav} >
-                            <i className="bi bi-list"></i>
-                            =
+                            <i className="bi bi-list h5 sec-bold pry-bold-text p-2 py-2 br-sm" />
+
                         </a>
-                        <Link to="" className="navbar-brand px-1 py-0 me-2">
-                            NAVBAR
-                        </Link>
+                      
 
                     </div>
                     <div className="d-flex">
-                    <i className='bx bi bi-person-circle pry-text h4 m-0 me-3' />
-                    
+                        <a className="navbar-brand px-1 py-0 me-2 d-md-none d-block" onClick={openNav} >
+                            <i className="bi bi-person-circle h5 sec-bold pry-bold-text p-2 py-2 br-sm" />
+
+                        </a>
                     </div>
+
                 </div>
             </nav>
+
+
         </>
     );
 }

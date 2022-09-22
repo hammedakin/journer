@@ -29,18 +29,19 @@ const AddNote = () => {
     }
     // Form Fields
 
-    const [msg, setmsg] = useState();
+    // Get Err for long Title
+    const [msg, setmsg] = useState('');
 
     const changeLabel = (e) => {
         if ([...form.title].length >= 199) {
-       
             setmsg(
                 <p className="m-0 text-danger small text-center ps-4">Enter a shorter title.</p>
-                )
-            } else {
+            )
+        } else {
             setmsg('')
         }
     }
+    // Get Err for long Title
 
     //   Create Note Function
     //   Create Note Function
@@ -100,7 +101,7 @@ const AddNote = () => {
                     noteId={noteId}
                     setnoteTheme={setnoteTheme}
                     noteTheme={noteTheme}
-msg={msg}
+                    msg={msg}
                 />
             </Wrapper>
 

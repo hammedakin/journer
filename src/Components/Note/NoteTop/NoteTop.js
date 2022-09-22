@@ -30,10 +30,12 @@ const NoteTop = ({ sending, submit, theme }) => {
                                 loading={sending} speedMultiplier="1.2" size="19" />
                         </span>
                         :
-                        <i
-                            className='bi bi-check2 h5 sec-bold p-2 br-sm me-0'
-                            onClick={e => submit(e)}
-                        />
+                        <button action="submit" className="btn shadow-none m-0 p-0">
+                            <i
+                                className='bi bi-check2 h5 sec-bold p-2 br-sm me-0'
+                                // onClick={e => submit(e)}
+                            />
+                        </button>
                     }
                 </div>
             </nav>

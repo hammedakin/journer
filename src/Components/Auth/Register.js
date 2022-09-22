@@ -90,7 +90,7 @@ const Register = () => {
                             </div>
 
 
-                            <form >
+                            <form onSubmit={(e)=>register(e)}>
                                 <div className="row justify-content-center text-left mt-5">
                                     <div className="col-md-10  ">
                                         <label className="mb-0"> Name:</label>
@@ -158,7 +158,6 @@ const Register = () => {
                                                     <button
                                                         type="submit"
                                                         className="btn btn-pry m-0 w-100" p
-                                                        onClick={(e) => register(e)}
                                                     >
                                                         Submit
                                                     </button>

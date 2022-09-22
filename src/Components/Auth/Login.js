@@ -22,7 +22,7 @@ const Login = () => {
 
     //   Login Function
     //   Login Function
-    function register(e) {
+    function login(e) {
         e.preventDefault();
         if (form.email && form.pword) {
             setsending(true);
@@ -40,7 +40,7 @@ const Login = () => {
                         setsending(false);
                         setData('usertoken', res.data.token)
                         setData('name', res.data.name)
-                        navigate("/")
+                        navigate('/app')
                         setTimeout(() => {
                             toast.success(res.data.msg);
                         }, 10);
@@ -95,7 +95,7 @@ const Login = () => {
                             </div>
 
 
-                            <form >
+                            <form onSubmit={(e)=>login(e)}>
                                 <div className="row justify-content-center text-left mt-5">
 
                                     <div className="col-md-10  ">
@@ -149,7 +149,6 @@ const Login = () => {
                                                     <button
                                                         type="submit"
                                                         className="btn btn-pry m-0 w-100" p
-                                                        onClick={(e) => register(e)}
                                                     >
                                                         Submit
                                                     </button>

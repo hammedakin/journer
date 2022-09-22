@@ -1,6 +1,8 @@
 import { ToastContainer } from 'react-toastify';
 import Nav from './Components/Navbar/Nav';
 import useLocalStorage from 'use-local-storage'
+import ProtectUser from './protectUser';
+import Navbar from './Components/Nav/Navbar';
 
 const Wrapper = ({ children, display, theme }) => {
 
@@ -11,9 +13,9 @@ const Wrapper = ({ children, display, theme }) => {
     }
 
     return (
-        <>
-            <div className=" d-flex dark-text" data-theme={darktheme}>
-                <Nav 
+        <ProtectUser>
+            <div className="dark-text" data-theme={darktheme}>
+                <Navbar 
                 theme={theme} 
                 darktheme={darktheme}
                 switchTheme={switchTheme}
@@ -33,7 +35,7 @@ const Wrapper = ({ children, display, theme }) => {
                 hideProgressBar={true}
             />
 
-        </>
+        </ProtectUser>
     );
 }
 
