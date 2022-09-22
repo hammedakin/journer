@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify'
 import { setData } from '../Global/LocalStorage';
@@ -7,10 +7,15 @@ import { setData } from '../Global/LocalStorage';
 const Login = () => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
     const [sending, setsending] = useState(false);
+    const [form, setform] = useState({});
+    const [eye, seteye] = useState(false);
     let navigate = useNavigate()
 
+    if (localStorage.getItem('usertoken')) {
+        return <Navigate to="/app" replace />
+    }
+
     // Form Fields
-    const [form, setform] = useState({});
     function handleChange(e) {
         setform((inputs) => ({
             ...inputs,
@@ -66,7 +71,6 @@ const Login = () => {
 
 
     // Password Show Function 
-    const [eye, seteye] = useState(false);
 
     function myInput() {
         var x = document.getElementById("security");

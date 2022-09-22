@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Loading } from "../Global/Loader";
 import AddNoteDiv from "./AddNoteDiv";
-import { note } from "./data";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../Global/useFetch";
+
 const AllNotes = () => {
     let navigate = useNavigate()
+
     // Get All Note
     const { loading, data, fetchData } = useFetch('note')
 
@@ -31,7 +32,6 @@ const AllNotes = () => {
     // Route to Edit
 
     const allnotes = data.note?.filter((x) => x.pinned === false).map((item) => {
-        // const allnotes = note?.map((item) => {
         const { timestamp, edited, title, content, _id, labels, theme, updatedAt } = item
         return (
             <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'}`} key={_id}>
@@ -47,17 +47,14 @@ const AllNotes = () => {
                     <p className="text-wrap content">
                         {content}
                     </p>
-                    {/* <div className="note-label d-flex align-self-end">
-                        {labels?.map((item, i) => {
-                            return <p className="m-0 me-2 br-sm pry-bold sec-text px-2" key={i}>{item}</p>
-                        })}
-                    </div> */}
+                    <div className="note-label d-flex align-self-end">
+                        <p className="m-0 me-2 br-sm pry-bold sec-text px-2">{labels.label === "None"? '': labels.label}</p>
+                    </div>
                 </div>
             </div>
         )
     }).reverse();
     const allpinned = data.note?.filter((x) => x.pinned === true).map((item) => {
-        // const allnotes = note?.map((item) => {
         const { timestamp, edited, title, content, _id, labels, theme, updatedAt } = item
         return (
             <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'}`} key={_id}>
@@ -65,12 +62,12 @@ const AllNotes = () => {
                     onClick={e => toEdit(item)}
                 >
                     <div className="d-flex justify-content-between">
-                    <small className="date ">
-                        {edited.date}
-                    </small>
-                    <i
-                        className='bi bi-pin-fill small'
-                    />
+                        <small className="date ">
+                            {edited.date}
+                        </small>
+                        <i
+                            className='bi bi-pin-fill small'
+                        />
                     </div>
                     <h6 className="title fw-bolder text-wrap">
                         {title}
@@ -78,11 +75,9 @@ const AllNotes = () => {
                     <p className="text-wrap content">
                         {content}
                     </p>
-                    {/* <div className="note-label d-flex align-self-end">
-                        {labels?.map((item, i) => {
-                            return <p className="m-0 me-2 br-sm pry-bold sec-text px-2" key={i}>{item}</p>
-                        })}
-                    </div> */}
+                    <div className="note-label d-flex align-self-end ">
+                        <p className="m-0 me-2 br-sm pry-bold sec-text px-2">{labels.label === "None"? '': labels.label}</p>
+                    </div>
                 </div>
             </div>
         )
