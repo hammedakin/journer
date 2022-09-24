@@ -41,7 +41,10 @@
   border-right: 1px var(--light-bold-color) solid;
   border-bottom: 1px var(--light-bold-color) solid;
   border-top: 1px var(--light-bold-color) solid;
-
+}
+.each-note img {
+    height: 8rem;
+  object-fit: contain;
 }
 
 .each-note .date {
@@ -65,7 +68,7 @@
   -webkit-box-orient: vertical !important;
 }
 
-.each-note .note-label {
+/* .each-note .note-label {
   overflow: scroll;
 }
 
@@ -82,7 +85,7 @@
 .each-note ::-webkit-scrollbar-thumb {
   background: var(--pry-color);
   height: 10px;
-}
+} */
 
 .each-note .note-label p {
   font-size: 11px;
@@ -155,12 +158,10 @@ input::-webkit-inner-spin-button {
 
 .custom-radio input + .theme-icon {
   border: 1px solid transparent;
-
 }
 
 .custom-radio input:checked + .theme-icon {
   border: 1px solid var(--pry-bold-color);
-
 }
 
 .red-light {

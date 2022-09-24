@@ -17,6 +17,22 @@
 /* The Project Content */
 
 
+/* Search */
+
+.search .input-style {
+  width: 100%;
+  padding: 7px 12px;
+  display: inline-block;
+  border: 1px solid var(--sec-bold-color);
+  box-sizing: border-box;
+  font-size: 15px;
+  /* font-weight: 400; */
+  color: var(--dark-color);
+  box-shadow: none;
+  background: transparent !important;
+}
+
+/* Search */
 
 @media (max-width: 767px) {
   /* The Project Content */

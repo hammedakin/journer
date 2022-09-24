@@ -17,6 +17,7 @@ import Register from "./Components/Auth/Register";
 import Login from "./Components/Auth/Login";
 import PageNotFound from "./PageNotFound";
 import NoPageAccess from "./Pages/NoPageAccess";
+import SearchPage from "./Components/Note/SearchPage";
 
 function App() {
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/app" element={<Dashboard />} />
           <Route path="/edit" element={<EditNote />} />
           <Route path="/new" element={<AddNote />} />
+          <Route path="/search" element={<SearchPage />} />
 
 
         <Route path="/test" element={<Test />} />

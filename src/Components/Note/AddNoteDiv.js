@@ -11,7 +11,9 @@ const AddNoteDiv = ({ column }) => {
                         <h4 className="sec-bold-text mt-3">
                             <i className="bi bi-plus" />
                             Add new </h4>
-                            <img src={add} width='100%' className="mt-3 " />
+                            <img src={add} width='100%' 
+                            className="card-img-top img-fluid mt-3"
+                             />
                     </div>
                 </Link>
             </div>

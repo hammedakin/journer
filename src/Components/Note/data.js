@@ -6,7 +6,7 @@ export const note = [
         content: " Lorem ipsum dolor sit amet consectetu",
         _id: "AN01",
         edited: {date:"21 May, 2019", time:"09:01"},
-        labels: ["Web Dev", "Pbrand", "Work", "School"],
+        labels: {label:"Diego", id:'1'},
         theme: {name:"None", color:'cyan'}
     },
     {
@@ -46,7 +46,7 @@ export const note = [
         content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis placeat nobis excepturi, sapiente voluptatem!",
         _id: "AN05",
         edited: {date:"21 May, 2019", time:"09:01"},
-        labels: ["Web Dev", "Pbrand", "Work", "School"],
+        labels: {label:"Diego", id:'1'},
         theme: {name:"None", color:'cyan'}
     },
     {
@@ -56,7 +56,7 @@ export const note = [
         content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis placeat nobis excepturi, sapiente voluptatem!",
         _id: "AN06",
         edited: {date:"21 May, 2019", time:"09:01"},
-        labels: ["Web Dev", "Pbrand", "Work", "School"],
+        labels: {label:"Diego", id:'1'},
         theme: {name:"None", color:'cyan'}
     },
     {
@@ -66,7 +66,7 @@ export const note = [
         content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis placeat nobis excepturi, sapiente voluptatem!",
         _id: "AN07",
         edited: {date:"21 May, 2019", time:"09:01"},
-        labels: ["Web Dev", "Pbrand", "Work", "School"],
+        labels: {label:"Diego", id:'1'},
         theme: {name:"None", color:'cyan'}
     },
     {
@@ -76,7 +76,7 @@ export const note = [
         content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis placeat nobis excepturi, sapiente voluptatem!",
         _id: "AN08",
         edited: {date:"21 May, 2019", time:"09:01"},
-        labels: ["Web Dev", "Pbrand", "Work", "School"],
+        labels: {label:"Diego", id:'1'},
         theme: {name:"None", color:'cyan'}
     },
     {
@@ -86,7 +86,7 @@ export const note = [
         content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis placeat nobis excepturi, sapiente voluptatem!",
         _id: "AN09",
         edited: {date:"21 May, 2019", time:"09:01"},
-        labels: ["Web Dev", "Pbrand", "Work", "School"],
+        labels: {label:"Diego", id:'1'},
         theme: {name:"Blue", color:'blueish'}
     },
     {
@@ -96,7 +96,7 @@ export const note = [
         content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis placeat nobis excepturi, sapiente voluptatem!",
         _id: "AN010",
         edited: {date:"21 May, 2019", time:"09:01"},
-        labels: ["Web Dev", "Pbrand", "Work", "School"],
+        labels: {label:"Diego", id:'1'},
         theme: {name:"Red", color:'reddish'}
     },
     {
@@ -106,7 +106,7 @@ export const note = [
         content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis placeat nobis excepturi, sapiente voluptatem!",
         _id: "AN011",
         edited: {date:"21 May, 2019", time:"09:01"},
-        labels: ["Web Dev", "Pbrand", "Work", "School"],
+        labels: {label:"Diego", id:'1'},
         theme: {name:"Yellow", color:'yellowish'}
     },
     {
@@ -116,7 +116,7 @@ export const note = [
         content: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis placeat nobis excepturi, sapiente voluptatem!",
         _id: "AN012",
         edited: {date:"21 May, 2019", time:"09:01"},
-        labels: ["Web Dev", "Pbrand", "Work", "School"],
+        labels: {label:"Diego", id:'1'},
         theme: {name:"Green", color:'greenish'}
     },
 ]

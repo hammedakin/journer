@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Wrapper from '../../Wrapper';
 import Note from './Note';
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify'
 import axios from 'axios';
 import { GetDateTime } from '../Global/GetDate';
@@ -18,6 +18,7 @@ const EditNote = () => {
 
     // Form Fields
     const [form, setform] = useState({ title: data?.title, content: data?.content });
+
     function handleChange(e) {
         setform((inputs) => ({
             ...inputs,
@@ -25,23 +26,29 @@ const EditNote = () => {
         }));
         editNote(e);
         changeLabel()
-
     }
     // Form Fields
+    
+    let navigate = useNavigate()
+    useEffect(() => {
+        if (location.state === null) {
+            navigate('/app')
+        }
+    }, []);
 
     // Get Err for long Title
     const [msg, setmsg] = useState('');
-    
+
     const changeLabel = (e) => {
         if ([...form.title].length >= 999) {
             setmsg(
                 <p className="m-0 text-danger small text-center ps-4">Enter a shorter title.</p>
-                )
-            } else {
-                setmsg('')
-            }
+            )
+        } else {
+            setmsg('')
         }
-        // Get Err for long Title
+    }
+    // Get Err for long Title
 
 
     const [timestamp] = useState(GetDateTime(new Date()));
