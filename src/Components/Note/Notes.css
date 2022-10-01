@@ -43,7 +43,7 @@
   border-top: 1px var(--light-bold-color) solid;
 }
 .each-note img {
-    height: 8rem;
+  height: 8rem;
   object-fit: contain;
 }
 
@@ -60,11 +60,12 @@
 }
 .each-note .content {
   font-size: 11px;
-
+  white-space: pre-wrap !important;
   text-overflow: ellipsis !important;
   overflow: hidden !important;
-  -webkit-line-clamp: 6 !important;
+
   display: -webkit-box !important;
+  -webkit-line-clamp: 6 !important;
   -webkit-box-orient: vertical !important;
 }
 

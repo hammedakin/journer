@@ -18,6 +18,7 @@ import Login from "./Components/Auth/Login";
 import PageNotFound from "./PageNotFound";
 import NoPageAccess from "./Pages/NoPageAccess";
 import SearchPage from "./Components/Note/SearchPage";
+import NotesInLabel from "./Components/Label/NotesInLabel";
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/edit" element={<EditNote />} />
           <Route path="/new" element={<AddNote />} />
           <Route path="/search" element={<SearchPage />} />
+        <Route path="/label/:id" element={<NotesInLabel />} />
 
 
         <Route path="/test" element={<Test />} />

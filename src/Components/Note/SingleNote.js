@@ -37,7 +37,8 @@ const SingleNote = ({ column, item }) => {
                         {title}
                     </h6>
                     <p className="text-wrap content">
-                        {content}
+                        <div dangerouslySetInnerHTML={{ __html: content }} />
+                        {/* {content} */}
                     </p>
                     <div className="note-label d-flex align-self-end">
                         <p className="m-0 me-2 br-sm pry-bold sec-text px-2">{labels.label === "None" ? '' : labels.label}</p>

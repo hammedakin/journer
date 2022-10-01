@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import axios from 'axios';
 import { ClipLoader } from 'react-spinners';
 
-const AddLabel = ({ fetchData }) => {
+const AddLabel = ({ fetchData, getLabelFn }) => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
     const [token] = useState(localStorage.getItem('usertoken'));
     const [sending, setsending] = useState(false);
@@ -34,6 +34,7 @@ const AddLabel = ({ fetchData }) => {
                         toast.success(res.data.msg);
                         setlabel('')
                         fetchData()
+                        getLabelFn()
                     }
                 })
                 .catch((error) => {

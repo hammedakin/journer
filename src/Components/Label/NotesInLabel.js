@@ -4,33 +4,32 @@ import { useLocation } from 'react-router-dom';
 import Wrapper from '../../Wrapper';
 import { Loading } from '../Global/Loader';
 import { useFetch } from '../Global/useFetch';
-import SingleNote from './SingleNote';
+import SingleNote from '../Note/SingleNote';
 
 
-const SearchPage = () => {
+const NotesInLabel = () => {
     const { loading, data } = useFetch('note')
 
     let location = useLocation()
-    const [searched] = useState(location.state);
+    // const [labelInfo] = useState(location.state);
+    let labelInfo = location.state
     const [newData, setnewData] = useState([]);
 
 
     useEffect(() => {
         if (data.note) {
             setnewData(data.note?.filter((x) =>
-             x.content?.toLowerCase().includes(searched.value?.toLowerCase()) ||
-             x.title?.toLowerCase().includes(searched.value?.toLowerCase()) ||
-             x.labels.label?.toLowerCase().includes(searched.value?.toLowerCase()) 
-             ))
+                x.labels._id?.includes(labelInfo._id)
+            ))
         }
 
-    }, [data.note]);
+    }, [data,location]);
 
     return (
         <>
             <Wrapper>
                 <h5 className="pry-bold-text">
-                    Search ({newData?.length}) - <span className="fw-light"> {searched.value} </span>
+                    <span className="fw-light"> {labelInfo.label} </span> - ({newData?.length})
                 </h5>
 
                 {loading &&
@@ -72,4 +71,4 @@ const SearchPage = () => {
     );
 }
 
-export default SearchPage;
+export default NotesInLabel;

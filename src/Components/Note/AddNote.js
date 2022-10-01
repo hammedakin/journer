@@ -33,7 +33,7 @@ const AddNote = () => {
     const [msg, setmsg] = useState('');
 
     const changeLabel = (e) => {
-        if ([...form.title].length >= 199) {
+        if ([...form.title].length >= 999) {
             setmsg(
                 <p className="m-0 text-danger small text-center ps-4">Enter a shorter title.</p>
             )
@@ -87,6 +87,50 @@ const AddNote = () => {
     //   Create Note Function
     //   Create Note Function
 
+    const [timestamp] = useState(GetDateTime(new Date()));
+
+    //   Edit Note Function
+    function editNote(e) {
+        e.preventDefault();
+        if (form.content) {
+            setsending(true);
+            const data = {
+                title: form.title,
+                content: form.content,
+                edited: timestamp
+            }
+            const headers = {
+                'Authorization': `Bearer ${token}`
+            }
+            axios
+                .patch(`${endpoint}/note/${noteId}`, data, { headers })
+                .then((res) => {
+                    if (res.data.success === false) {
+                        toast.warn(res.data.msg);
+                        setsending(false);
+                    } else {
+                        setsending(false);
+                        // toast.success(res.data.msg);
+                    }
+                })
+                .catch((error) => {
+                    if (error.response.data) {
+                        setsending(false);
+                        toast.error(error.response.data.msg);
+                    } else {
+                        setsending(false);
+                        toast.error('network error ❌');
+                    }
+                });
+        } else {
+            setsending(false);
+            toast.error("note can't be empty 🙁");
+        }
+    }
+    //   Edit Note Function
+    //   Edit Note Function
+
+
     return (
         <>
             <Wrapper theme={noteTheme}>
@@ -96,7 +140,7 @@ const AddNote = () => {
                     form={form}
                     timestamp={GetDateTime(new Date())}
                     edited={GetDateTime(new Date())}
-                    submit={createNote}
+                    submit={noteId ? editNote : createNote}
                     sending={sending}
                     noteId={noteId}
                     setnoteTheme={setnoteTheme}

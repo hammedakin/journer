@@ -1,5 +1,4 @@
 import { ToastContainer } from 'react-toastify';
-import Nav from './Components/Navbar/Nav';
 import useLocalStorage from 'use-local-storage'
 import ProtectUser from './protectUser';
 import Navbar from './Components/Nav/Navbar';

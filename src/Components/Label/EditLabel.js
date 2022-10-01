@@ -5,7 +5,7 @@ import { ClipLoader } from 'react-spinners';
 import TheEditLabelForm from './TheEditLabelForm';
 
 
-const EditLabel = ({ loading, data, fetchData }) => {
+const EditLabel = ({ loading, data, fetchData, getLabelFn }) => {
 
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
     const [token] = useState(localStorage.getItem('usertoken'));
@@ -34,6 +34,7 @@ const EditLabel = ({ loading, data, fetchData }) => {
                     } else {
                         setsending(false);
                         toast.success(res.data.msg);
+                        getLabelFn()
                     }
                 })
                 .catch((error) => {
@@ -71,6 +72,7 @@ const EditLabel = ({ loading, data, fetchData }) => {
                     setdeleting(false);
                     toast.success(res.data.msg);
                     fetchData()
+                    getLabelFn()
                 }
             })
             .catch((error) => {

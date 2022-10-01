@@ -6,7 +6,7 @@ import AddLabel from '../Components/Label/AddLabel';
 import EditLabel from '../Components/Label/EditLabel';
 import { useFetch } from '../Components/Global/useFetch';
 
-const Label = ({ children }) => {
+const Label = ({ children, fetchData: getLabelFn }) => {
     const { loading, data, fetchData } = useFetch(`label`)
 
     const [showremove, setShowremove] = useState(false);
@@ -39,12 +39,14 @@ const Label = ({ children }) => {
                             loading={loading}
                             data={data}
                             fetchData={fetchData}
+                            getLabelFn={getLabelFn}
                         />
 
                         <EditLabel
                             loading={loading}
                             data={data}
                             fetchData={fetchData}
+                            getLabelFn={getLabelFn}
                         />
 
                     </div>

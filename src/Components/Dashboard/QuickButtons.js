@@ -22,11 +22,8 @@ const QuickButton = ({ fetchData, loading, setcolumn, column, data }) => {
 
     const searchNote = (e) => {
         e.preventDefault()
-        const searched = data.note?.filter((x) => x.content.toLowerCase().includes(searchValue.toLowerCase()))
-        console.log(searched);
         navigate('/search',
-            { state: {searched, value: searchValue} }
-
+            { state: {value: searchValue} }
         )
     }
 
