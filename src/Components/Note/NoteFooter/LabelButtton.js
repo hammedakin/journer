@@ -87,49 +87,20 @@ const LabelButtton = ({ noteId, label }) => {
                         {sending ?
                             <div className="text-center py-5">
 
-                                <ClipLoader className='pry-bold-border'
+                                <ClipLoader className='loader-pry-border'
                                     loading={sending} speedMultiplier="1.2" size="50" />
                             </div>
                             :
                             <>
-                        <div className="col-md-12 pry-bold-text font-weight-bold p-1 ">
-                            <div className="mb-2 row justify-content-between">
-                                <div className="col">
-                                    <label
-                                        className=""
-                                        for="None"
-                                    >
-                                        <span className="">
-                                            None
-                                        </span>
-                                    </label>
-                                </div>
-                                <div className="col-2">
-
-                                    <input
-                                        type="radio"
-                                        className=""
-                                        name="groupOfDefaultRadios"
-                                        id="None"
-                                        value="None"
-                                        onChange={e => editLabel(e.target.value)}
-                                        checked={"None" == chosenLabel?.label ? true : false}
-
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        {allLabels.label?.map(({ label, _id }, i) => {
-                            return (
-                                <div className="col-md-12 pry-bold-text font-weight-bold p-1 " key={_id}>
+                                <div className="col-md-12 pry-bold-text font-weight-bold p-1 ">
                                     <div className="mb-2 row justify-content-between">
                                         <div className="col">
                                             <label
                                                 className=""
-                                                for={label}
+                                                for="None"
                                             >
                                                 <span className="">
-                                                    {label}
+                                                    None
                                                 </span>
                                             </label>
                                         </div>
@@ -139,18 +110,47 @@ const LabelButtton = ({ noteId, label }) => {
                                                 type="radio"
                                                 className=""
                                                 name="groupOfDefaultRadios"
-                                                id={label}
-                                                value={label}
+                                                id="None"
+                                                value="None"
                                                 onChange={e => editLabel(e.target.value)}
-                                                checked={label == chosenLabel?.label ? true : false}
+                                                checked={"None" == chosenLabel?.label ? true : false}
 
                                             />
                                         </div>
                                     </div>
                                 </div>
+                                {allLabels.label?.map(({ label, _id }, i) => {
+                                    return (
+                                        <div className="col-md-12 pry-bold-text font-weight-bold p-1 " key={_id}>
+                                            <div className="mb-2 row justify-content-between">
+                                                <div className="col">
+                                                    <label
+                                                        className=""
+                                                        for={label}
+                                                    >
+                                                        <span className="">
+                                                            {label}
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div className="col-2">
 
-                            )
-                        })}
+                                                    <input
+                                                        type="radio"
+                                                        className=""
+                                                        name="groupOfDefaultRadios"
+                                                        id={label}
+                                                        value={label}
+                                                        onChange={e => editLabel(e.target.value)}
+                                                        checked={label == chosenLabel?.label ? true : false}
+
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    )
+                                })}
                             </>
                         }
 

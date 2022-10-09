@@ -19,6 +19,7 @@ import PageNotFound from "./PageNotFound";
 import NoPageAccess from "./Pages/NoPageAccess";
 import SearchPage from "./Components/Note/SearchPage";
 import NotesInLabel from "./Components/Label/NotesInLabel";
+import TaskPage from "./Pages/TaskPage";
 
 function App() {
 
@@ -30,13 +31,14 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
 
-      
-          <Route path="/app" element={<Dashboard />} />
-          <Route path="/edit" element={<EditNote />} />
-          <Route path="/new" element={<AddNote />} />
-          <Route path="/search" element={<SearchPage />} />
-        <Route path="/label/:id" element={<NotesInLabel />} />
 
+        <Route path="/note" element={<Dashboard />} />
+        <Route path="/note/new" element={<AddNote />} />
+        <Route path="/note/edit" element={<EditNote />} />
+        <Route path="/note/search" element={<SearchPage />} />
+        <Route path="/note/label/:id" element={<NotesInLabel />} />
+
+        <Route path="/task" element={<TaskPage />} />
 
         <Route path="/test" element={<Test />} />
 

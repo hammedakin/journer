@@ -12,7 +12,7 @@ const Login = () => {
     let navigate = useNavigate()
 
     if (localStorage.getItem('usertoken')) {
-        return <Navigate to="/app" replace />
+        return <Navigate to="/note" replace />
     }
 
     // Form Fields
@@ -45,7 +45,7 @@ const Login = () => {
                         setsending(false);
                         setData('usertoken', res.data.token)
                         setData('name', res.data.name)
-                        navigate('/app')
+                        navigate('/note')
                         setTimeout(() => {
                             toast.success(res.data.msg);
                         }, 10);
@@ -99,7 +99,7 @@ const Login = () => {
                             </div>
 
 
-                            <form onSubmit={(e)=>login(e)}>
+                            <form onSubmit={(e) => login(e)}>
                                 <div className="row justify-content-center text-left mt-5">
 
                                     <div className="col-md-10  ">

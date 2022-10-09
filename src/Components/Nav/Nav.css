@@ -20,6 +20,10 @@
   z-index: 1040 !important;
 }
 
+.active {
+  background: var(--sec-bold-color) !important;
+  border-radius: 10px 0 0 10px !important;
+}
 .sidenav ul li {
   margin-bottom: 1rem;
 }

@@ -93,7 +93,7 @@ const Register = () => {
                             <form onSubmit={(e)=>register(e)}>
                                 <div className="row justify-content-center text-left mt-5">
                                     <div className="col-md-10  ">
-                                        <label className="mb-0"> Name:</label>
+                                        <label className="mb-0"> Username:</label>
                                         <div className="input-group">
                                             <input
                                                 type="name"

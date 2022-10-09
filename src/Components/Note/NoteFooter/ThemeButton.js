@@ -84,7 +84,7 @@ const ThemeButton = ({ noteId, theme, setnoteTheme }) => {
                             {sending ?
                                 <div className="text-center py-5">
 
-                                    <ClipLoader className='pry-bold-border'
+                                    <ClipLoader className='loader-pry-border'
                                         loading={sending} speedMultiplier="1.2" size="50" />
                                 </div>
                                 :

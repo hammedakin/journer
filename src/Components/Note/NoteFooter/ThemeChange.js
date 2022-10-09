@@ -21,7 +21,7 @@ const ThemeChange = (props) => {
                     />
 
                     {sending ?
-                        <ClipLoader className='pry-bold-border'
+                        <ClipLoader className='loader-pry-border'
                             loading={sending} speedMultiplier="1.2" size="20" />
                         :
                         <div className={`${color} br-xlg theme-icon fit-content`}>

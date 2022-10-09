@@ -11,7 +11,6 @@ const NotesInLabel = () => {
     const { loading, data } = useFetch('note')
 
     let location = useLocation()
-    // const [labelInfo] = useState(location.state);
     let labelInfo = location.state
     const [newData, setnewData] = useState([]);
 

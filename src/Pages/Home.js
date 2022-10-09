@@ -3,7 +3,7 @@ import { Link, Navigate } from 'react-router-dom'
 const Home = () => {
 
     if (localStorage.getItem('usertoken')) {
-        return <Navigate to="/app" replace />
+        return <Navigate to="/note" replace />
     }
     return (
         <>

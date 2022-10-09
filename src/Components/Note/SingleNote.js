@@ -11,7 +11,7 @@ const SingleNote = ({ column, item }) => {
     function toEdit(item) {
         const data = { ...item }
         navigate(
-            '/edit',
+            '/note/edit',
             { state: data }
         )
     }

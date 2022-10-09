@@ -57,16 +57,17 @@ h5 {
   background-color: var(--pry-color) !important;
 }
 .pry-border {
-  border: var(--pry-color) 1px solid !important;
+  border-color: var(--pry-color) !important;
 }
-.pry-bold-border {
-  border-color: var(--pry-bold-color) var(--pry-bold-color) transparent !important;
-}
+
 .pry-bold-text {
   color: var(--pry-bold-color) !important;
 }
 .pry-bold {
   background-color: var(--pry-bold-color) !important;
+}
+.pry-bold-border {
+  border-left-color: var(--pry-bold-color)  !important;
 }
 .sec-text {
   color: var(--sec-color) !important;
@@ -127,7 +128,9 @@ h5 {
 }
 
 /* Border Color */
-
+.loader-pry-border {
+  border-color: var(--pry-bold-color) var(--pry-bold-color) transparent !important;
+}
 /* Border Color */
 
 .w-lg-75 {

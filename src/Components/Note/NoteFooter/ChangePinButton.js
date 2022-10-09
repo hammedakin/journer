@@ -57,7 +57,7 @@ const ChangePinButton = ({ noteId, pin }) => {
                     <i
                         className='bi h5 sec-bold p-2 br-sm me-2 pry-bold-text'
                     >
-                        <ClipLoader className='pry-bold-border'
+                        <ClipLoader className='loader-pry-border'
                             loading={sending} speedMultiplier="1.2" size="20" />
                     </i>
                     :

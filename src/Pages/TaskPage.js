@@ -1,18 +1,18 @@
 import Header from "../Components/Dashboard/Header";
-import AllNotes from "../Components/Note/AllNotes";
+// import AllNotes from "../Components/Note/AllNotes";
 import Wrapper from '../Wrapper'
 
 
-const Dashboard = () => {
+const TaskPage = () => {
     return (
         <Wrapper>
 
             <main>
                 <Header />
-                <AllNotes />
+                {/* <AllNotes /> */}
             </main>
         </Wrapper>
     );
 }
 
-export default Dashboard;
+export default TaskPage;

@@ -22,8 +22,8 @@ const QuickButton = ({ fetchData, loading, setcolumn, column, data }) => {
 
     const searchNote = (e) => {
         e.preventDefault()
-        navigate('/search',
-            { state: {value: searchValue} }
+        navigate('/note/search',
+            { state: { value: searchValue } }
         )
     }
 
@@ -32,7 +32,7 @@ const QuickButton = ({ fetchData, loading, setcolumn, column, data }) => {
             <div className="pry-text text-end d-flex justify-content-end my-3">
                 {search &&
                     <div className="col">
-                        <form className='search me-3' onSubmit={(e)=>searchNote(e)}>
+                        <form className='search me-3' onSubmit={(e) => searchNote(e)}>
                             <input
                                 type="search"
                                 className='input-style br-sm'

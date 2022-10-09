@@ -15,6 +15,7 @@ const EditNote = () => {
     const [data] = useState(location.state);
     const [noteId, setnoteId] = useState(data?._id);
     const [noteTheme, setnoteTheme] = useState(data?.theme.color);
+    const [msg, setmsg] = useState('');
 
     // Form Fields
     const [form, setform] = useState({ title: data?.title, content: data?.content });
@@ -28,16 +29,15 @@ const EditNote = () => {
         changeLabel()
     }
     // Form Fields
-    
+
     let navigate = useNavigate()
     useEffect(() => {
         if (location.state === null) {
-            navigate('/app')
+            navigate('/note')
         }
     }, []);
 
     // Get Err for long Title
-    const [msg, setmsg] = useState('');
 
     const changeLabel = (e) => {
         if ([...form.title].length >= 999) {

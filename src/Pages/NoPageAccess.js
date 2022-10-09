@@ -5,7 +5,7 @@ const NoPageAccess = () => {
   let navigate = useNavigate()
 
   if (localStorage.getItem('usertoken')) {
-    return <Navigate to="/app" replace />
+    return <Navigate to="/note" replace />
   }
 
   return (
