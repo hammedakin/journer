@@ -26,7 +26,7 @@ const SideNav = ({ darktheme, switchTheme }) => {
   };
   if (document.getElementById("mySidenav")) {
 
-    if (window.innerWidth > 580) {
+    if (window.innerWidth > 768) {
       document.getElementById("mySidenav").style.width = "250px";
     } else {
       document.getElementById("mySidenav").style.width = "0";

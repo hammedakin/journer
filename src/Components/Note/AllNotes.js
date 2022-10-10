@@ -37,7 +37,7 @@ const AllNotes = () => {
             />
         )
     }).reverse();
-
+    console.log(data);
     return (
         <>
             {<Loading load={loading} />}

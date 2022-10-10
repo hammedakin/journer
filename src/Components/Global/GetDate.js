@@ -54,3 +54,25 @@ export function GetDateTime(e) {
 
 // Get Date n Time
 // Get Date n Time 
+
+
+// Format Date
+// Format Date
+
+export function formatDate(date) {
+    return [
+        date.getFullYear(),
+        padTo2Digits(date.getMonth() + 1),
+        padTo2Digits(date.getDate()),
+    ].join('-');
+}
+export function formatDateTime(date) {
+    return [
+        date.getFullYear(),
+        padTo2Digits(date.getMonth() + 1),
+        padTo2Digits(date.getDate()),
+    ].join('-');
+}
+
+// Format Date
+// Format Date

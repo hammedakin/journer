@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Wrapper from '../../Wrapper';
 import { Loading } from '../Global/Loader';
 import { useFetch } from '../Global/useFetch';
@@ -10,25 +11,32 @@ import SingleNote from '../Note/SingleNote';
 const NotesInLabel = () => {
     const { loading, data } = useFetch('note')
 
+    let navigate = useNavigate()
     let location = useLocation()
     let labelInfo = location.state
     const [newData, setnewData] = useState([]);
 
 
     useEffect(() => {
+        if (labelInfo === null) {
+            navigate('/note')
+            setTimeout(() => {
+                toast.error('select a label!')
+            }, 100);
+        }
         if (data.note) {
             setnewData(data.note?.filter((x) =>
-                x.labels._id?.includes(labelInfo._id)
+                x.labels._id?.includes(labelInfo?._id)
             ))
         }
 
-    }, [data,location]);
+    }, [data, location]);
 
     return (
         <>
             <Wrapper>
                 <h5 className="pry-bold-text">
-                    <span className="fw-light"> {labelInfo.label} </span> - ({newData?.length})
+                    <span className="fw-light"> {labelInfo?.label} </span> - ({newData?.length})
                 </h5>
 
                 {loading &&

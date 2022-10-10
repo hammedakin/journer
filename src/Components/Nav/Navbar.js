@@ -13,11 +13,6 @@ const Navbar = ({ theme, darktheme, switchTheme }) => {
   };
   // Open Navbar 
 
-  // Get First letter of user's name
-  // let name = uname.charAt(0)
-
-  // Get First letter of user's name
-
   return (
     <>
       <div className="">
@@ -35,7 +30,7 @@ const Navbar = ({ theme, darktheme, switchTheme }) => {
 
             </div>
             <div className="d-flex">
-              <a className="navbar-brand px-1 py-0 me-2 d-block" onClick={openNav} >
+              <a className="navbar-brand px-1 py-0 me-2 d-block" href="#">
                 <i className="bi bi-person-circle h5 sec-bold pry-bold-text p-2 py-2 br-sm" />
 
               </a>

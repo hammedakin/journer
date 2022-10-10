@@ -1,4 +1,5 @@
 import Header from "../Components/Dashboard/Header";
+import AddTask from "../Components/Tasks/AddTask";
 // import AllNotes from "../Components/Note/AllNotes";
 import Wrapper from '../Wrapper'
 
@@ -8,7 +9,9 @@ const TaskPage = () => {
         <Wrapper>
 
             <main>
-                <Header />
+                {/* <Header /> */}
+                <AddTask />
+
                 {/* <AllNotes /> */}
             </main>
         </Wrapper>

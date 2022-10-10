@@ -31,7 +31,7 @@ const NavLinks = ({ darktheme, switchTheme }) => {
     }
 
     const labelNote = (e) => {
-        navigate(`/note/label/${e._id}`,
+        navigate(`/label/${e._id}`,
             { state: e }
         )
     }
@@ -56,11 +56,11 @@ const NavLinks = ({ darktheme, switchTheme }) => {
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/task`}>
 
                         <span className=""> <i className="bi bi-book"></i> Tasks </span>
-                        <p className="pry-bold br-sm light-text m-0 p-0 px-1"
+                        {/* <p className="pry-bold br-sm light-text m-0 p-0 px-1"
                             style={{ fontSize: '10px' }}
                         >
                             soon
-                        </p>
+                        </p> */}
 
                     </NavLink>
                 </li>
@@ -69,7 +69,7 @@ const NavLinks = ({ darktheme, switchTheme }) => {
                         <li className="mb-2 ">
                             <a
                                 className={`pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between pointer
-                                                ${location.state?.label ? 'active' : null}`}
+                                 ${location.state?.label ? 'active' : null}`}
                                 onClick={() => setshowLabel(!showLabel)}
                             >
                                 <span className=""> <i className="bi bi-tags"></i> Labels </span>
@@ -97,7 +97,7 @@ const NavLinks = ({ darktheme, switchTheme }) => {
                         }
                     </>
                 }
-                
+
                 <li className="mb-2">
                     <Label
                         fetchData={fetchData}
@@ -121,7 +121,7 @@ const NavLinks = ({ darktheme, switchTheme }) => {
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between"
                     >
                         <span className="text-truncate pointer"
-                            onClick={e => logout(e)}
+                            onClick={() => logout()}
                         > <i className="bi bi-tag"></i> Logout </span>
                     </div>
                 </li>

@@ -36,7 +36,7 @@ function App() {
         <Route path="/note/new" element={<AddNote />} />
         <Route path="/note/edit" element={<EditNote />} />
         <Route path="/note/search" element={<SearchPage />} />
-        <Route path="/note/label/:id" element={<NotesInLabel />} />
+        <Route path="/label/:id" element={<NotesInLabel />} />
 
         <Route path="/task" element={<TaskPage />} />
 
