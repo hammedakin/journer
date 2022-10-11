@@ -1,22 +1,20 @@
-import { useState } from "react";
 import { Loading } from "../Global/Loader";
-import AddNoteDiv from "./AddNoteDiv";
 import { useNavigate } from "react-router-dom";
 import { useFetch } from "../Global/useFetch";
 import QuickButton from "../Dashboard/QuickButtons";
 import useLocalStorage from "use-local-storage";
-import SingleNote from "./SingleNote";
+import SingleNote from "../Note/SingleNote";
+import AddNoteDiv from "../Note/AddNoteDiv";
 
-const AllNotes = () => {
-    let navigate = useNavigate()
+const AllArchive = () => {
 
     // Get All Note
-    const { loading, data, fetchData } = useFetch('note')
+    const { loading, data, fetchData } = useFetch('archive')
 
     const [column, setcolumn] = useLocalStorage('column' ? false : true);
 
 
-    const allnotes = data.note?.filter((x) => x.pinned === false).map((item) => {
+    const allarchives = data.archive?.filter((x) => x.pinned === false).map((item) => {
         const { _id } = item
         return (
 
@@ -27,7 +25,7 @@ const AllNotes = () => {
             />
         )
     }).reverse();
-    const allpinned = data.note?.filter((x) => x.pinned === true).map((item) => {
+    const allpinned = data.archive?.filter((x) => x.pinned === true).map((item) => {
         const { _id } = item
         return (
             <SingleNote
@@ -52,9 +50,9 @@ const AllNotes = () => {
                     data={data}
                 />
                 <div className="row">
-                    <AddNoteDiv column={column} />
+                    {/* <AddNoteDiv column={column} /> */}
                     {allpinned}
-                    {allnotes}
+                    {allarchives}
                 </div>
             </section>
 
@@ -62,4 +60,4 @@ const AllNotes = () => {
     );
 }
 
-export default AllNotes;
+export default AllArchive;

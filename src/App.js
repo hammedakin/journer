@@ -20,6 +20,7 @@ import NoPageAccess from "./Pages/NoPageAccess";
 import SearchPage from "./Components/Note/SearchPage";
 import NotesInLabel from "./Components/Label/NotesInLabel";
 import TaskPage from "./Pages/TaskPage";
+import ArchivePage from "./Pages/ArchivePage";
 
 function App() {
 
@@ -36,7 +37,11 @@ function App() {
         <Route path="/note/new" element={<AddNote />} />
         <Route path="/note/edit" element={<EditNote />} />
         <Route path="/note/search" element={<SearchPage />} />
+
+        {/* <Route path="/label" element={<NotesInLabel />} /> */}
         <Route path="/label/:id" element={<NotesInLabel />} />
+
+        <Route path="/archive" element={<ArchivePage />} />
 
         <Route path="/task" element={<TaskPage />} />
 

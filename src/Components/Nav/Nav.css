@@ -41,6 +41,9 @@
   text-align: center !important;
   margin-left: 0.5rem !important;
 }
+.pagename {
+  margin-left: 250px !important;
+}
 
 #main {
   transition: margin-left 0.5s;
@@ -52,7 +55,9 @@
 @media screen and (max-width: 768px) {
 
   /* Side Navbar */
-
+.pagename {
+  margin-left: 0px !important;
+}
   .sidenav {
     width: 0;
   }

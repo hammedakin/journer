@@ -5,7 +5,7 @@ import Wrapper from '../Wrapper'
 
 const Dashboard = () => {
     return (
-        <Wrapper>
+        <Wrapper pagename={'Note'}>
 
             <main>
                 <Header />

@@ -34,7 +34,7 @@ const NotesInLabel = () => {
 
     return (
         <>
-            <Wrapper>
+            <Wrapper pagename={'Label'}>
                 <h5 className="pry-bold-text">
                     <span className="fw-light"> {labelInfo?.label} </span> - ({newData?.length})
                 </h5>

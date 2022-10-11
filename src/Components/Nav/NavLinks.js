@@ -45,7 +45,7 @@ const NavLinks = ({ darktheme, switchTheme }) => {
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between"
                         to={`/note`}
                     >
-                        <span className=""> <i className="bi bi-book"></i> Note </span>
+                        <span className=""> <i className="bi bi-journals"></i> Note </span>
                         <span className="pry-bold br-sm light-text py-0 px-2">
                             {allNotes.note?.length || '...'}
                         </span>
@@ -55,7 +55,20 @@ const NavLinks = ({ darktheme, switchTheme }) => {
                     <NavLink tag={Link}
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/task`}>
 
-                        <span className=""> <i className="bi bi-book"></i> Tasks </span>
+                        <span className=""> <i className="bi bi-list-task"></i> Tasks </span>
+                        {/* <p className="pry-bold br-sm light-text m-0 p-0 px-1"
+                            style={{ fontSize: '10px' }}
+                        >
+                            soon
+                        </p> */}
+
+                    </NavLink>
+                </li>
+                <li className="mb-2 ">
+                    <NavLink tag={Link}
+                        className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/archive`}>
+
+                        <span className=""> <i className="bi bi-archive"></i> Archive </span>
                         {/* <p className="pry-bold br-sm light-text m-0 p-0 px-1"
                             style={{ fontSize: '10px' }}
                         >

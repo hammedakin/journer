@@ -6,7 +6,7 @@ import Wrapper from '../Wrapper'
 
 const TaskPage = () => {
     return (
-        <Wrapper>
+        <Wrapper pagename={'Task'}>
 
             <main>
                 {/* <Header /> */}

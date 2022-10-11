@@ -25,7 +25,7 @@ const EditNote = () => {
             ...inputs,
             [e.target.name]: e.target.value,
         }));
-        editNote(e);
+        // editNote(e);
         changeLabel()
     }
     // Form Fields

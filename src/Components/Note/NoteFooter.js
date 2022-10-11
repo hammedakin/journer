@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import DeleteModal from '../Global/DeleteModal';
 import { GetDate, GetTime } from '../Global/GetDate';
-import ChangePinButton from './NoteFooter/ChangePinButton';
+import PinButton from './NoteFooter/PinButton';
 import LabelButtton from './NoteFooter/LabelButtton';
 import ShareButton from './NoteFooter/ShareBotton';
 import ThemeButton from './NoteFooter/ThemeButton';
+import ArchiveButton from './NoteFooter/ArchiveButton';
 
 const NoteFooter = (props) => {
 
@@ -29,9 +30,13 @@ const NoteFooter = (props) => {
 
                             {noteId &&
                                 <>
-                                    <ChangePinButton
+                                    <ArchiveButton
                                         noteId={noteId}
-                                        pin={data.pinned} />
+                                        archive={data?.archive} />
+
+                                    <PinButton
+                                        noteId={noteId}
+                                        pin={data?.pinned} />
 
                                     <ShareButton
                                         form={form}
@@ -39,13 +44,13 @@ const NoteFooter = (props) => {
 
                                     <ThemeButton
                                         noteId={noteId}
-                                        theme={data.theme}
+                                        theme={data?.theme}
                                         setnoteTheme={setnoteTheme}
                                     />
 
                                     <LabelButtton
                                         noteId={noteId}
-                                        label={data.labels}
+                                        label={data?.labels}
                                     />
 
                                     <DeleteModal

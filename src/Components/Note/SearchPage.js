@@ -28,7 +28,7 @@ const SearchPage = () => {
 
     return (
         <>
-            <Wrapper>
+            <Wrapper pagename={'Search'}>
                 <h5 className="pry-bold-text">
                     Search ({newData?.length}) - <span className="fw-light"> {searched.value} </span>
                 </h5>

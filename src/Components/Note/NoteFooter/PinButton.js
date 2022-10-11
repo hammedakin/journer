@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify'
 import axios from 'axios';
 import { useFetch } from '../../Global/useFetch';
 import { ClipLoader } from 'react-spinners';
 
 
-const ChangePinButton = ({ noteId, pin }) => {
+const PinButton = ({ noteId, pin }) => {
     const { fetchData } = useFetch(`note/${noteId}`)
 
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
@@ -71,4 +71,4 @@ const ChangePinButton = ({ noteId, pin }) => {
     );
 }
 
-export default ChangePinButton;
+export default PinButton;
