@@ -6,6 +6,7 @@ import './Components/Note/Notes.css'
 import './Components/Label/Label.css'
 import './Components/Dashboard/Dashboard.css'
 import './Components/Auth/Auth.css'
+import './Components/Task/Task.css'
 
 import Test from "./Components/Global/Test";
 import Dashboard from "./Pages/Dashboard";

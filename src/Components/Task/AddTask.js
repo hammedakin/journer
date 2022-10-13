@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify'
-import { setData } from '../Global/LocalStorage';
-import { formatDate, GetDate, GetTime } from '../Global/GetDate';
+import { toast } from 'react-toastify'
+import { formatDate, GetTime } from '../Global/GetDate';
 
-const AddTask = () => {
+const AddTask = ({ allTasksFn }) => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
+    const [token] = useState(localStorage.getItem('usertoken'));
     const [sending, setsending] = useState(false);
     const [form, setform] = useState({ task: '', date: formatDate(new Date()), time: GetTime(new Date()) });
-    const [eye, seteye] = useState(false);
 
     // Form Fields
     function handleChange(e) {
@@ -20,31 +18,28 @@ const AddTask = () => {
     }
     // Form Fields
 
-
-    //   Login Function
-    //   Login Function
-    function login(e) {
+    function createTask(e) {
         e.preventDefault();
-        if (form.email && form.pword) {
+        if (form.task) {
             setsending(true);
             const data = {
-                email: form.email,
-                password: form.pword,
+                task: form.task,
+                date: form.date,
+                time: form.time,
+            }
+            const headers = {
+                'Authorization': `Bearer ${token}`
             }
             axios
-                .post(`${endpoint}/task/login`, data)
+                .post(`${endpoint}/task`, data, { headers })
                 .then((res) => {
                     if (res.data.success === false) {
                         toast.warn(res.data.msg);
                         setsending(false);
                     } else {
                         setsending(false);
-                        setData('usertoken', res.data.token)
-                        setData('name', res.data.name)
-                        // navigate('/note')
-                        setTimeout(() => {
-                            toast.success(res.data.msg);
-                        }, 10);
+                        toast.success(res.data.msg);
+                        allTasksFn()
                     }
                 })
                 .catch((error) => {
@@ -61,25 +56,22 @@ const AddTask = () => {
             toast.error("empty fields!");
         }
     }
-    //   Login Function
-    //   Login Function
 
     return (
         <>
-            <section className="auth">
+            <section className="auth m-0 border py-2 br-sm">
                 <div className="container">
-               
-                    <form onSubmit={(e) => login(e)} autoComplete="false">
+                    <form onSubmit={(e) => createTask(e)} autoComplete="false">
                         <div className="row justify-content-cente text-left">
 
-                            <div className="col-md-6  ">
-                                <label className="mb-0"> Task:</label>
+                            <div className="col-md-6 col-lg-8 ">
+                                {/* <label className="mb-0"> Task:</label> */}
                                 <div className="input-group">
                                     <input
                                         type="text"
                                         className=" input-style input-line"
                                         name="task"
-                                        placeholder="enter task"
+                                        placeholder="Enter task"
                                         onChange={handleChange}
                                         value={form.task}
                                         required
@@ -87,8 +79,8 @@ const AddTask = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="col-md-3  ">
-                                <label className="mb-0"> Date:</label>
+                            <div className="col-lg-2 col-md-3 col-6 ">
+                                {/* <label className="mb-0"> Date:</label> */}
                                 <div className="input-group">
                                     <input
                                         type="date"
@@ -96,12 +88,11 @@ const AddTask = () => {
                                         name="date"
                                         onChange={handleChange}
                                         value={form.date}
-                                        required
                                     />
                                 </div>
                             </div>
-                            <div className="col-md-3  ">
-                                <label className="mb-0"> Time:</label>
+                            <div className="col-lg-2 col-md-3 col-6 ">
+                                {/* <label className="mb-0"> Time:</label> */}
                                 <div className="input-group">
                                     <input
                                         type="time"
@@ -109,16 +100,15 @@ const AddTask = () => {
                                         name="time"
                                         onChange={handleChange}
                                         value={form.time}
-                                        required
                                     />
                                 </div>
                             </div>
 
                         </div>
                     </form>
-
                 </div>
             </section>
+
         </>
     );
 }

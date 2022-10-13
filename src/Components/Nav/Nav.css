@@ -52,12 +52,11 @@
 
 /*Side Navbar */
 
-@media screen and (max-width: 768px) {
-
+@media screen and (max-width: 767px) {
   /* Side Navbar */
-.pagename {
-  margin-left: 0px !important;
-}
+  .pagename {
+    margin-left: 0px !important;
+  }
   .sidenav {
     width: 0;
   }

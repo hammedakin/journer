@@ -15,7 +15,7 @@ const NoteTop = ({ sending, submit, theme }) => {
     return (
         <>
             <nav
-                className={`fixed-top shadow-none bottom-nav py-3 d-flex justify-content-between align-items-center mx-2 ${theme ? 'transparent top-nav' : "light-bg"} `}
+                className={`fixed-top shadow-none note-nav py-3 d-flex justify-content-between align-items-center mx-2 ${theme ? 'transparent top-nav' : "light-bg"} `}
             >
                 <div className="">
                     <i

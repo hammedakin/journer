@@ -26,7 +26,7 @@ const Navbar = ({ theme, darktheme, pagename, switchTheme }) => {
                 <i className="bi bi-list h5 sec-bold pry-bold-text p-2 py-2 br-sm" />
 
               </a>
-              <h5 className="pry-text pagename container">
+              <h5 className="pry-bold-text font-weight-light pagename container">
                 {pagename}
               </h5>
             </div>

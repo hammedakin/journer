@@ -167,7 +167,7 @@ const NewNote = (props) => {
 
                 <div className=" pb-5">
                     <nav
-                        className="navbar light-bg navbar-expand-sm navbar-light fixed-bottom py-1 border-top shadow-none py-3 bottom-nav"
+                        className="navbar light-bg navbar-expand-sm navbar-light fixed-bottom py-1 border-top shadow-none py-3 note-nav"
                         id="navbar main ">
                         <div className="container justify-content-between" id="logo">
 

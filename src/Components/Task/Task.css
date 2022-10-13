@@ -1,0 +1,10 @@
+.alltasks .first {
+  border-bottom: 1px var(--light-bold-color) solid !important;
+
+}
+
+.alltasks .active-task {
+    color: var(--pry-bold-color);
+    border-bottom: 3px var(--pry-bold-color) solid !important;
+    border-bottom-right-radius: -13px;
+}

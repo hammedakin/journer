@@ -15,9 +15,9 @@ const NoteFooter = (props) => {
         <>
             <div className=" pb-5">
                 <nav
-                    className={`navbar navbar-expand-sm navbar-light fixed-bottom py-1 border-top shadow-none py-3 bottom-nav ${noteTheme ? noteTheme : "light-bg"} `}
+                    className={`navbar navbar-light fixed-bottom py-1 border-top shadow-none py-3 note-nav bottom-nav ${noteTheme ? noteTheme : "light-bg"} `}
                     id="navbar main ">
-                    <div className="container justify-content-between" id="logo">
+                    <div className="container justify-content-between">
                         <li className="list-unstyled text-center " >
                             <div className="small-text pry-bold-text">
                                 <small className="my-2">
@@ -26,7 +26,7 @@ const NoteFooter = (props) => {
                                 </small>
                             </div>
                         </li>
-                        <li className="list-unstyled text-center " >
+                        <li className="list-unstyled text-center" >
 
                             {noteId &&
                                 <>

@@ -69,25 +69,6 @@
   -webkit-box-orient: vertical !important;
 }
 
-/* .each-note .note-label {
-  overflow: scroll;
-}
-
-.each-note ::-webkit-scrollbar {
-  width: 7px;
-  height: 0px;
-}
-
-.each-note ::-webkit-scrollbar-track {
-  border: none;
-  background-color: transparent;
-}
-
-.each-note ::-webkit-scrollbar-thumb {
-  background: var(--pry-color);
-  height: 10px;
-} */
-
 .each-note .note-label p {
   font-size: 11px;
   white-space: nowrap !important;
@@ -175,5 +156,3 @@ input::-webkit-inner-spin-button {
 
 /* Note Footer */
 
-@media (max-width: 767px) {
-}

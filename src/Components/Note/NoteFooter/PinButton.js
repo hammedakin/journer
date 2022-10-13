@@ -6,7 +6,6 @@ import { ClipLoader } from 'react-spinners';
 
 
 const PinButton = ({ noteId, pin }) => {
-    const { fetchData } = useFetch(`note/${noteId}`)
 
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
     const [token] = useState(localStorage.getItem('usertoken'));
@@ -57,7 +56,7 @@ const PinButton = ({ noteId, pin }) => {
                     <i
                         className='bi h5 sec-bold p-2 br-sm me-2 pry-bold-text'
                     >
-                        <ClipLoader className='loader-pry-border'
+                        <ClipLoader className='loader-pry-border footer-loader'
                             loading={sending} speedMultiplier="1.2" size="20" />
                     </i>
                     :
