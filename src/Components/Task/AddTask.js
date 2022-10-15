@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify'
 import { formatDate, GetTime } from '../Global/GetDate';
 
@@ -8,6 +9,7 @@ const AddTask = ({ allTasksFn }) => {
     const [token] = useState(localStorage.getItem('usertoken'));
     const [sending, setsending] = useState(false);
     const [form, setform] = useState({ task: '', date: formatDate(new Date()), time: GetTime(new Date()) });
+    let navigate = useNavigate()
 
     // Form Fields
     function handleChange(e) {
@@ -40,6 +42,7 @@ const AddTask = ({ allTasksFn }) => {
                         setsending(false);
                         toast.success(res.data.msg);
                         allTasksFn()
+                        navigate('/task/#uncompleted')
                     }
                 })
                 .catch((error) => {

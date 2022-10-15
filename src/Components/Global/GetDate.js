@@ -29,7 +29,7 @@ export function GetTime(e) {
     let hour = e.getHours();
     let time = `${padTo2Digits(hour)}:${padTo2Digits(min)}`
 
-    return time
+    return time 
 }
 
 // Get Date
@@ -71,7 +71,7 @@ export function formatDateTime(date) {
         date.getFullYear(),
         padTo2Digits(date.getMonth() + 1),
         padTo2Digits(date.getDate()),
-    ].join('-');
+    ].join('-') ;
 }
 
 // Format Date

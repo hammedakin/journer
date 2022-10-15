@@ -66,10 +66,8 @@ const TaskPage = () => {
         if (key === '#uncompleted') {
             setData(allTask?.task?.filter((tasks) => tasks?.completed === false))
         }
-    }, [location]);
-    console.log(data);
-    console.log(allTask);
-    // console.log(location);
+    }, [location, allTask?.task]);
+
 
     return (
         <Wrapper pagename={'Task'}>
