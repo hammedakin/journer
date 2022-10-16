@@ -1,14 +1,12 @@
-import { useState } from "react";
 import { Loading } from "../Global/Loader";
 import AddNoteDiv from "./AddNoteDiv";
-import { useNavigate } from "react-router-dom";
 import { useFetch } from "../Global/useFetch";
 import QuickButton from "../Dashboard/QuickButtons";
 import useLocalStorage from "use-local-storage";
 import SingleNote from "./SingleNote";
+import EmptyList from "../Global/EmptyList";
 
 const AllNotes = () => {
-    let navigate = useNavigate()
 
     // Get All Note
     const { loading, data, fetchData } = useFetch('note')
@@ -53,6 +51,17 @@ const AllNotes = () => {
                 />
                 <div className="row">
                     <AddNoteDiv column={column} />
+
+                    {!loading && !data.note ?
+                        <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'} `}>
+                            <EmptyList
+                                icon={'bi-journal'}
+                                text={'Note'}
+                            />
+                        </div>
+                        : null
+                    }
+
                     {allpinned}
                     {allnotes}
                 </div>

@@ -1,7 +1,7 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Wrapper from '../../Wrapper';
+import EmptyList from '../Global/EmptyList';
 import { Loading } from '../Global/Loader';
 import { useFetch } from '../Global/useFetch';
 import SingleNote from './SingleNote';
@@ -18,10 +18,10 @@ const SearchPage = () => {
     useEffect(() => {
         if (data.note) {
             setnewData(data.note?.filter((x) =>
-             x.content?.toLowerCase().includes(searched.value?.toLowerCase()) ||
-             x.title?.toLowerCase().includes(searched.value?.toLowerCase()) ||
-             x.labels.label?.toLowerCase().includes(searched.value?.toLowerCase()) 
-             ))
+                x.content?.toLowerCase().includes(searched.value?.toLowerCase()) ||
+                x.title?.toLowerCase().includes(searched.value?.toLowerCase()) ||
+                x.labels.label?.toLowerCase().includes(searched.value?.toLowerCase())
+            ))
         }
 
     }, [data.note]);
@@ -41,6 +41,15 @@ const SearchPage = () => {
                         </div>
                     </>
 
+                }
+                {!loading && !newData?.length ?
+                    <div className="py-5">
+                        <EmptyList
+                            icon={'bi-search'}
+                            text={`Notes with (${searched.value})`}
+                        />
+                    </div>
+                    : null
                 }
                 <div className="row">
                     {newData?.filter((x) => x.pinned === true).map((item) => {

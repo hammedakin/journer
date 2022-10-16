@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
 import { toast } from "react-toastify";
-// import { labels } from "../data";
 import { useFetch } from "../../Global/useFetch";
 import { ClipLoader } from "react-spinners";
 
 
 
 const LabelButtton = ({ noteId, label }) => {
-    const { loading, data: allLabels, fetchData } = useFetch(`label`)
+    const { data: allLabels, fetchData } = useFetch(`label`)
 
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
     const [token] = useState(localStorage.getItem('usertoken'));
@@ -49,7 +48,6 @@ const LabelButtton = ({ noteId, label }) => {
                     setsending(false);
                 } else {
                     setsending(false);
-                    console.log(res.data);
                     setchosenLabel(res.data.note.labels)
                 }
             })
@@ -113,7 +111,7 @@ const LabelButtton = ({ noteId, label }) => {
                                                 id="None"
                                                 value="None"
                                                 onChange={e => editLabel(e.target.value)}
-                                                checked={"None" == chosenLabel?.label ? true : false}
+                                                checked={"None" === chosenLabel?.label ? true : false}
 
                                             />
                                         </div>
@@ -142,7 +140,7 @@ const LabelButtton = ({ noteId, label }) => {
                                                         id={label}
                                                         value={label}
                                                         onChange={e => editLabel(e.target.value)}
-                                                        checked={label == chosenLabel?.label ? true : false}
+                                                        checked={label === chosenLabel?.label ? true : false}
 
                                                     />
                                                 </div>

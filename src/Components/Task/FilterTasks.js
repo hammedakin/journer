@@ -4,7 +4,7 @@ import { GetDate } from '../Global/GetDate';
 import EditTask from './EditTask';
 import TaskFooter from './TaskFooter';
 
-const AllUncompletedTasks = ({ allTasks, allTasksFn }) => {
+const FilterTasks = ({ allTasks, allTasksFn }) => {
 
     let location = useLocation()
     let key = location.hash
@@ -24,7 +24,7 @@ const AllUncompletedTasks = ({ allTasks, allTasksFn }) => {
                                             allTasksFn={allTasksFn}
                                             taskId={_id}
                                             data={item}
-                                            >
+                                        >
                                             <p className="m-0">
                                                 {task}
                                             </p>
@@ -44,7 +44,7 @@ const AllUncompletedTasks = ({ allTasks, allTasksFn }) => {
                                             completed={completed}
                                         />
                                     </div>
-                                <hr className='' />
+                                    <hr className='' />
                                 </div>
                             </>
                         )
@@ -56,4 +56,4 @@ const AllUncompletedTasks = ({ allTasks, allTasksFn }) => {
     );
 }
 
-export default AllUncompletedTasks;
+export default FilterTasks;

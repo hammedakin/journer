@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import AllUncompletedTasks from './AllUncompletedTasks';
+import FilterTasks from './FilterTasks';
+import EmptyList from "../Global/EmptyList";
 
-const AllTasks = ({ allTasks, allTasksFn}) => {
+const AllTasks = ({ loading, allTasks, allTasksFn, name }) => {
     let location = useLocation()
 
     let key = location.hash || '#uncompleted'
@@ -10,7 +11,7 @@ const AllTasks = ({ allTasks, allTasksFn}) => {
     const links = [
         {
             id: 'important',
-            name: <i className='bi bi-star-fill'/>
+            name: <i className='bi bi-star-fill' />
         },
         {
             id: 'all',
@@ -25,6 +26,7 @@ const AllTasks = ({ allTasks, allTasksFn}) => {
             name: 'Completed'
         },
     ]
+
     return (
         <>
             <section className=" mt-4 alltasks">
@@ -40,8 +42,16 @@ const AllTasks = ({ allTasks, allTasksFn}) => {
                     )}
 
                 </div>
-
-                <AllUncompletedTasks
+                {!loading && !allTasks?.length ?
+                    <div className="py-5">
+                        <EmptyList
+                            icon={'bi-list-task'}
+                            text={`${name} task`}
+                        />
+                    </div>
+                    : null
+                }
+                <FilterTasks
                     allTasks={allTasks}
                     allTasksFn={allTasksFn}
                 />

@@ -1,8 +1,8 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Wrapper from '../../Wrapper';
+import EmptyList from '../Global/EmptyList';
 import { Loading } from '../Global/Loader';
 import { useFetch } from '../Global/useFetch';
 import SingleNote from '../Note/SingleNote';
@@ -48,6 +48,17 @@ const NotesInLabel = () => {
                     </>
 
                 }
+
+                {!loading && !newData?.length ?
+                    <div className="py-5">
+                        <EmptyList
+                            icon={'bi-tag'}
+                            text={`Notes with (${labelInfo?.label})`}
+                        />
+                    </div>
+                    : null
+                }
+
                 <div className="row">
                     {newData?.filter((x) => x.pinned === true).map((item) => {
                         const { _id } = item

@@ -1,10 +1,9 @@
 import { Loading } from "../Global/Loader";
-import { useNavigate } from "react-router-dom";
 import { useFetch } from "../Global/useFetch";
 import QuickButton from "../Dashboard/QuickButtons";
 import useLocalStorage from "use-local-storage";
 import SingleNote from "../Note/SingleNote";
-import AddNoteDiv from "../Note/AddNoteDiv";
+import EmptyList from "../Global/EmptyList";
 
 const AllArchive = () => {
 
@@ -49,8 +48,16 @@ const AllArchive = () => {
                     setcolumn={setcolumn}
                     data={data}
                 />
+                {!loading && !data?.archive?.length ?
+                    <div className="py-5">
+                        <EmptyList
+                            icon={'bi-archive'}
+                            text={`Archived note`}
+                        />
+                    </div>
+                    : null
+                }
                 <div className="row">
-                    {/* <AddNoteDiv column={column} /> */}
                     {allpinned}
                     {allarchives}
                 </div>

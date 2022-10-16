@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { removeData } from '../Global/LocalStorage';
 import { toast } from "react-toastify";
-import { labels } from '../Note/data';
 import Label from '../../Pages/Label';
 import DarkModeToggle from './DarkModeToggle';
 import { useState } from 'react';
@@ -10,7 +9,7 @@ import { useFetch } from '../Global/useFetch';
 import { useEffect } from 'react';
 
 const NavLinks = ({ darktheme, switchTheme }) => {
-    const { loading, data: allLabels, fetchData } = useFetch(`label`)
+    const { data: allLabels, fetchData } = useFetch(`label`)
     const { data: allNotes, fetchData: Fn } = useFetch(`note`)
     const [showLabel, setshowLabel] = useState(false);
 
@@ -56,11 +55,6 @@ const NavLinks = ({ darktheme, switchTheme }) => {
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/task`}>
 
                         <span className=""> <i className="bi bi-list-task"></i> Tasks </span>
-                        {/* <p className="pry-bold br-sm light-text m-0 p-0 px-1"
-                            style={{ fontSize: '10px' }}
-                        >
-                            soon
-                        </p> */}
 
                     </NavLink>
                 </li>
@@ -69,12 +63,6 @@ const NavLinks = ({ darktheme, switchTheme }) => {
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between" to={`/archive`}>
 
                         <span className=""> <i className="bi bi-archive"></i> Archive </span>
-                        {/* <p className="pry-bold br-sm light-text m-0 p-0 px-1"
-                            style={{ fontSize: '10px' }}
-                        >
-                            soon
-                        </p> */}
-
                     </NavLink>
                 </li>
                 {allLabels.label?.length === 0 ? <></> :

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify'
 import { formatDate, GetTime } from '../Global/GetDate';
+import { Loading } from '../Global/Loader';
 
 const AddTask = ({ allTasksFn }) => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
@@ -42,6 +43,7 @@ const AddTask = ({ allTasksFn }) => {
                         setsending(false);
                         toast.success(res.data.msg);
                         allTasksFn()
+                        setform({ task: '', date: formatDate(new Date()), time: GetTime(new Date()) })
                         navigate('/task/#uncompleted')
                     }
                 })
@@ -62,6 +64,7 @@ const AddTask = ({ allTasksFn }) => {
 
     return (
         <>
+            {sending && <Loading load={sending} />}
             <section className="auth m-0 border py-2 br-sm">
                 <div className="container">
                     <form onSubmit={(e) => createTask(e)} autoComplete="false">

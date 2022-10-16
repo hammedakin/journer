@@ -3,6 +3,7 @@ import { toast } from 'react-toastify'
 import axios from 'axios';
 import { ClipLoader } from 'react-spinners';
 import TheEditLabelForm from './TheEditLabelForm';
+import EmptyList from '../Global/EmptyList';
 
 
 const EditLabel = ({ loading, data, fetchData, getLabelFn }) => {
@@ -101,27 +102,33 @@ const EditLabel = ({ loading, data, fetchData, getLabelFn }) => {
                         size="25"
                     /> Loading...
                 </div>
-                :
-                <>
-                    {
-                        data.label?.map((item, i) => {
-                            const { label, _id } = item
-                            return (
-                                <TheEditLabelForm
-                                    label={label}
-                                    id={_id}
-                                    key={_id}
-                                    fetchData={fetchData}
-                                    DeleteLabel={DeleteLabel}
-                                    deleting={deleting}
+                : null}
+            {!loading && !data.label ?
+                <div className="py-5">
+                    <EmptyList
+                        icon={'bi-tag'}
+                        text={`label`}
+                    />
+                </div>
+                : null
+            }
+            {
+                data.label?.map((item, i) => {
+                    const { label, _id } = item
+                    return (
+                        <TheEditLabelForm
+                            label={label}
+                            id={_id}
+                            key={_id}
+                            fetchData={fetchData}
+                            DeleteLabel={DeleteLabel}
+                            deleting={deleting}
 
-                                    sending={sending}
-                                    labelEdit={labelEdit}
-                                />
-                            )
-                        })
-                    }
-                </>
+                            sending={sending}
+                            labelEdit={labelEdit}
+                        />
+                    )
+                })
             }
         </>
     );
