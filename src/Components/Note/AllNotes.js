@@ -56,7 +56,7 @@ const AllNotes = () => {
                         <div className={`mb-4 ${column === true ? 'col-lg-3 col-md-4 col-6' : ' col-md-6 col-12'} `}>
                             <EmptyList
                                 icon={'bi-journal'}
-                                text={'Note'}
+                                text={'Empty note'}
                             />
                         </div>
                         : null

@@ -53,7 +53,7 @@ const NotesInLabel = () => {
                     <div className="py-5">
                         <EmptyList
                             icon={'bi-tag'}
-                            text={`Notes with (${labelInfo?.label})`}
+                            text={`No notes with this label (${labelInfo?.label})`}
                         />
                     </div>
                     : null

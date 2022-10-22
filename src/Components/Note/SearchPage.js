@@ -46,7 +46,7 @@ const SearchPage = () => {
                     <div className="py-5">
                         <EmptyList
                             icon={'bi-search'}
-                            text={`Notes with (${searched.value})`}
+                            text={`No matching notes with (${searched.value})`}
                         />
                     </div>
                     : null

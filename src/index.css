@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 
 /* CSS Variables */
 :root {
@@ -13,19 +14,21 @@
   --nav-color: #6faaf6;
   --top-nav-bg: #ffffffb3;
   /* theme */
-  --reddish-bg:#f28b82;
-  --orangeish-bg:#fbbc04;
-  --yellowish-bg:#fff475;
-  --greenish-bg:#ccff90;
-  --tealish-bg:#a7ffeb;
-  --blueish-bg:#cbf0f8;
-  --darkblueish-bg:#aecbfa;
-  --purpleish-bg:#d7aefb;
-  --brownish-bg:#e6c9a8;
-  --greyish-bg:#e8eaed;
+  --reddish-bg: #f28b82;
+  --orangeish-bg: #fbbc04;
+  --yellowish-bg: #fff475;
+  --greenish-bg: #ccff90;
+  --tealish-bg: #a7ffeb;
+  --blueish-bg: #cbf0f8;
+  --darkblueish-bg: #aecbfa;
+  --purpleish-bg: #d7aefb;
+  --brownish-bg: #e6c9a8;
+  --greyish-bg: #e8eaed;
+  /* Font */
+  --text: "DM Sans", sans-serif;
+
 }
 /* CSS Variables */
-
 
 /* Dark Mode Variables */
 [data-theme="dark"] {
@@ -41,30 +44,31 @@
   --nav-color: #6faaf6;
   --top-nav-bg: #0a132a86;
   /* theme */
-  --reddish-bg:#5c2b29;
-  --orangeish-bg:#614a19;
-  --yellowish-bg:#635d19;
-  --greenish-bg:#345920;
-  --tealish-bg:#16504b;
-  --blueish-bg:#2d555e;
-  --darkblueish-bg:#1e3a5f;
-  --purpleish-bg:#42275e;
-  --brownish-bg:#442f19;
-  --greyish-bg:#3c3f43;
+  --reddish-bg: #5c2b29;
+  --orangeish-bg: #614a19;
+  --yellowish-bg: #635d19;
+  --greenish-bg: #345920;
+  --tealish-bg: #16504b;
+  --blueish-bg: #2d555e;
+  --darkblueish-bg: #1e3a5f;
+  --purpleish-bg: #42275e;
+  --brownish-bg: #442f19;
+  --greyish-bg: #3c3f43;
+   /* Font */
+  --text: "DM Sans", sans-serif;
 }
 /* Dark Mode Variables */
 
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

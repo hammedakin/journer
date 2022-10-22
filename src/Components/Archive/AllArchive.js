@@ -52,7 +52,7 @@ const AllArchive = () => {
                     <div className="py-5">
                         <EmptyList
                             icon={'bi-archive'}
-                            text={`Archived note`}
+                            text={`Empty archive`}
                         />
                     </div>
                     : null

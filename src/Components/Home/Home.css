@@ -1,0 +1,9 @@
+.showcase {
+    padding: 7rem 0;
+}
+
+.showcase .image {
+background: url(../assets/circle.svg) no-repeat;
+text-align: right;
+background-size: cover;
+}

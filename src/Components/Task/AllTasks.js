@@ -46,7 +46,7 @@ const AllTasks = ({ loading, allTasks, allTasksFn, name }) => {
                     <div className="py-5">
                         <EmptyList
                             icon={'bi-list-task'}
-                            text={`${name} task`}
+                            text={`No ${name === "All" ? '' : name} task`}
                         />
                     </div>
                     : null

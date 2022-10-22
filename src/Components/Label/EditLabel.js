@@ -107,7 +107,7 @@ const EditLabel = ({ loading, data, fetchData, getLabelFn }) => {
                 <div className="py-5">
                     <EmptyList
                         icon={'bi-tag'}
-                        text={`label`}
+                        text={`Empty label`}
                     />
                 </div>
                 : null

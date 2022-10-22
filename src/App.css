@@ -11,7 +11,7 @@ body {
   margin: 0 auto;
   color: var(--dark-color) !important ;
   line-height: 1.6;
-  font-family: "Inter", sans-serif !important;
+  font-family: var(--text) !important;
   overflow-x: hidden !important;
 }
 
