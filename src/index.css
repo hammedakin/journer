@@ -13,6 +13,10 @@
   --light-bold-color: #e2e2e2;
   --nav-color: #6faaf6;
   --top-nav-bg: #ffffffb3;
+
+  --grey-text-color: #667085;
+  --grey-bg-color: #a1a1a11a;
+
   /* theme */
   --reddish-bg: #f28b82;
   --orangeish-bg: #fbbc04;
@@ -24,9 +28,9 @@
   --purpleish-bg: #d7aefb;
   --brownish-bg: #e6c9a8;
   --greyish-bg: #e8eaed;
+
   /* Font */
   --text: "DM Sans", sans-serif;
-
 }
 /* CSS Variables */
 
@@ -54,7 +58,7 @@
   --purpleish-bg: #42275e;
   --brownish-bg: #442f19;
   --greyish-bg: #3c3f43;
-   /* Font */
+  /* Font */
   --text: "DM Sans", sans-serif;
 }
 /* Dark Mode Variables */

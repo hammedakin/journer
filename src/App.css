@@ -67,7 +67,7 @@ h5 {
   background-color: var(--pry-bold-color) !important;
 }
 .pry-bold-border {
-  border-left-color: var(--pry-bold-color)  !important;
+  border-left-color: var(--pry-bold-color) !important;
 }
 .sec-text {
   color: var(--sec-color) !important;
@@ -102,6 +102,12 @@ h5 {
 }
 .dark-bg {
   background-color: var(--dark-color) !important;
+}
+.grey-bg {
+  background-color: var(--grey-bg-color) !important;
+}
+.grey-text {
+  color: var(--grey-text-color) !important;
 }
 
 /* Colors */
