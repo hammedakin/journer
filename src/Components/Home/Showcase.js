@@ -7,7 +7,7 @@ const Showcase = () => {
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-md-6">
-                        <div className="col-lg-8 mx-auto">
+                        <div className="col-lg-8">
                             <h1>
                                 Enjoy note taking with your friends
                             </h1>

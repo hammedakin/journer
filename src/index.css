@@ -2,7 +2,7 @@
 
 /* CSS Variables */
 :root {
-  --pry-color: #1560bd;
+  /* --pry-color: #1560bd;
   --pry-bold-color: #023676;
   --sec-color: #f1f6fd;
   --sec-bold-color: #c6dcf8;
@@ -12,7 +12,22 @@
   --modal-color: #ffffff;
   --light-bold-color: #e2e2e2;
   --nav-color: #6faaf6;
+  --top-nav-bg: #ffffffb3; */
+  
+  --pry-color: #3a3a3a;
+  --pry-bold-color: #000000;
+  --sec-color: #eae8e8;
+  --sec-bold-color: #d9d8d8;
+  /* --sec-color: #a1a1a11a;
+  --sec-bold-color: #7e7e7e1a; */
+  --dark-color: #000000;
+  --dark-hover-color: #5a5a5a;
+  --light-color: #ffffff;
+  --modal-color: #ffffff;
+  --light-bold-color: #e2e2e2;
+  --nav-color: #777777;
   --top-nav-bg: #ffffffb3;
+
 
   --grey-text-color: #667085;
   --grey-bg-color: #a1a1a11a;

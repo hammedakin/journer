@@ -12,7 +12,7 @@ const Contact = () => {
                     <p className="fw-bold mb-2">
                         Do you have any questions?
                     </p>
-                    <p>We are available 24/7 to answer any question you have about Note.d</p>
+                    <p>We are available 24/7 to answer any question you have about Journer</p>
                     <button className="btn dark-bg light-text ">
                         Send a message
                     </button>

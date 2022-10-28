@@ -40,7 +40,7 @@ const SideNav = ({ darktheme, switchTheme }) => {
           <div className="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
             <h1 className="fs-4">
 
-              <span className="pry-text ms-3">Learning</span>
+              <span className="pry-text ms-3">Journer </span>
             </h1>
             <span className=" d-md-none d-block close-btn px-1 py-0 text-white"
               onClick={closeNav}>

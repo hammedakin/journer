@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify'
+import Navbar from '../Home/Navbar';
 
 const Register = () => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
@@ -76,7 +77,9 @@ const Register = () => {
 
     return (
         <>
-            <div className="auth">
+            <main>
+                <Navbar />
+            <section className="auth">
                 <div className="container">
                     <div className="col-md-8 mx-auto">
                         <div className="container py-4 border br-md">
@@ -90,7 +93,7 @@ const Register = () => {
                             </div>
 
 
-                            <form onSubmit={(e)=>register(e)}>
+                            <form onSubmit={(e) => register(e)}>
                                 <div className="row justify-content-center text-left mt-5">
                                     <div className="col-md-10  ">
                                         <label className="mb-0"> Username:</label>
@@ -137,7 +140,7 @@ const Register = () => {
                                             />
 
                                             <a
-                                                className={`bi toggle-eye ${eye ? "bi-eye-slash" : "bi-eye"}`}
+                                                    className={`bi toggle-eye pry-text ${eye ? "bi-eye-slash" : "bi-eye"}`}
                                                 id="togglePassword"
                                                 onClick={myInput}
                                             >
@@ -149,7 +152,7 @@ const Register = () => {
                                         <div className="user-btn mb-4 mr-auto text-center">
                                             {sending ? (
                                                 <>
-                                                    <button type="submit" className="btn btn-pry m-0 w-100" disabled>
+                                                    <button type="submit" className="btn  pry-bold light-text m-0 w-100" disabled>
                                                         <i className="bx bx-loader bx-spin bx-sm white-text" />
                                                     </button>
                                                 </>
@@ -157,7 +160,7 @@ const Register = () => {
                                                 <>
                                                     <button
                                                         type="submit"
-                                                        className="btn btn-pry m-0 w-100" p
+                                                        className="btn  pry-bold light-text m-0 w-100" p
                                                     >
                                                         Submit
                                                     </button>
@@ -179,7 +182,7 @@ const Register = () => {
                         </div>
                     </div>
                 </div>
-            </div >
+            </section >
             <ToastContainer
                 position="bottom-left"
                 autoClose={1500}
@@ -189,6 +192,7 @@ const Register = () => {
             // transition="slide"
 
             />
+            </main>
         </>
     );
 }

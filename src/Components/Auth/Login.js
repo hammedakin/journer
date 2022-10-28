@@ -3,6 +3,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify'
 import { setData } from '../Global/LocalStorage';
+import Navbar from '../Home/Navbar';
 
 const Login = () => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
@@ -85,100 +86,103 @@ const Login = () => {
 
     return (
         <>
-            <div className="auth">
-                <div className="container">
-                    <div className="col-md-8 mx-auto">
-                        <div className="container py-4 border br-md">
-                            <div className="my-2 text-center text-sm-left">
-                                <h3>
-                                    Login
-                                </h3>
-                                <p>
-                                    Login an account to continue your journey.
-                                </p>
-                            </div>
-
-
-                            <form onSubmit={(e) => login(e)}>
-                                <div className="row justify-content-center text-left mt-5">
-
-                                    <div className="col-md-10  ">
-                                        <label className="mb-0"> Email:</label>
-                                        <div className="input-group">
-                                            <input
-                                                type="email"
-                                                className=" input-style input-line"
-                                                name="email"
-                                                placeholder="example@example.com"
-                                                onChange={handleChange}
-                                                required
-                                                autoComplete="false"
-                                            />
-                                        </div>
+            <main>
+                <Navbar />
+                <section className="auth">
+                        <div className="container">
+                            <div className="col-md-8 mx-auto">
+                                <div className="container py-4 border br-md">
+                                    <div className="my-2 text-center text-sm-left">
+                                        <h3>
+                                            Login
+                                        </h3>
+                                        <p>
+                                            Login an account to continue your journey.
+                                        </p>
                                     </div>
 
-                                    <div className="col-md-10  ">
-                                        <label className="mb-0"> Password:</label>
-                                        <div className="input-group">
-                                            <input
-                                                type="password"
-                                                className=" input-style input-line pword-input"
-                                                name="pword"
-                                                placeholder="************"
-                                                onChange={handleChange}
-                                                required
-                                                autoComplete="false"
-                                                id="security"
-                                            />
 
-                                            <a
-                                                className={`bi toggle-eye ${eye ? "bi-eye-slash" : "bi-eye"}`}
-                                                id="togglePassword"
-                                                onClick={myInput}
-                                            >
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <form onSubmit={(e) => login(e)}>
+                                        <div className="row justify-content-center text-left mt-5">
 
-                                    <div className="col-md-10 mx-auto text-center">
-                                        <div className="user-btn mb-4 mr-auto text-center">
-                                            {sending ? (
-                                                <>
-                                                    <button type="submit" className="btn btn-pry m-0 w-100" disabled>
-                                                        <i className="bx bx-loader bx-spin bx-sm white-text" />
-                                                    </button>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <button
-                                                        type="submit"
-                                                        className="btn btn-pry m-0 w-100" p
+                                            <div className="col-md-10  ">
+                                                <label className="mb-0"> Email:</label>
+                                                <div className="input-group">
+                                                    <input
+                                                        type="email"
+                                                        className=" input-style input-line"
+                                                        name="email"
+                                                        placeholder="example@example.com"
+                                                        onChange={handleChange}
+                                                        required
+                                                        autoComplete="false"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div className="col-md-10  ">
+                                                <label className="mb-0"> Password:</label>
+                                                <div className="input-group">
+                                                    <input
+                                                        type="password"
+                                                        className=" input-style input-line pword-input"
+                                                        name="pword"
+                                                        placeholder="************"
+                                                        onChange={handleChange}
+                                                        required
+                                                        autoComplete="false"
+                                                        id="security"
+                                                    />
+
+                                                    <a
+                                                    className={`bi toggle-eye pry-text ${eye ? "bi-eye-slash" : "bi-eye "}`}
+                                                        id="togglePassword"
+                                                        onClick={myInput}
                                                     >
-                                                        Submit
-                                                    </button>
-                                                </>
-                                            )}
-                                        </div>
-                                        <div className="text-center">
-                                            <small>
-                                                Forgot your password?
-                                                <span className="pry-text pointer"> Reset it here.</span>
-                                            </small>
-                                            <hr className="w-75 mx-auto m-2" />
-                                            <small>
-                                                Don't have an account?
-                                                <Link to="/register" className="pry-text"> Sign Up</Link>
+                                                    </a>
+                                                </div>
+                                            </div>
 
-                                            </small>
+                                            <div className="col-md-10 mx-auto text-center">
+                                                <div className="user-btn mb-4 mr-auto text-center">
+                                                    {sending ? (
+                                                        <>
+                                                            <button type="submit" className="btn pry-bold light-text m-0 w-100" disabled>
+                                                                <i className="bx bx-loader bx-spin bx-sm white-text" />
+                                                            </button>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <button
+                                                                type="submit"
+                                                                className="btn pry-bold light-text m-0 w-100" p
+                                                            >
+                                                                Submit
+                                                            </button>
+                                                        </>
+                                                    )}
+                                                </div>
+                                                <div className="text-center">
+                                                    <small>
+                                                        Forgot your password?
+                                                        <span className="pry-text pointer"> Reset it here.</span>
+                                                    </small>
+                                                    <hr className="w-75 mx-auto m-2" />
+                                                    <small>
+                                                        Don't have an account?
+                                                        <Link to="/register" className="pry-text"> Sign Up</Link>
+
+                                                    </small>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
+
                                 </div>
-                            </form>
-
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div >
+                </section>
+            </main>
             <ToastContainer
                 position="bottom-left"
                 autoClose={1500}

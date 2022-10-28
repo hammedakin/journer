@@ -2,14 +2,15 @@ import { Link, Navigate } from 'react-router-dom'
 import Contact from '../Components/Home/Contact';
 import Features from '../Components/Home/Features';
 import Footer from '../Components/Home/Footer';
+import Navbar from '../Components/Home/Navbar';
 import Quote from '../Components/Home/Quote';
 import Showcase from '../Components/Home/Showcase';
 
 const Home = () => {
 
-    if (localStorage.getItem('usertoken')) {
-        return <Navigate to="/note" replace />
-    }
+    // if (localStorage.getItem('usertoken')) {
+    //     return <Navigate to="/note" replace />
+    // }
     return (
         <>
             {/* <div className="d-flex mt-5 pt-5 align-items-center justify-content-center">
@@ -28,6 +29,7 @@ const Home = () => {
             </div> */}
 
             <main className="home">
+                <Navbar/>
                 <Showcase />
                 <Features />
                 <Contact />
