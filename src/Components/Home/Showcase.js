@@ -1,5 +1,6 @@
 import React from 'react';
 import note from '../assets/note.png'
+import Install from '../Global/Install';
 
 const Showcase = () => {
     return (
@@ -9,13 +10,14 @@ const Showcase = () => {
                     <div className="col-md-6">
                         <div className="col-lg-8">
                             <h1>
-                                Enjoy note taking with your friends
+                                Enjoy note taking with your journal
                             </h1>
-                            <p className='mt-5'>
-                                Put down your thoughts down in one app, share
-                                with your friends and loved ones.
+                            <p className='mt-3'>
+                                Put down your thoughts down in one app, access them anywhere and any device.
                             </p>
-                            <div className="btn dark-bg light-text mb-3 py-1 px-3 br-sm ">
+
+                            <Install>
+                            <div className="btn dark-bg light-text my-3 py-1 px-3 br-sm ">
                                 <div className="d-flex align-items-center">
                                     <span>
                                         <i className='bi bi-github me-2 h5' />
@@ -30,6 +32,7 @@ const Showcase = () => {
                                     </span>
                                 </div>
                             </div>
+                            </Install>
                         </div>
                     </div>
                     <div className="col-md-6">

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Install = () => {
+const Install = ({ children }) => {
     let deferredPrompt;
 
     window.addEventListener('beforeinstallprompt', (e) => {
@@ -39,9 +39,14 @@ const Install = () => {
 
     return (
         <>
-            <button onClick={() => install()}>
+            {/* <button onClick={() => install()}>
                 click
-            </button>
+            </button> */}
+            <span
+                onClick={() => alert('coming soon... ')}
+            >
+                {children}
+            </span>
 
         </>
     );

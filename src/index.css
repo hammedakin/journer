@@ -18,8 +18,6 @@
   --pry-bold-color: #000000;
   --sec-color: #eae8e8;
   --sec-bold-color: #d9d8d8;
-  /* --sec-color: #a1a1a11a;
-  --sec-bold-color: #7e7e7e1a; */
   --dark-color: #000000;
   --dark-hover-color: #5a5a5a;
   --light-color: #ffffff;
@@ -51,7 +49,7 @@
 
 /* Dark Mode Variables */
 [data-theme="dark"] {
-  --sec-color: #0a132a;
+  /* --sec-color: #0a132a;
   --sec-bold-color: #1f3b81;
   --pry-color: #f1f6fd;
   --pry-bold-color: #c6dcf8;
@@ -61,7 +59,20 @@
   --modal-color: #0a132a;
   --light-bold-color: #5a5a5a;
   --nav-color: #6faaf6;
-  --top-nav-bg: #0a132a86;
+  --top-nav-bg: #0a132a86; */
+
+  --pry-color: #eae8e8;
+  --pry-bold-color: #d9d8d8;
+  --sec-color: #151515;
+  --sec-bold-color: #3a3a3a;
+  --dark-color: #ffffff;
+  --dark-hover-color: #e2e2e2;
+  --light-color: #151515;
+  --modal-color: #151515;
+  --light-bold-color: #5a5a5a;
+  --nav-color: #777777;
+  --top-nav-bg: #151515;
+
   /* theme */
   --reddish-bg: #5c2b29;
   --orangeish-bg: #614a19;

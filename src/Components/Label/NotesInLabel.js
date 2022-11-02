@@ -36,6 +36,9 @@ const NotesInLabel = () => {
         <>
             <Wrapper pagename={'Label'}>
                 <h5 className="pry-bold-text">
+                    <i className='bi bi-chevron-left me-1 pointer'
+                        onClick={() => navigate(-1)}
+                    />
                     <span className="fw-light"> {labelInfo?.label} </span> - ({newData?.length})
                 </h5>
 

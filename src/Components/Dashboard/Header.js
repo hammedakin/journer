@@ -36,14 +36,14 @@ const Header = () => {
     return (
         <>
             <section className="header">
-                <div className="row justify-content-between border py-4 br-sm light-bg ">
+                <div className="row justify-content-between py- br-sm light-bg ">
                     <div className="col mb-3">
                         <h3 className="">
                             Hello, {localStorage.getItem('name')}
                             <i className="bi bi-lightning-charge-fill ms-2 text-warning" />
                         </h3>
                     </div>
-                    <div className="col-md-5">
+                    <div className="col-md-5 d-none d-md-block ">
                         <div className="text-md-end">
                             <h6 className="fw-bold"> {currentDate}</h6>
                             <p> {currentTime} </p>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Wrapper from '../../Wrapper';
 import EmptyList from '../Global/EmptyList';
 import { Loading } from '../Global/Loader';
@@ -11,6 +11,7 @@ const SearchPage = () => {
     const { loading, data } = useFetch('note')
 
     let location = useLocation()
+    let navigate = useNavigate()
     const [searched] = useState(location.state);
     const [newData, setnewData] = useState([]);
 
@@ -29,7 +30,10 @@ const SearchPage = () => {
     return (
         <>
             <Wrapper pagename={'Search'}>
-                <h5 className="pry-bold-text">
+                <h5 className="pry-bold-text mb-4">
+                    <i className='bi bi-chevron-left me-2 pointer'
+                        onClick={() => navigate(-1)}
+                    />
                     Result ({newData?.length}) - <span className="fw-light"> {searched.value} </span>
                 </h5>
 
