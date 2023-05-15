@@ -9,14 +9,12 @@ import 'boxicons'
 import 'bootstrap/dist/js/bootstrap'
 import "react-toastify/dist/ReactToastify.css";
 import reportWebVitals from './reportWebVitals';
-import ScrollToTop from './ScrollToTop';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <ScrollToTop /> */}
       <App />
     </BrowserRouter>
 
