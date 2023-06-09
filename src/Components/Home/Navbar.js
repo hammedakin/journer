@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import logo from '../assets/logo.svg'
+import logo from '../assets/journer1.png';
 
 
 
@@ -17,9 +17,8 @@ const Navbar = () => {
 
             <nav className="navbar shadow-none navbar-expand-lg fixed-to light-bg " id="navbar">
                 <div className="container">
-                    <Link to="/" className="navbar-brand mt-2 mb-3 dark-text">
-                        {/* <img src="https://renitrust.com/theimages/logo.png" width="60%" alt="logo" loading="lazy" /> */}
-                        <img src={logo} alt="Logo" width="60%" />
+                    <Link to="/" className="mt-2 mb-3 dark-text fit-content">
+                        <img src={logo} alt="Logo" />
 
 
                     </Link>
@@ -38,12 +37,12 @@ const Navbar = () => {
                         </span>
                     </a>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto text-center animated fadeIn align-items-center">
                             {navLink.map(({ title, to }, i) => {
                                 return (
                                     <li className="nav-item" key={i}>
-                                        <Link ClassName="active" to={`${to}`}>
+                                        <Link ClassName="active" to={`${ to }`}>
                                             {title}
                                         </Link>
                                     </li>
@@ -79,9 +78,9 @@ const Navbar = () => {
                                     </li>
 
                                     <li className=" btn-contact">
-                                        <button 
-                                        // onClick={HandleLogout} 
-                                        className="btn br-sm">
+                                        <button
+                                            // onClick={HandleLogout} 
+                                            className="btn br-sm">
                                             <i className="bx bx-log-out-circle me-2" />
                                             Logout
                                         </button>
@@ -94,6 +93,6 @@ const Navbar = () => {
             </nav>
         </header>
     );
-}
+};
 
 export default Navbar;

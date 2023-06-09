@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavLinks from './NavLinks';
-
+import logo from "../assets/journer1.png";
+import logo1 from "../assets/journer2.png";
 
 const SideNav = ({ darktheme, switchTheme }) => {
 
@@ -39,8 +40,7 @@ const SideNav = ({ darktheme, switchTheme }) => {
         <div id="mySidenav" className="sidenav">
           <div className="header-box px-2 pt-3 pb-4 d-flex justify-content-between">
             <h1 className="fs-4">
-
-              <span className="pry-text ms-3">Journer </span>
+              <img src={darktheme === 'dark' ? logo1 : logo} alt="Journer" width='80%' />
             </h1>
             <span className=" d-md-none d-block close-btn px-1 py-0 text-white"
               onClick={closeNav}>

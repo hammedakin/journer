@@ -1,6 +1,6 @@
 import React from 'react';
 import note from '../assets/note1.png'
-import Install from '../Global/Install';
+import InstallButton from '../Global/InstallButton';
 
 
 const Quote = () => {
@@ -16,8 +16,7 @@ const Quote = () => {
                             Join over 20,000+ users
                             and make your life easier.
                         </h1>
-                        <Install>
-
+                        <InstallButton>
                         <div className="btn light-bg dark-text mb-3 py-1 px-3 br-sm ">
                             <div className="d-flex align-items-center">
                                 <span>
@@ -33,7 +32,7 @@ const Quote = () => {
                                 </span>
                             </div>
                         </div>
-                        </Install>
+                        </InstallButton>
                     </div>
                     <div className="col-md-4">
                         <div className="image">

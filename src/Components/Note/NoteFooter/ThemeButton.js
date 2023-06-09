@@ -24,27 +24,27 @@ const ThemeButton = ({ noteId, theme, setnoteTheme }) => {
     //   Edit Theme Function
     //   Edit Theme Function
     function editTheme(e) {
-        let colorIndex = allThemes.findIndex(x => x.color === e)
-        let newTheme = allThemes[colorIndex]
-        setistheme(newTheme)
+        let colorIndex = allThemes.findIndex(x => x.color === e);
+        let newTheme = allThemes[colorIndex];
+        setistheme(newTheme);
         setsending(true);
         const data = {
             theme: newTheme
-        }
+        };
 
         const headers = {
-            'Authorization': `Bearer ${token}`
-        }
+            'Authorization': `Bearer ${ token }`
+        };
         axios
-            .patch(`${endpoint}/note/theme/${noteId}`, data, { headers })
+            .patch(`${ endpoint }/note/theme/${ noteId }`, data, { headers })
             .then((res) => {
                 if (res.data.success === false) {
                     toast.warn(res.data.msg);
                     setsending(false);
                 } else {
                     setsending(false);
-                    setistheme(res.data.note.theme)
-                    setnoteTheme(res.data.note.theme.color)
+                    setistheme(res.data.note.theme);
+                    setnoteTheme(res.data.note.theme.color);
                 }
             })
             .catch((error) => {
@@ -92,7 +92,7 @@ const ThemeButton = ({ noteId, theme, setnoteTheme }) => {
                                     {allThemes.map(({ name, color }, i) => {
                                         return (
                                             <div className="col-md-4 col-6 mb-4" key={name}>
-                                                <label class="custom-radio">
+                                                <label className="custom-radio">
                                                     <input
                                                         type="radio"
                                                         className="theme-radio"
@@ -103,7 +103,7 @@ const ThemeButton = ({ noteId, theme, setnoteTheme }) => {
                                                         checked={name == istheme?.name ? true : false}
                                                     />
 
-                                                    <div className={`${color} br-xlg theme-icon fit-content`}>
+                                                    <div className={`${ color } br-xlg theme-icon fit-content`}>
                                                         {name == istheme?.name ?
                                                             <i
                                                                 className="bi bx m-0 bx-sm p-2 bi-check2"
@@ -126,7 +126,7 @@ const ThemeButton = ({ noteId, theme, setnoteTheme }) => {
                                                     </div>
                                                 </label>
                                             </div>
-                                        )
+                                        );
                                     })
                                     }
                                 </>
@@ -141,6 +141,6 @@ const ThemeButton = ({ noteId, theme, setnoteTheme }) => {
             </Modal>
         </>
     );
-}
+};
 
 export default ThemeButton;

@@ -40,7 +40,7 @@ const Features = () => {
                 <h1 className=''> Features </h1>
                 <div className="row justify-content-between">
                     {features.map(({ icon, title, content }, i) =>
-                        <div className=" col-md-4">
+                        <div className=" col-md-4" key={i}>
                             <div className="my-3">
                                 <i className={`bi p-3 bx bx-sm br-lg ${icon} `} />
                             </div>

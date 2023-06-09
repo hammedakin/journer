@@ -41,6 +41,10 @@
   color: var(--dark-color);
   background-color: var(--light-color);
 }
+
+.homenav img {
+  width: 25vh;
+}
 /* Navbar */
 
 

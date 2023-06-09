@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo.svg'
+import logo from '../assets/journer1.png'
 
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className="row align-items-center text-center text-md-start">
                     <div className="col-md-6">
 
-                    <img src={logo} alt="Logo" width="30%" />
+                    <img src={logo} alt="Logo" width="40%" />
                     </div>
                     <div className="col-md-6 small grey-text text-md-end">
 
