@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import Navbar from '../Components/Home/Navbar';
 
 const NoPageAccess = () => {
   let navigate = useNavigate()
@@ -10,6 +11,7 @@ const NoPageAccess = () => {
 
   return (
     <>
+      <Navbar />
 
       <main className="pagenotfound light-bg">
         <div className="container">

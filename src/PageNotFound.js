@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "./Components/Home/Navbar";
 
 const PageNotFound = () => {
 
 
   return (
     <>
+    <Navbar/>
       <section className="pagenotfound white">
         <div className="container ">
           <div className="col-md-7 mx-auto text-center ">

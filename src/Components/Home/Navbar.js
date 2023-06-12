@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/journer1.png';
+import { removeData } from '../Global/LocalStorage';
+import { toast } from 'react-toastify';
 
 
 
@@ -11,6 +13,17 @@ const Navbar = () => {
         { title: "Features", to: "/#features" },
         // { title: "FAQs", to: "#" },
     ];
+    let navigate = useNavigate();
+
+    function logout() {
+        removeData('name');
+        removeData('usertoken');
+        toast.success('logout successful, redirecting...');
+        setTimeout(() => {
+            navigate('/login');
+        }, 1000);
+    }
+
 
     return (
         <header className='homenav '>
@@ -79,7 +92,7 @@ const Navbar = () => {
 
                                     <li className=" btn-contact">
                                         <button
-                                            // onClick={HandleLogout} 
+                                            onClick={() => logout()}
                                             className="btn br-sm">
                                             <i className="bx bx-log-out-circle me-2" />
                                             Logout

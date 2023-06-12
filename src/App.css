@@ -189,7 +189,7 @@ h5 {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 10rem) ;
   justify-content: center;
   overflow: hidden;
 }

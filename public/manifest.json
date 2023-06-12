@@ -1,6 +1,6 @@
 {
-  "short_name": "Jornally",
-  "name": "Journally",
+  "short_name": "Journer",
+  "name": "Journer App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#ffffff",
+  "background_color": "#000000"
 }
