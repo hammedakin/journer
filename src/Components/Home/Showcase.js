@@ -1,5 +1,5 @@
 import React from 'react';
-import note from '../assets/note.png';
+import note from '../assets/note.svg';
 import InstallButton from '../Global/InstallButton';
 
 const Showcase = () => {

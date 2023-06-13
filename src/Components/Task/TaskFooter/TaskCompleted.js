@@ -59,7 +59,6 @@ const TaskCompeleted = ({ taskId, done, allTasksFn }) => {
                         className={` ${completed ? ' bi-check2 pry-text' : ' bi-circle'} bi ms-2`}
                     />
             }
-            {/* <i className='bi bi-circle ms-2' /> */}
         </>
     );
 }

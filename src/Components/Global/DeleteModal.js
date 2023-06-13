@@ -78,12 +78,12 @@ const DeleteModal = ({ children, content, Fn, noteId }) => {
                             <i className="bx bx-loader bx-spin bx-sm text-danger" />
                             :
                             <>
-                                <a type="button" className="btn btn-outline-danger waves-effect"
+                                <button type="button" className="btn btn-outline-danger waves-effect"
                                     onClick={e => handleCloseremove()}
-                                >No</a>
-                                <a href="" className="btn btn-danger waves-effect "
+                                >No</button>
+                                <button href="" className="btn btn-danger waves-effect "
                                     onClick={e => DeleteNote(e)}
-                                >Yes</a>
+                                >Yes</button>
                             </>
                         }
                     </div>

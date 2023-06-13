@@ -1,5 +1,5 @@
 import React from 'react';
-import note from '../assets/note1.png'
+import note from '../assets/note1.png';
 import InstallButton from '../Global/InstallButton';
 
 
@@ -13,25 +13,25 @@ const Quote = () => {
                             Download JORNER
                         </p>
                         <h1 className="mt-4">
-                            Join over 20,000+ users
+                            Join over 2,000+ users
                             and make your life easier.
                         </h1>
                         <InstallButton>
-                        <div className="btn light-bg dark-text mb-3 py-1 px-3 br-sm ">
-                            <div className="d-flex align-items-center">
-                                <span>
-                                    <i className='bi bi-github me-2 h5' />
-                                </span>
-                                <span>
-                                    <small>
-                                        INSTALL
-                                    </small>
-                                    <p className="fw-bold m-0">
-                                        JOURNER
-                                    </p>
-                                </span>
+                            <div className="btn light-bg dark-text mb-3 py-1 px-3 br-sm ">
+                                <div className="d-flex align-items-center">
+                                    <span>
+                                        <i className='bi bi-github me-2 h5' />
+                                    </span>
+                                    <span>
+                                        <small>
+                                            INSTALL
+                                        </small>
+                                        <p className="fw-bold m-0">
+                                            JOURNER
+                                        </p>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
                         </InstallButton>
                     </div>
                     <div className="col-md-4">
@@ -48,6 +48,6 @@ const Quote = () => {
             </div>
         </section>
     );
-}
+};
 
 export default Quote;

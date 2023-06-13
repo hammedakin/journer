@@ -110,7 +110,9 @@ const AddTask = ({ allTasksFn }) => {
                                 </div>
                             </div>
                             <div className="col-md-12">
-                                
+                                <button type='submit' className="btn light-text dark-bg w-100"                                >
+                                    Add Task
+                                </button>
                             </div>
                         </div>
                     </form>

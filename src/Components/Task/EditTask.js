@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { toast } from "react-toastify";
 import { Modal } from "react-bootstrap";
 import axios from 'axios';
-import { formatDate, GetTime } from '../Global/GetDate';
+import { formatDate } from '../Global/GetDate';
 
 const EditTask = ({ children, allTasksFn, taskId, data }) => {
 
@@ -80,7 +80,6 @@ const EditTask = ({ children, allTasksFn, taskId, data }) => {
                 onHide={handleCloseremove}
                 size="md"
                 backdrop="static"
-            // onExited={fetchData}
 
             >
                 <Modal.Header closeButton>
@@ -94,7 +93,7 @@ const EditTask = ({ children, allTasksFn, taskId, data }) => {
                                 <div className="row justify-content-cente text-left">
 
                                     <div className="col-md-12 col-lg-12 ">
-                                        {/* <label className="mb-0"> Task:</label> */}
+                                    
                                         <div className="input-group">
                                             <textarea
                                                 type="text"
@@ -109,7 +108,7 @@ const EditTask = ({ children, allTasksFn, taskId, data }) => {
                                         </div>
                                     </div>
                                     <div className="col-6 ">
-                                        {/* <label className="mb-0"> Date:</label> */}
+                                
                                         <div className="input-group">
                                             <input
                                                 type="date"
@@ -121,7 +120,7 @@ const EditTask = ({ children, allTasksFn, taskId, data }) => {
                                         </div>
                                     </div>
                                     <div className="col-6 ">
-                                        {/* <label className="mb-0"> Time:</label> */}
+                                     
                                         <div className="input-group">
                                             <input
                                                 type="time"

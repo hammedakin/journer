@@ -7,33 +7,38 @@ import DarkModeToggle from './DarkModeToggle';
 import { useState } from 'react';
 import { useFetch } from '../Global/useFetch';
 import { useEffect } from 'react';
+import { Modal } from 'react-bootstrap';
 
 const NavLinks = ({ darktheme, switchTheme }) => {
-    const { data: allLabels, fetchData } = useFetch(`label`)
-    const { data: allNotes, fetchData: Fn } = useFetch(`note`)
+    const { data: allLabels, fetchData } = useFetch(`label`);
+    const { data: allNotes, fetchData: Fn } = useFetch(`note`);
     const [showLabel, setshowLabel] = useState(false);
 
-    let navigate = useNavigate()
-    let location = useLocation()
+    let navigate = useNavigate();
+    let location = useLocation();
 
     useEffect(() => {
-        Fn()
+        Fn();
     }, []);
 
     function logout() {
-        removeData('name')
-        removeData('usertoken')
-        toast.success('logout successful, redirecting...')
+        removeData('name');
+        removeData('usertoken');
+        toast.success('logout successful, redirecting...');
         setTimeout(() => {
-            navigate('/login')
+            navigate('/login');
         }, 1000);
     }
 
     const labelNote = (e) => {
-        navigate(`/label/${e._id}`,
+        navigate(`/label/${ e._id }`,
             { state: e }
-        )
-    }
+        );
+    };
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <>
@@ -70,29 +75,29 @@ const NavLinks = ({ darktheme, switchTheme }) => {
                         <li className="mb-2 ">
                             <a
                                 className={`pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between pointer
-                                 ${location.state?.label ? 'active' : null}`}
+                                 ${ location.state?.label ? 'active' : null }`}
                                 onClick={() => setshowLabel(!showLabel)}
                             >
                                 <span className=""> <i className="bi bi-tags"></i> Labels </span>
-                                <i className={`bi  ${showLabel ? 'bi-chevron-down' : 'bi-chevron-right'}`} />
+                                <i className={`bi  ${ showLabel ? 'bi-chevron-down' : 'bi-chevron-right' }`} />
                             </a>
                         </li>
                         {showLabel &&
                             <>
                                 {allLabels.label?.map((item, i) => {
-                                    const { label, _id } = item
+                                    const { label, _id } = item;
                                     return (
                                         <li className="mb-0 mx-3 border-start border-primar pry-bold-border" key={_id}>
                                             <a
                                                 className={`pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between pointer 
-                                                ${location.state?._id === _id ? 'active' : null}`}
+                                                ${ location.state?._id === _id ? 'active' : null }`}
                                                 onClick={(e) => labelNote(item)}
 
                                             >
                                                 <span className="text-truncate small"> <i className="bi bi-tag"></i> {label} </span>
                                             </a>
                                         </li>
-                                    )
+                                    );
                                 })}
                             </>
                         }
@@ -122,13 +127,39 @@ const NavLinks = ({ darktheme, switchTheme }) => {
                         className="pry-bold-text text-decoration-none d-block px-3 py-2 d-flex justify-content-between"
                     >
                         <span className="text-truncate pointer"
-                            onClick={() => logout()}
-                        > <i className="bi bi-tag"></i> Logout </span>
+                            onClick={() => handleShow()}
+                        > <i className="bi bi-box-arrow-right"></i> Logout </span>
                     </div>
                 </li>
             </ul>
+
+            <Modal
+                show={show}
+                onHide={handleClose}
+                size="sm"
+            >
+                <div className="modal-header d-flex justify-content-center">
+                    <p className="heading m-0 fw-bolder">Confirm</p>
+                </div>
+                <Modal.Body style={{ backgroundColor: "transparent!important" }}>
+                    <div className="text-center">
+
+                        <i className="bi bi-box-arrow-right fa-4x animated rotateIn text-danger"></i>
+                        <p className="heading">Are you sure you want logout?</p>
+
+                    </div>
+                </Modal.Body>
+                <div className="modal-footer justify-content-center">
+                    <button type="button" className="btn btn-outline-danger waves-effect"
+                        onClick={e => handleClose()}
+                    >No</button>
+                    <button href="" className="btn btn-danger waves-effect "
+                        onClick={e => logout(e)}
+                    >Yes</button>
+                </div>
+            </Modal>
         </>
     );
-}
+};
 
 export default NavLinks;
