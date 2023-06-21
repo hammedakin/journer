@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify';
 import Navbar from '../Home/Navbar';
 
 const Register = () => {
     const [endpoint] = useState(process.env.REACT_APP_ENDPOINT);
     const [sending, setsending] = useState(false);
-    let navigate = useNavigate()
+    let navigate = useNavigate();
 
     // Form Fields
     const [form, setform] = useState({});
@@ -30,17 +30,19 @@ const Register = () => {
                 name: form.name,
                 email: form.email,
                 password: form.pword,
-            }
+            };
             axios
-                .post(`${endpoint}/auth/register`, data,)
+                .post(`${ endpoint }/auth/register`, data,)
                 .then((res) => {
                     if (res.data.success === false) {
                         toast.warn(res.data.msg);
                         setsending(false);
                     } else {
                         setsending(false);
-                        navigate("/login")
-                        toast.success(res.data.msg);
+                        navigate("/login");
+                        setTimeout(() => {
+                            toast.success(res.data.msg);
+                        }, 10);
                     }
                 })
                 .catch((error) => {
@@ -71,7 +73,7 @@ const Register = () => {
         } else {
             x.type = "password";
         }
-        seteye(!eye)
+        seteye(!eye);
     }
     // Password Show Function
 
@@ -79,122 +81,122 @@ const Register = () => {
         <>
             <main>
                 <Navbar />
-            <section className="auth">
-                <div className="container">
-                    <div className="col-md-8 mx-auto">
-                        <div className="container py-4 border br-md">
-                            <div className="my-2 text-center text-sm-left">
-                                <h3>
-                                    Register
-                                </h3>
-                                <p>
-                                    Register an account to begin your journey.
-                                </p>
-                            </div>
-
-
-                            <form onSubmit={(e) => register(e)}>
-                                <div className="row justify-content-center text-left mt-5">
-                                    <div className="col-md-10  ">
-                                        <label className="mb-0"> Username:</label>
-                                        <div className="input-group">
-                                            <input
-                                                type="name"
-                                                className=" input-style input-line"
-                                                name="name"
-                                                placeholder="example@example.com"
-                                                onChange={handleChange}
-                                                required
-                                                autoComplete="false"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-10  ">
-                                        <label className="mb-0"> Email:</label>
-                                        <div className="input-group">
-                                            <input
-                                                type="email"
-                                                className=" input-style input-line"
-                                                name="email"
-                                                placeholder="example@example.com"
-                                                onChange={handleChange}
-                                                required
-                                                autoComplete="false"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-10  ">
-                                        <label className="mb-0"> Password:</label>
-                                        <div className="input-group">
-                                            <input
-                                                type="password"
-                                                className=" input-style input-line pword-input"
-                                                name="pword"
-                                                placeholder="************"
-                                                onChange={handleChange}
-                                                required
-                                                autoComplete="false"
-                                                id="security"
-                                            />
-
-                                            <a
-                                                    className={`bi toggle-eye pry-text ${eye ? "bi-eye-slash" : "bi-eye"}`}
-                                                id="togglePassword"
-                                                onClick={myInput}
-                                            >
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-10 mx-auto text-center">
-                                        <div className="user-btn mb-4 mr-auto text-center">
-                                            {sending ? (
-                                                <>
-                                                    <button type="submit" className="btn  pry-bold light-text m-0 w-100" disabled>
-                                                        <i className="bx bx-loader bx-spin bx-sm white-text" />
-                                                    </button>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <button
-                                                        type="submit"
-                                                        className="btn  pry-bold light-text m-0 w-100" p
-                                                    >
-                                                        Submit
-                                                    </button>
-                                                </>
-                                            )}
-                                        </div>
-                                        <div className="text-center">
-
-                                            <small>
-                                                Already have an account?
-                                                <Link to="/login" className="pry-text"> Login</Link>
-
-                                            </small>
-                                        </div>
-                                    </div>
+                <section className="auth">
+                    <div className="container">
+                        <div className="col-md-8 mx-auto">
+                            <div className="container py-4 border br-md">
+                                <div className="my-2 text-center text-sm-left">
+                                    <h3>
+                                        Register
+                                    </h3>
+                                    <p>
+                                        Register an account to begin your journey.
+                                    </p>
                                 </div>
-                            </form>
 
+
+                                <form onSubmit={(e) => register(e)}>
+                                    <div className="row justify-content-center text-left mt-5">
+                                        <div className="col-md-10  ">
+                                            <label className="mb-0"> Username:</label>
+                                            <div className="input-group">
+                                                <input
+                                                    type="name"
+                                                    className=" input-style input-line"
+                                                    name="name"
+                                                    placeholder="example@example.com"
+                                                    onChange={handleChange}
+                                                    required
+                                                    autoComplete="false"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="col-md-10  ">
+                                            <label className="mb-0"> Email:</label>
+                                            <div className="input-group">
+                                                <input
+                                                    type="email"
+                                                    className=" input-style input-line"
+                                                    name="email"
+                                                    placeholder="example@example.com"
+                                                    onChange={handleChange}
+                                                    required
+                                                    autoComplete="false"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="col-md-10  ">
+                                            <label className="mb-0"> Password:</label>
+                                            <div className="input-group">
+                                                <input
+                                                    type="password"
+                                                    className=" input-style input-line pword-input"
+                                                    name="pword"
+                                                    placeholder="************"
+                                                    onChange={handleChange}
+                                                    required
+                                                    autoComplete="false"
+                                                    id="security"
+                                                />
+
+                                                <a
+                                                    className={`bi toggle-eye pry-text ${ eye ? "bi-eye-slash" : "bi-eye" }`}
+                                                    id="togglePassword"
+                                                    onClick={myInput}
+                                                >
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div className="col-md-10 mx-auto text-center">
+                                            <div className="user-btn mb-4 mr-auto text-center">
+                                                {sending ? (
+                                                    <>
+                                                        <button type="submit" className="btn  pry-bold light-text m-0 w-100" disabled>
+                                                            <i className="bx bx-loader bx-spin bx-sm white-text" />
+                                                        </button>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <button
+                                                            type="submit"
+                                                            className="btn  pry-bold light-text m-0 w-100" p
+                                                        >
+                                                            Submit
+                                                        </button>
+                                                    </>
+                                                )}
+                                            </div>
+                                            <div className="text-center">
+
+                                                <small>
+                                                    Already have an account?
+                                                    <Link to="/login" className="pry-text"> Login</Link>
+
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section >
-            <ToastContainer
-                position="bottom-left"
-                autoClose={1500}
-                theme="dark"
-                className="small"
-                hideProgressBar={true}
-            // transition="slide"
+                </section >
+                <ToastContainer
+                    position="bottom-left"
+                    autoClose={1500}
+                    theme="dark"
+                    className="small"
+                    hideProgressBar={true}
+                // transition="slide"
 
-            />
+                />
             </main>
         </>
     );
-}
+};
 
 export default Register;
